@@ -1,7 +1,12 @@
 Hi 👋 My name is VincentZyu
 ===========================
 
+- [my GitHub: https://github.com/VincentZyu233](https://github.com/VincentZyu233)
+- [my Gitee: https://gitee.com/vincent-zyu](https://gitee.com/vincent-zyu)
+
+
 An ordinary person
+> 这里不用看，没啥好看的awa，为了申请github学生优惠申请的qwq，就是一个普通人
 ------------------
 
 *   🌍  I'm based in Fujian, Xiamen
