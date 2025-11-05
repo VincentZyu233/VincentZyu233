@@ -8,19 +8,19 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Examples', link: '/vitepress-example/markdown-examples' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Vitepress Examples',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Markdown Examples', link: '/vitepress-example/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/vitepress-example/api-examples' }
         ]
       },
       {
-        text: 'Notes',
+        text: 'Notes 备忘录',
         items: [
           {
             text: 'Proxy Config 代理配置',
