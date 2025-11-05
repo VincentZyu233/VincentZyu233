@@ -23,13 +23,14 @@ export default defineConfig({
         text: 'Notes',
         items: [
           {
-            text: 'Proxy Config',
+            text: 'Proxy Config 代理配置',
             collapsed: false,
             items: [
-              { text: 'CMD 使用 代理', link: '/notes/shell-proxy/cmd-clash' },
-              { text: 'Git Bash 使用 代理', link: '/notes/shell-proxy/gitbash-clash' },
-              { text: 'PowerShell 使用 代理', link: '/notes/shell-proxy/powershell-clash' },
-              { text: 'proxychains 使用指南', link: '/notes/shell-proxy/proxychains' }
+              { text: 'CMD 使用代理', link: '/notes/shell-proxy/cmd-clash' },
+              { text: 'Git Bash 使用代理', link: '/notes/shell-proxy/gitbash-clash' },
+              { text: 'PowerShell 使用代理', link: '/notes/shell-proxy/powershell-clash' },
+              { text: 'proxychains 使用指南', link: '/notes/shell-proxy/proxychains' },
+              { text: 'Docker 配置代理', link: '/notes/shell-proxy/docker-proxy' }
             ]
           },
           {

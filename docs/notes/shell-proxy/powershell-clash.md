@@ -46,3 +46,4 @@ $Env:HTTPS_PROXY = $null
 - [Git Bash 使用 Clash](./gitbash-clash.md)
 - [PowerShell 使用 Clash](./powershell-clash.md)
 - [proxychains 使用指南](./proxychains.md)
+- [Docker 代理配置](./docker-proxy.md)

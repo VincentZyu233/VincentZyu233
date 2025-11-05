@@ -38,7 +38,7 @@ curl -I https://www.google.com
 ```cmd
 set http_proxy=
 set https_proxy=
-``````
+```
 
 ## 效果示例
 
@@ -50,3 +50,4 @@ set https_proxy=
 - [Git Bash 使用 Clash](./gitbash-clash.md)
 - [PowerShell 使用 Clash](./powershell-clash.md)
 - [proxychains 使用指南](./proxychains.md)
+- [Docker 代理配置](./docker-proxy.md)

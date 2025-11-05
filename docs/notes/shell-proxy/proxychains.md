@@ -185,6 +185,8 @@ proxychains4 curl -I https://www.google.com
 
 ## 相关链接
 
-- [CMD 使用 Clash](./cmd-clash.md)
+- [CMD 使用 代理](./cmd-clash.md)
 - [Git Bash 使用 Clash](./gitbash-clash.md)
 - [PowerShell 使用 Clash](./powershell-clash.md)
+- [proxychains 使用指南](./proxychains.md)
+- [Docker 代理配置](./docker-proxy.md)
