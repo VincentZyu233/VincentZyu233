@@ -5,6 +5,11 @@
 export HTTP_PROXY="http://127.0.0.1:7890"
 export HTTPS_PROXY="http://127.0.0.1:7890"
 ```
+
+::: info 提示
+默认情况下，Clash 的本地代理端口为 `7890`。如果你修改了 Clash 的端口设置，请相应调整上述命令中的端口号。
+:::
+
 ::: tip 提示
 Git Bash 使用的是 Linux/Unix 风格的环境变量设置方式，与 Windows CMD 不同。Git Bash 使用的是 Linux/Unix 风格的环境变量设置方式，与 Windows CMD 不同。
 :::

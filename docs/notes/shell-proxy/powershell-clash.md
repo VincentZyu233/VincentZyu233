@@ -7,6 +7,11 @@
 $Env:HTTP_PROXY = "http://127.0.0.1:7890"
 $Env:HTTPS_PROXY = "http://127.0.0.1:7890"
 ```
+
+::: info 提示
+默认情况下，Clash 的本地代理端口为 `7890`。如果你修改了 Clash 的端口设置，请相应调整上述命令中的端口号。
+:::
+
 ::: tip 提示
 PowerShell 使用 `$Env:` 前缀来设置环境变量，这是 PowerShell 特有的语法。PowerShell 使用 `$Env:` 前缀来设置环境变量，这是 PowerShell 特有的语法。
 :::
