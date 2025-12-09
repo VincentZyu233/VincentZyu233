@@ -37,7 +37,7 @@ cat ~/.config/uv/uv.toml
 ```
 
 ::: details 安装完成后的输出示例
-```shell
+```shell{2-12}
 root@S43LYjdh3w4zO:/data/maibot# curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/0.9.16/uv-installer-custom.sh | sh
 downloading uv 0.9.16 x86_64-unknown-linux-gnu
 no checksums to verify
@@ -54,7 +54,7 @@ root@S43LYjdh3w4zO:/data/maibot#
 ```
 
 查看 UV 配置文件：
-```shell
+```shell{2-6}
 root@S43LYjdh3w4zO:/data/maibot# cat /root/.config/uv/uv.toml
 python-install-mirror = "https://ghfast.top/https://github.com/astral-sh/python-build-standalone/releases/download"
 
@@ -65,7 +65,7 @@ root@S43LYjdh3w4zO:/data/maibot#
 ```
 
 确认 UV 版本和路径：
-```shell
+```shell{2,4}
 root@S43LYjdh3w4zO:/data/maibot# uv --version
 uv 0.9.16
 root@S43LYjdh3w4zO:/data/maibot# which uv

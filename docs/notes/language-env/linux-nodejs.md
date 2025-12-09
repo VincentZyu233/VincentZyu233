@@ -4,7 +4,7 @@
 
 ::: details 我自己的测试环境参考
 在这个机器上面，已经实践验证过 本文的全部操作是可行的
-```shell
+```shell{2-20}
 root@S43LYjdh3w4zO:/data/nodejs# neofetch
        _,met$$$$$gg.          root@S43LYjdh3w4zO
     ,g$$$$$$$$$$$$$$$P.       ------------------
@@ -79,7 +79,7 @@ tar -xvf node-v22.9.0-linux-x64.tar.xz
 ```
 
 ::: details 解压后的目录结构
-```shell
+```shell{2-23}
 root@S43LYjdh3w4zO:/data/nodejs# tree -L 3
 .
 ├── node-v22.9.0-linux-x64
@@ -142,7 +142,7 @@ source ~/.bashrc
 - `<node绝对路径> <yarn绝对路径> [args...]`
 
 ::: tip 使用示例
-```shell
+```shell{3,10,15,22,26,27,28}
 # 查看 Node.js 版本
 root@S43LYjdh3w4zO:/data/nodejs/node-v22.9.0-linux-x64/bin# /data/nodejs/node-v22.9.0-linux-x64/bin/node -v
 v22.9.0
