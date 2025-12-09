@@ -6,6 +6,7 @@
 :::
 
 ::: warning 注意事项
+本文档撰写于 2025-12-07
 请注意：文档可能会过时，本文档仅供参考，请记得随时查看最新仓库和最新文档。
 
 ## **请牢记：**
@@ -553,3 +554,8 @@ screen -S <会话名或ID> -X quit
 - [SiliconFlow - LLM API [https://cloud.siliconflow.cn/] ](https://cloud.siliconflow.cn/)
 - [Docker 官方文档 [https://docs.docker.com/] ](https://docs.docker.com/)
 - [linuxmirrors - 国内镜像源 [https://linuxmirrors.cn/] ](https://linuxmirrors.cn/)
+
+**运维相关工具：**
+- [GNU Screen[https://www.gnu.org/software/screen/]](https://www.gnu.org/software/screen/)
+- [RUNOOB tmux命令参考[https://www.runoob.com/linux/linux-comm-tmux.html]](https://www.runoob.com/linux/linux-comm-tmux.html)
+- [MCSManager 文档[https://docs.mcsmanager.com/zh_cn/]](https://docs.mcsmanager.com/zh_cn/)

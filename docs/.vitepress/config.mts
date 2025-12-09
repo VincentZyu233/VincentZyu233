@@ -64,7 +64,8 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'MaiBot 麦麦部署', link: '/notes/bot-deploy/maibot-deploy' },
-              { text: 'NoneBot2 部署', link: '/notes/bot-deploy/nonebot2-deploy' }
+              { text: 'NoneBot2 部署', link: '/notes/bot-deploy/nonebot2-deploy' },
+              { text: 'Koishi 部署', link: '/notes/bot-deploy/koishi-deploy' }
             ]
           }
         ]

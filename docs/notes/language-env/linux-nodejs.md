@@ -2,6 +2,30 @@
 
 本文档介绍在 Linux 系统上安装 Node.js 的多种方法。
 
+::: details 我自己的测试环境参考
+在这个机器上面，已经实践验证过 本文的全部操作是可行的
+```shell
+root@S43LYjdh3w4zO:/data/nodejs# neofetch
+       _,met$$$$$gg.          root@S43LYjdh3w4zO
+    ,g$$$$$$$$$$$$$$$P.       ------------------
+  ,g$$P"     """Y$$.".        OS: Debian GNU/Linux 12 (bookworm) x86_64
+ ,$$P'              `$$$.     Host: KVM RHEL 7.6.0 PC (i440FX + PIIX, 1996)
+',$$P       ,ggs.     `$$b:   Kernel: 6.1.0-10-amd64
+`d$$'     ,$P"'   .    $$$    Uptime: 16 hours, 12 mins
+ $$P      d$'     ,    $$P    Packages: 904 (dpkg)
+ $$:      $$.   -    ,d$$'    Shell: bash 5.2.15
+ $$;      Y$b._   _,d$P'      Resolution: 1024x768
+ Y$$.    `.`"Y$$$$P"'         Terminal: /dev/pts/6
+ `$$b      "-.__              CPU: Intel Xeon E5-2686 v4 (1) @ 2.294GHz
+  `Y$$                        GPU: 00:02.0 Cirrus Logic GD 5446
+   `Y$$.                      Memory: 919MiB / 1919MiB
+     `$$b.
+       `Y$$b.
+          `"Y$b._
+              `"""
+```
+:::
+
 ## 官方安装方法（国际网络环境）
 
 如果处于国际网络环境，可以直接使用 [Node.js 官网](https://nodejs.org/zh-cn/download) 的安装指令。
@@ -28,32 +52,17 @@ corepack enable yarn
 yarn -v
 ```
 
+::: tip 安装失败的解决方案
+如果遇到连接超时/连接重置等问题，可以尝试以下方法：
+- 先配置命令行代理环境变量：[Linux Bash 使用代理](/notes/shell-proxy/linux-bash-clash)
+- 或者先配置 proxychains4 bash 环境：[proxychains 使用指南](/notes/shell-proxy/proxychains)
+
+这两种方法都可以帮助你在网络受限的环境下成功下载和安装 Node.js。
+:::
+
 ## 国内镜像源安装（推荐）
 
 国内网络环境可能需要使用镜像源或配置代理。以下是使用淘宝镜像源安装 Node.js 的方法。
-
-::: details 测试环境参考
-```shell
-root@S43LYjdh3w4zO:/data/nodejs# neofetch
-       _,met$$$$$gg.          root@S43LYjdh3w4zO
-    ,g$$$$$$$$$$$$$$$P.       ------------------
-  ,g$$P"     """Y$$.".        OS: Debian GNU/Linux 12 (bookworm) x86_64
- ,$$P'              `$$$.     Host: KVM RHEL 7.6.0 PC (i440FX + PIIX, 1996)
-',$$P       ,ggs.     `$$b:   Kernel: 6.1.0-10-amd64
-`d$$'     ,$P"'   .    $$$    Uptime: 16 hours, 12 mins
- $$P      d$'     ,    $$P    Packages: 904 (dpkg)
- $$:      $$.   -    ,d$$'    Shell: bash 5.2.15
- $$;      Y$b._   _,d$P'      Resolution: 1024x768
- Y$$.    `.`"Y$$$$P"'         Terminal: /dev/pts/6
- `$$b      "-.__              CPU: Intel Xeon E5-2686 v4 (1) @ 2.294GHz
-  `Y$$                        GPU: 00:02.0 Cirrus Logic GD 5446
-   `Y$$.                      Memory: 919MiB / 1919MiB
-     `$$b.
-       `Y$$b.
-          `"Y$b._
-              `"""
-```
-:::
 
 ### 下载并解压
 
@@ -175,7 +184,7 @@ node -v
 npm -v
 yarn -v
 
-# 如果没有配置环境变量，使用绝对路径
+# 如果没有配置环境变量，使用绝对路径, 
 /data/nodejs/node-v22.9.0-linux-x64/bin/node -v
 /data/nodejs/node-v22.9.0-linux-x64/bin/node /data/nodejs/node-v22.9.0-linux-x64/bin/npm -v
 /data/nodejs/node-v22.9.0-linux-x64/bin/node /data/nodejs/node-v22.9.0-linux-x64/bin/yarn -v

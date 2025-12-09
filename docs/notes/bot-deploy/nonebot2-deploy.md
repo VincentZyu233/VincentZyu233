@@ -6,7 +6,7 @@
 :::
 
 ::: warning 注意事项
-本文档撰写于 2025-12-07
+本文档撰写于 2025-12-08
 
 请注意：文档可能会过时，本文档仅供参考，请记得随时查看最新仓库和最新文档。
 
@@ -498,3 +498,8 @@ screen -S nonebot -X quit
 **工具和资源：**
 - [pipx GitHub 仓库 [https://github.com/pypa/pipx] ](https://github.com/pypa/pipx)
 - [Playwright Python 文档 [https://playwright.dev/python/] ](https://playwright.dev/python/)
+
+**运维相关工具：**
+- [GNU Screen[https://www.gnu.org/software/screen/]](https://www.gnu.org/software/screen/)
+- [RUNOOB tmux命令参考[https://www.runoob.com/linux/linux-comm-tmux.html]](https://www.runoob.com/linux/linux-comm-tmux.html)
+- [MCSManager 文档[https://docs.mcsmanager.com/zh_cn/]](https://docs.mcsmanager.com/zh_cn/)
