@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "VincentZyuBlog"
+  name: "VincentZyu"
   text: "Vitepress"
   tagline: Blog
   image:

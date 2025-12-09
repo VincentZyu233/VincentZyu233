@@ -7,6 +7,7 @@ export default defineConfig({
   description: "A VitePress Site",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/avatar/mahiro-pfp-VincentZyu.jpg',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/vitepress-example/markdown-examples' }
@@ -71,7 +72,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/VincentZyu233/VincentZyu233' }
     ]
   }
 })
