@@ -11,10 +11,10 @@ hero:
     alt: VincentZyu
   actions:
     - theme: brand
-      text: notes笔记
+      text: Notes笔记
       link: /notes/shell-proxy/powershell-clash.html
     - theme: alt
-      text: examples例子
+      text: Examples例子
       link: /vitepress-example/markdown-examples.html
 
 features:

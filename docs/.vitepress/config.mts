@@ -9,9 +9,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     logo: '/avatar/mahiro-pfp-VincentZyu.jpg',
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Notes', link: '/notes/shell-proxy/powershell-clash' },
-      { text: 'Examples', link: '/vitepress-example/markdown-examples' }
+      { text: 'Home主页', link: '/' },
+      { text: 'Notes笔记', link: '/notes/shell-proxy/powershell-clash' },
+      { text: 'Examples例子', link: '/vitepress-example/markdown-examples' }
     ],
 
     sidebar: [
