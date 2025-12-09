@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/VincentZyu233/',
   title: "VincentZyuVitePress",
   description: "A VitePress Site",
   themeConfig: {
