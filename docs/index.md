@@ -11,18 +11,18 @@ hero:
     alt: VincentZyu
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: notes笔记
+      link: /notes/shell-proxy/powershell-clash.html
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: examples例子
+      link: /vitepress-example/markdown-examples.html
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 你好
+    details: 你好你好
+  - title: 你好
+    details: 你好你好
+  - title: 你好
+    details: 你好你好
 ---
 

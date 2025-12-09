@@ -2,7 +2,7 @@
 
 在 Linux 系统中为 Docker 配置代理，可以让 Docker 拉取镜像时通过代理服务器访问网络，解决国内访问 Docker Hub 速度慢或无法访问的问题。
 
-## 配置方法
+## Linux Bash 配置方法
 
 ### 1. 创建或编辑 Docker 配置文件
 
@@ -194,7 +194,7 @@ sudo systemctl restart docker
 
 # Docker Desktop GUI 界面配置代理
 
-## 配置步骤
+## Docker Desktop GUI on Windows 配置步骤
 
 ### 1. 点击右上角的 **⚙️ 设置图标**，进入设置页面。
 

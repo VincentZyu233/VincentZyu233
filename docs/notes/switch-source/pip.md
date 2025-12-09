@@ -2,6 +2,14 @@
 
 pip 是 Python 的包管理工具，更换为国内镜像源可以显著提升下载速度。
 
+::: tip 安装 pip
+部分 Linux 发行版（比如 Debian）会自带 Python 解释器，但可能不会自带 `venv` 和 `pip`，需要手动安装：
+
+```bash
+apt install python3-pip
+```
+:::
+
 ## 常用国内镜像源
 
 ### 清华源

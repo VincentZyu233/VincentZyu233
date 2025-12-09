@@ -40,6 +40,22 @@ git config --global --unset http.proxygit config --global --unset http.proxy
 git config --global --unset https.proxygit config --global --unset https.proxy
 ```
 
+## 针对特定域名配置代理
+
+如果只想为 GitHub 配置代理：
+
+```bash
+# 只为 GitHub 配置代理
+git config --global http.https://github.com.proxy socks5://127.0.0.1:7891
+```
+
+取消特定域名代理：
+
+```bash
+git config --global --unset http.https://github.com.proxy
+```
+
+
 ## 持久化配置
 
 如果希望每次打开 Git Bash 都自动设置代理，可以将代理命令添加到 `~/.bashrc` 文件中：
