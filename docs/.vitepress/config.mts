@@ -10,12 +10,13 @@ export default defineConfig({
     logo: '/avatar/mahiro-pfp-VincentZyu.jpg',
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Notes', link: '/notes/shell-proxy/powershell-clash' },
       { text: 'Examples', link: '/vitepress-example/markdown-examples' }
     ],
 
     sidebar: [
       {
-        text: 'Vitepress Examples',
+        text: 'Vitepress Examples效果示例',
         items: [
           { text: 'Markdown Examples', link: '/vitepress-example/markdown-examples' },
           { text: 'Runtime API Examples', link: '/vitepress-example/api-examples' }
@@ -40,7 +41,8 @@ export default defineConfig({
             text: 'Language Environment 语言环境配置',
             collapsed: false,
             items: [
-              { text: 'Linux 安装 Node.js', link: '/notes/language-env/linux-nodejs' }
+              { text: 'Linux 安装 Node.js', link: '/notes/language-env/linux-nodejs' },
+              { text: 'Linux 安装 UV', link: '/notes/language-env/linux-uv' }
             ]
           },
           {
