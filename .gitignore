@@ -12,6 +12,13 @@ node_modules/
 .pnp
 .pnp.js
 
+# Python virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
 # VitePress build output
 docs/.vitepress/dist
 docs/.vitepress/cache

@@ -5,6 +5,9 @@ export default defineConfig({
   base: '/VincentZyu233/',
   title: "VincentZyuVitePress",
   description: "A VitePress Site",
+  head: [
+    ['link', { rel: 'icon', href: '/VincentZyu233/avatar/favicon.ico' }]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/avatar/mahiro-pfp-VincentZyu.jpg',

@@ -101,7 +101,7 @@ which pipx
 ```
 
 ::: details 成功安装后的输出示例
-```shell
+```shell{2-20}
 root@S43LYjdh3w4zO:/data# pipx
 usage: pipx [-h] [--version] {install,inject,upgrade,upgrade-all,uninstall,uninstall-all,reinstall,reinstall-all,list,run,runpip,ensurepath,environment,completions} ...
 
