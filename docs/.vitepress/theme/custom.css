@@ -346,6 +346,42 @@
   --vp-font-family-mono: 'LXGWWenKaiMono', Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* 字体切换过渡效果 */
+.font-loaded-transition .VPDoc,
+.font-loaded-transition .VPContent,
+.font-loaded-transition .VPNav,
+.font-loaded-transition .VPSidebar,
+.font-loaded-transition .VPHome,
+.font-loaded-transition .VPHero,
+.font-loaded-transition .VPFeature {
+  transition: opacity 0.3s ease;
+}
+
+/* 字体切换时的淡出效果 */
+.font-transitioning .VPDoc,
+.font-transitioning .VPContent,
+.font-transitioning .VPNav,
+.font-transitioning .VPSidebar,
+.font-transitioning .VPHome,
+.font-transitioning .VPHero,
+.font-transitioning .VPFeature {
+  opacity: 0.3;
+}
+
+/* 字体加载完成前的初始状态 */
+.font-loaded-transition:not(.fonts-loaded) .VPDoc,
+.font-loaded-transition:not(.fonts-loaded) .VPContent,
+.font-loaded-transition:not(.fonts-loaded) .VPHome {
+  opacity: 0.95;
+}
+
+/* 字体加载完成后的状态 */
+.font-loaded-transition.fonts-loaded .VPDoc,
+.font-loaded-transition.fonts-loaded .VPContent,
+.font-loaded-transition.fonts-loaded .VPHome {
+  opacity: 1;
+}
+
 /* 应用字体到主要元素，增大字体大小并使用更粗的字重 */
 .VPDoc, .VPContent, .VPNav, .VPSidebar, .VPHome {
   font-family: var(--vp-font-family-base);

@@ -29,9 +29,23 @@
 import { ref, onMounted, watch } from 'vue'
 
 const isCustomFontEnabled = ref(true) // 默认开启
+const isTransitioning = ref(false)
 
 const toggleFont = () => {
-  isCustomFontEnabled.value = !isCustomFontEnabled.value
+  // 开始过渡动画
+  isTransitioning.value = true
+  document.documentElement.classList.add('font-transitioning')
+  
+  // 等待淡出完成后切换字体
+  setTimeout(() => {
+    isCustomFontEnabled.value = !isCustomFontEnabled.value
+    
+    // 等待字体切换后淡入
+    setTimeout(() => {
+      isTransitioning.value = false
+      document.documentElement.classList.remove('font-transitioning')
+    }, 50)
+  }, 200)
 }
 
 const updateFontClass = () => {
@@ -59,6 +73,17 @@ onMounted(() => {
   
   // 应用初始字体设置
   updateFontClass()
+  
+  // 监听字体加载完成事件，实现 swap 时的渐变效果
+  if ('fonts' in document) {
+    // 先添加过渡类
+    document.documentElement.classList.add('font-loaded-transition')
+    
+    document.fonts.ready.then(() => {
+      // 字体加载完成后，触发渐变效果
+      document.documentElement.classList.add('fonts-loaded')
+    })
+  }
 })
 </script>
 
