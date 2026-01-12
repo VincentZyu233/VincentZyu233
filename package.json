@@ -1,8 +1,4 @@
 {
-  "engines": {
-    "node": "22.17.0",
-    "npm": "10.9.2"
-  },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.12",
     "vue": "^3.5.22"
@@ -11,5 +7,9 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.1.0",
+    "@vueuse/motion": "^3.0.3"
   }
 }

@@ -12,21 +12,22 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     logo: '/avatar/mahiro-pfp-VincentZyu.jpg',
     nav: [
-      { text: 'Home主页', link: '/' },
-      { text: 'Notes笔记', link: '/notes/shell-proxy/powershell-clash' },
-      { text: 'Examples例子', link: '/vitepress-example/markdown-examples' }
+      { text: '🏠 Home主页', link: '/' },
+      { text: '📝 Notes笔记', link: '/notes/shell-proxy/powershell-clash' },
+      { text: '🚀 Examples例子', link: '/vitepress-example/markdown-examples' },
+      { text: '🔗 友链', link: '/friends/' }
     ],
 
     sidebar: [
       {
-        text: 'Vitepress Examples效果示例',
+        text: '🚀 Vitepress Examples效果示例',
         items: [
           { text: 'Markdown Examples', link: '/vitepress-example/markdown-examples' },
           { text: 'Runtime API Examples', link: '/vitepress-example/api-examples' }
         ]
       },
       {
-        text: 'Notes 备忘录',
+        text: '📝 Notes 备忘录',
         items: [
           {
             text: 'Proxy Config 代理配置',
@@ -73,6 +74,12 @@ export default defineConfig({
               { text: 'Koishi 部署', link: '/notes/bot-deploy/koishi-deploy' }
             ]
           }
+        ]
+      },
+      {
+        text: '🤝 Friends 友链',
+        items: [
+          { text: '🔗 友链', link: '/friends/' }
         ]
       }
     ],

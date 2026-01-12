@@ -9,16 +9,19 @@
   --vp-button-brand-active-bg: #ff5ca3;
   --vp-c-brand: #ff69b4;
 }
+
 .dark {
   --vp-c-brand-1: #ff85c1;
   --vp-c-brand-2: #ff69b4;
   --vp-c-brand-3: #ffa0d2;
 }
 
+/* Hero 区域背景与头像动效 */
 .VPHero {
   position: relative;
   overflow: hidden;
 }
+
 .VPHero::before {
   content: '';
   position: absolute;
@@ -33,12 +36,23 @@
   animation: glow-breath 6s ease-in-out infinite;
   z-index: 0;
 }
+
 @keyframes glow-breath {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
 }
+
 .VPHero .container { position: relative; z-index: 1; }
-.VPHero .image-container { position: relative; }
+
+.VPHero .image-container { 
+  position: relative; 
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.VPHero .image-container:hover {
+  transform: scale(1.1); /* 鼠标悬停微微放大 */
+}
+
 .VPHero .image-container::before {
   content: '';
   position: absolute;
@@ -52,7 +66,223 @@
   pointer-events: none;
   z-index: -1;
 }
+
 @keyframes icon-glow {
   0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
   50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/**
+ * Feature 卡片增强样式
+ * -------------------------------------------------------------------------- */
+
+/* 强制 Feature 卡片单列布局 */
+.VPHomeFeatures .items {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  align-items: center !important; /* 宽屏居中 */
+}
+
+.VPHomeFeatures .item {
+  width: 100% !important;
+  max-width: 720px !important; /* 宽屏进一步收窄 */
+  padding: 0 !important;
+}
+
+.VPHomeFeatures .VPFeature {
+  height: auto !important;
+  min-height: 120px;
+}
+
+/* Feature 卡片基础样式优化 */
+.VPFeature {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid var(--vp-c-bg-soft);
+  overflow: hidden;
+  z-index: 1;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.VPFeature:hover {
+  transform: translateY(-8px);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 15px 45px rgba(255, 105, 180, 0.1);
+  background-color: var(--vp-c-bg);
+}
+
+/* Feature 卡片背景 Emoji 基础样式 */
+.VPFeature::after {
+  content: '';
+  position: absolute;
+  right: -2%;
+  bottom: -5%;
+  font-size: 10rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(2px);
+  transform: scale(0.8);
+  transition: all 0.6s ease;
+}
+
+.VPFeature:hover::after {
+  opacity: 0.15;
+  transform: scale(1.1);
+  filter: blur(0);
+}
+
+/* 针对不同卡片配置 Emoji */
+.VPHomeFeatures .item:nth-child(1) .VPFeature::after { content: '✨'; }
+.VPHomeFeatures .item:nth-child(2) .VPFeature::after { content: '🔍'; }
+.VPHomeFeatures .item:nth-child(3) .VPFeature::after { content: '❄️'; }
+.VPHomeFeatures .item:nth-child(4) .VPFeature::after { content: '🕯️'; }
+
+/* 特征卡片标题渐变色 */
+.VPFeature .title {
+  background: linear-gradient(120deg, var(--vp-c-text-1), var(--vp-c-brand-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.VPFeature:hover .title {
+  color: transparent;
+}
+
+/* 统一的背景 Emoji 缓慢放大动效 */
+@keyframes emoji-zoom-slow {
+  0%, 100% { transform: scale(1.1) rotate(0deg); }
+  50% { transform: scale(1.25) rotate(5deg); }
+}
+
+.VPFeature:hover::after {
+  animation: emoji-zoom-slow 5s ease-in-out infinite;
+}
+
+/**
+ * 页面全局交互与动效
+ * -------------------------------------------------------------------------- */
+
+/* 页面进入动画 */
+.VPContent {
+  animation: pageEnter 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 链接悬停效果 */
+.VPDoc a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.VPDoc a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff69b4, #ff85c1);
+  transition: width 0.3s ease;
+}
+
+.VPDoc a:hover::after {
+  width: 100%;
+}
+
+/* 代码块悬停效果 */
+.vp-doc div[class*='language-'] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vp-doc div[class*='language-']:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 侧边栏链接动画 */
+.VPSidebarItem .link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.VPSidebarItem .link::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 5px;
+  height: 5px;
+  background: #ff69b4;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.VPSidebarItem .link:hover::before {
+  transform: translateY(-50%) scale(1);
+}
+
+/* 按钮悬停动画 */
+.VPButton {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.VPButton:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff69b4, #ff85c1);
+  border-radius: 5px;
+  border: 2px solid var(--vp-c-bg-soft);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff85c1;
+}
+
+/* Home Hero 视觉配置 */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    #ff69b4 30%,
+    #ff85c1 70%
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #ff69b4 50%,
+    #ffa0d2 50%
+  );
+  --vp-home-hero-image-filter: blur(50px);
+}
+
+@media (min-width: 640px) { :root { --vp-home-hero-image-filter: blur(60px); } }
+@media (min-width: 960px) { :root { --vp-home-hero-image-filter: blur(80px); } }
+
+/* 减少动画 (尊重用户偏好) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
