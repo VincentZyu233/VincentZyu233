@@ -1,3 +1,20 @@
+/* 字体定义 */
+@font-face {
+  font-family: 'LXGWWenKaiMono';
+  src: url('/VincentZyu233/fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LXGWWenKaiMono';
+  src: url('/VincentZyu233/fonts/LXGWWenKaiMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 粉色主题色与发光呼吸效果 */
 :root {
   --vp-c-brand-1: #ff69b4;
@@ -8,6 +25,10 @@
   --vp-button-brand-hover-bg: #ff85c1;
   --vp-button-brand-active-bg: #ff5ca3;
   --vp-c-brand: #ff69b4;
+  
+  /* 字体变量 */
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vp-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .dark {
@@ -103,6 +124,7 @@
   overflow: hidden;
   z-index: 1;
   background-color: var(--vp-c-bg-soft);
+  cursor: default;
 }
 
 .VPFeature:hover {
@@ -241,7 +263,8 @@
 
 /* 滚动条美化 */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -250,12 +273,42 @@
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #ff69b4, #ff85c1);
-  border-radius: 5px;
+  border-radius: 4px;
   border: 2px solid var(--vp-c-bg-soft);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ff85c1;
+}
+
+/* 代码块滚动条 - 更细更不显眼 */
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar,
+.vp-doc [class*='language-'] > pre::-webkit-scrollbar {
+  height: 4px;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-track,
+.vp-doc [class*='language-'] > pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb,
+.vp-doc [class*='language-'] > pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 105, 180, 0.3);
+  border-radius: 2px;
+  border: none;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb:hover,
+.vp-doc [class*='language-'] > pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 105, 180, 0.5);
+}
+
+/* Firefox 代码块滚动条 */
+.vp-doc div[class*='language-'] pre,
+.vp-doc [class*='language-'] > pre {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 105, 180, 0.3) transparent;
 }
 
 /* Home Hero 视觉配置 */
@@ -285,4 +338,189 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* 字体切换功能 */
+.custom-font-enabled {
+  --vp-font-family-base: 'LXGWWenKaiMono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vp-font-family-mono: 'LXGWWenKaiMono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* 应用字体到主要元素，增大字体大小并使用更粗的字重 */
+.VPDoc, .VPContent, .VPNav, .VPSidebar, .VPHome {
+  font-family: var(--vp-font-family-base);
+}
+
+/* 自定义字体启用时的样式调整 */
+.custom-font-enabled .VPDoc {
+  font-size: 16px; /* 增大正文字体 */
+  font-weight: 500; /* 使用 Medium 字重 */
+  line-height: 1.7; /* 增加行高提升可读性 */
+}
+
+.custom-font-enabled .VPDoc h1 {
+  font-size: 2.2rem; /* 增大标题字体 */
+  font-weight: 500;
+}
+
+.custom-font-enabled .VPDoc h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.custom-font-enabled .VPDoc h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.custom-font-enabled .VPDoc h4,
+.custom-font-enabled .VPDoc h5,
+.custom-font-enabled .VPDoc h6 {
+  font-weight: 500;
+}
+
+.custom-font-enabled .VPDoc p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.custom-font-enabled .VPDoc li {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 导航栏字体调整 */
+.custom-font-enabled .VPNavBarTitle {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.custom-font-enabled .VPNavBarMenuLink {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* 侧边栏字体调整 */
+.custom-font-enabled .VPSidebarItem .text {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* Hero 区域字体调整 */
+.custom-font-enabled .VPHero .name {
+  font-weight: 500;
+}
+
+.custom-font-enabled .VPHero .text {
+  font-weight: 500;
+}
+
+.custom-font-enabled .VPHero .tagline {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* Feature 卡片字体调整 */
+.custom-font-enabled .VPFeature .title {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.custom-font-enabled .VPFeature .details {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+code, pre, .vp-code {
+  font-family: var(--vp-font-family-mono);
+}
+
+/* 代码块字体调整 */
+.custom-font-enabled code {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.custom-font-enabled pre code {
+  font-weight: 400; /* 代码块保持 Regular 字重 */
+  font-size: 14px;
+}
+
+/* 字体切换按钮在导航栏中的样式 */
+.VPNavBar .font-toggle {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* 确保字体切换按钮和主题切换按钮紧挨着 */
+.VPNavBarExtra {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* 响应式设计 - 窄屏幕时的处理 */
+@media (max-width: 768px) {
+  .VPNavBar .font-toggle {
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .VPNavBar .font-toggle {
+    margin-right: 4px;
+  }
+}
+
+/* 优化 PNG 图标在社交链接中的显示 */
+.VPSocialLink img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+/* Container 盒子发光跟随效果 */
+.vp-doc .custom-block {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.vp-doc .custom-block:hover {
+  transform: translateY(-2px);
+}
+
+/* 不同类型的 container 悬浮时的阴影效果 */
+.vp-doc .custom-block.info:hover {
+  box-shadow: 0 8px 25px rgba(58, 139, 255, 0.08);
+}
+
+.vp-doc .custom-block.tip:hover {
+  box-shadow: 0 8px 25px rgba(82, 196, 26, 0.08);
+}
+
+.vp-doc .custom-block.warning:hover {
+  box-shadow: 0 8px 25px rgba(250, 173, 20, 0.08);
+}
+
+.vp-doc .custom-block.danger:hover {
+  box-shadow: 0 8px 25px rgba(255, 77, 79, 0.08);
+}
+
+.vp-doc .custom-block.details:hover {
+  box-shadow: 0 8px 25px rgba(132, 146, 166, 0.08);
+}
+
+/* 默认 container 悬浮阴影 */
+.vp-doc .custom-block:not(.info):not(.tip):not(.warning):not(.danger):not(.details):hover {
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.08);
+}
+
+/* 确保 container 内容在发光效果之上 */
+.vp-doc .custom-block > * {
+  position: relative;
+  z-index: 1;
 }

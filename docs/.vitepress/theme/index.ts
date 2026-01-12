@@ -10,6 +10,8 @@ import ScrollReveal from './components/ScrollReveal.vue'
 import GradientText from './components/GradientText.vue'
 import GlowCard from './components/GlowCard.vue'
 import FriendCard from './components/FriendCard.vue'
+import FontToggle from './components/FontToggle.vue'
+import GlowFollower from './components/GlowFollower.vue'
 
 // 交互动画组件
 import CursorGlow from './components/CursorGlow.vue'
@@ -27,7 +29,9 @@ export default {
         h(ScrollProgress),
         h(CursorGlow),
         h(ClickEffect),
-        h(FloatingIcons)
+        h(FloatingIcons),
+        h(GlowFollower),
+        h(FontToggle)
       ]
     })
   },
@@ -39,5 +43,7 @@ export default {
     app.component('GlowCard', GlowCard)
     app.component('FriendCard', FriendCard)
     app.component('MagneticButton', MagneticButton)
+    app.component('FontToggle', FontToggle)
+    app.component('GlowFollower', GlowFollower)
   }
 } satisfies Theme
