@@ -27,6 +27,17 @@ const friends = [
       { url: 'https://github.com/ChengZhiMeow', label: 'GitHub', icon: '🐙' }
     ],
     bio: '%PLACEHODER%'
+  },
+  {
+    name: '牢废物',
+    description: 'hekuo',
+    frontAvatar: 'https://avatars.githubusercontent.com/u/78573256?v=4',
+    backAvatar: 'https://q1.qlogo.cn/g?b=qq&nk=2378311279&s=640',
+    links: [
+      { url: 'https://www.io.hk.cn/', label: '博客', icon: '🏠' },
+      { url: 'https://github.com/hekuo5310', label: 'GitHub', icon: '🐙' }
+    ],
+    bio: '我的梦想：学会圈钱'
   }
 ]
 </script>
