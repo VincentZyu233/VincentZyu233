@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip action')"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
