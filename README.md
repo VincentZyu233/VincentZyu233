@@ -27,7 +27,11 @@
 
 
 <a href="https://vincentzyu233.github.io/VincentZyu233/">
-  <img src="https://img.shields.io/badge/📖_VitePress_Blog-vincentzyu233.github.io-ff69b4?style=for-the-badge&logo=vitepress&logoColor=white" alt="VitePress Blog" />
+  <img src="https://img.shields.io/badge/📖_GitHub_Pages-vincentzyu233.github.io-ff69b4?style=for-the-badge&logo=github&logoColor=white&labelColor=181717" alt="GitHub Pages" />
+</a>
+
+<a href="https://vincentzyu-vitepress.pages.dev">
+  <img src="https://img.shields.io/badge/⚡_Cloudflare_Pages-vincentzyu--vitepress.pages.dev-ff69b4?style=for-the-badge&logo=cloudflare&logoColor=white&labelColor=f38020" alt="Cloudflare Pages" />
 </a>
 
 
