@@ -187,7 +187,8 @@ npm run pub onebot-info-image -- --registry https://registry.npmjs.org
 npm dist-tag add koishi-plugin-onebot-info-image@0.2.0-alpha.11+20251013 latest --registry https://registry.npmjs.org
 
 npm view koishi-plugin-onebot-info-image
-npm-stat.com
+# 或者浏览器打开这个：npm-stat.com
+# 这个也不错捏：socket.dev
 ```
 
 ## 保持进程运行

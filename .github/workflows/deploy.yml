@@ -1,4 +1,4 @@
-name: Deploy VitePress to GitHub Pages
+name: Deploy VitePress Sites
 
 on:
   push:
@@ -15,9 +15,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  # Job 1: 部署到 GitHub Pages (带子路径 /VincentZyu233/)
+  deploy-gh-pages:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'skip action')"
+    if: "contains(github.event.head_commit.message, 'build page')"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -25,13 +26,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '25.2.1'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build VitePress
+      - name: Build for GitHub Pages
+        env:
+          VITEPRESS_BASE: '/VincentZyu233/'
         run: npm run docs:build
 
       - name: Setup Pages
@@ -45,3 +48,34 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Job 2: 部署到 Cloudflare Pages (根路径 /)
+  deploy-cf-pages:
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, 'build page')"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build for Cloudflare Pages
+        env:
+          VITEPRESS_BASE: '/'
+        run: npm run docs:build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: vincentzyu-vitepress # 需要在 Cloudflare 仪表盘确认项目名称
+          directory: docs/.vitepress/dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
