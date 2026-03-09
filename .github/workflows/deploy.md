@@ -19,7 +19,20 @@ git commit -m "docs: update install guide (build page)"
 
 如果提交信息中**不包含** `build page`，GitHub Action 将**不会运行**。
 
-## 🛠️ 部署逻辑
+## 🚀 前置准备：手动创建 Cloudflare 项目 (重要)
+
+由于使用的是 API Token 推送模式，你需要先在 Cloudflare 后台手动创建一个同名的 **Direct Upload** 类型项目，否则 Action 会报 `Project not found` 错误。
+
+1. 进入 [Cloudflare Dashboard](https://dash.cloudflare.com/) -> **Workers & Pages**。
+2. 点击 **Create application** (创建应用)。
+3. 在创建页面中，**不要**直接连接 GitHub，请选择标签页 **Pages**。
+4. **关键步骤：** 点击 **Upload assets** (上传资产) 或者 **Upload your static files** (上传静态文件)。
+   > _提示：该选项可能位于页面底部，或者在 Connect GitHub 下方。确保选择的是 Direct Upload 模式。_
+5. 输入项目名称：`vincentzyu-vitepress` (必须与 `deploy.yml` 中的配置一致)。
+6. 点击 **Create project** 完成创建（首次创建可能需要手动上传任意文件初始化，或直接保存）。   - ❤️ **推荐做法**：找个空文件夹（如 `temp`），里面新建一个 `index.html` (写个 "Hello" 即可)，拖进去点 **Deploy site** 完成"占位"。
+   - 只要项目创建成功，后续的 GitHub Action 会自动覆盖这里的内容，不用担心。
+7. 回到 GitHub Actions 页面，**重新运行 (Re-run**) 之前失败的任务。
+## 🛠️部署逻辑
 
 该工作流包含两个并行的任务 (Jobs)，分别针对两个平台进行不同的构建配置：
 
