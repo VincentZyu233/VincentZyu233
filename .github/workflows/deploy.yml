@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write # 👈 新增这一行：允许 Cloudflare Action 创建 GitHub Deployment 状态
 
 concurrency:
   group: pages
