@@ -1,12 +1,14 @@
 import { defineConfig } from 'vitepress'
 
+const base = process.env.VITEPRESS_BASE || '/VincentZyu233/'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: process.env.VITEPRESS_BASE || '/VincentZyu233/',
+  base: base,
   title: "VincentZyuVitePress",
   description: "A VitePress Site",
   head: [
-    ['link', { rel: 'icon', href: '/VincentZyu233/avatar/favicon.ico' }]
+    ['link', { rel: 'icon', href: `${base}avatar/favicon.ico` }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

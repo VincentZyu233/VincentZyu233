@@ -1,5 +1,6 @@
 # 部署流程说明 (Deploy Workflow)
 
+
 本项目使用 GitHub Actions 自动构建并部署 VitePress 文档。
 
 > **注意**：该工作流默认只在该仓库的 `main` 分支上触发。
@@ -68,3 +69,8 @@ git commit -m "docs: update install guide (build page)"
           # ...
           projectName: vincentzyu-vitepress # 👈 修改这里为你在 Cloudflare 创建的项目名
 ```
+
+--- 
+
+### tp:
+> [📄 README](./README.md) | [🛠️ DEV](./DEV.md) | [🚀 Deploy](./.github/workflows/deploy.md)
