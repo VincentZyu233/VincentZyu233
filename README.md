@@ -4,7 +4,9 @@
 
 你好
 
-![nggyu](nggyu.gif)
+<picture>
+ <img src="nggyu.gif" width="666" />
+</picture>
 
 ---
 
