@@ -184,12 +184,39 @@ Invoke-WebRequest -Uri "https://www.google.com" -Method Head -UseBasicParsing
 npm login --registry https://registry.npmjs.org
 # 在浏览器里面登录npm，去邮件里面收验证码
 npm run pub onebot-info-image -- --registry https://registry.npmjs.org
+# 带上--debug可以看到更多信息呢
+npm run pub onebot-info-image -- --debug --registry https://registry.npmjs.org
+# 或者你cd到插件文件夹 然后再publish呢，比如：
+cd /home/bawuyinguo/SSoftwareFiles/koishi/koishi-dev-4/external/anime-convention-lizard-vincentzyu-fork
+npm publish --access public --registry https://registry.npmjs.org
+
+# 手动更新latest tag
 npm dist-tag add koishi-plugin-onebot-info-image@0.2.0-alpha.11+20251013 latest --registry https://registry.npmjs.org
 
 npm view koishi-plugin-onebot-info-image
 # 或者浏览器打开这个：npm-stat.com
 # 这个也不错捏：socket.dev
 ```
+
+### TypeScript 类型检查
+
+在 Koishi 项目中，使用 **yakumo**（官方构建工具）进行 TypeScript 类型检查：
+
+```bash
+# 检查单个插件（最快）
+cd /path/to/koishi-dev-4
+yarn yakumo tsc --noEmit -p external/your-plugin/tsconfig.json
+
+# 检查所有插件（推荐日常使用）
+yarn yakumo tsc --noEmit
+
+# 完整构建（包含 esbuild 打包，比上面慢）
+yarn build
+```
+
+::: tip
+`yakumo tsc --noEmit` 只做类型检查不生成文件，比 `yarn build` 快很多，适合快速验证语法和类型错误。没有报错输出即为通过。
+:::
 
 ## 保持进程运行
 
