@@ -70,7 +70,7 @@ const friends = [
   <p>欢迎交换友链！申请方式：在 <a href="https://github.com/VincentZyu233/VincentZyu233" target="_blank">GitHub 仓库</a> 提交 Issue 或 PR~</p>
   <p>或者加我QQ: <a href="https://qm.qq.com/q/Nt61fik76g" target="_blank">1830540513</a></p>
   <a href="https://gitee.com/vincent-zyu/koishi-plugin-onebot-info-image" target="_blank">
-    <img src="/VincentZyu233/avatar/koishi-plugin-onebot-info-image的生图.aui指令.VincentZyu的QQ~.png" alt="QQ" title="想要渲染同款 qq用户信息图片吗？来这个仓库： https://github.com/VincentZyuApps/koishi-plugin-onebot-info-image" style="max-width: 555px; border-radius: 8px; margin-top: 16px;" />
+    <img src="/avatar/koishi-plugin-onebot-info-image的生图.aui指令.VincentZyu的QQ~.png" alt="QQ" title="想要渲染同款 qq用户信息图片吗?来这个仓库: https://github.com/VincentZyuApps/koishi-plugin-onebot-info-image" style="max-width: 555px; border-radius: 8px; margin-top: 16px;" />
   </a>
 </div>
 
