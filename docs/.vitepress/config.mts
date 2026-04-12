@@ -52,11 +52,11 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Env Config 环境变量配置',
+            text: 'Env Config 环境变量与配置文件',
             collapsed: false,
             items: [
-              { text: 'Windows PowerShell', link: '/notes/env-config/win-powershell-env-config' },
-              { text: 'Linux Bash', link: '/notes/env-config/linux-bash-env-config' }
+              { text: 'Windows PowerShell 的 环境变量与配置文件', link: '/notes/env-config/win-powershell-env-config' },
+              { text: 'Linux Bash 的 环境变量与配置文件', link: '/notes/env-config/linux-bash-env-config' }
             ]
           },
           {

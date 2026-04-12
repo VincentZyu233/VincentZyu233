@@ -29,6 +29,17 @@ const friends = [
     bio: '%PLACEHODER%'
   },
   {
+    name: '牢废物',
+    description: 'hekuo',
+    frontAvatar: 'https://avatars.githubusercontent.com/u/78573256?v=4',
+    backAvatar: 'https://q1.qlogo.cn/g?b=qq&nk=2378311279&s=640',
+    links: [
+      { url: 'https://www.io.hk.cn/', label: '博客', icon: '🏠' },
+      { url: 'https://github.com/hekuo5310', label: 'GitHub', icon: '🐙' }
+    ],
+    bio: '我的梦想：学会圈钱'
+  },
+    {
     name: '白瑜',
     description: 'bluerosion',
     frontAvatar: 'http://q.qlogo.cn/headimg_dl?dst_uin=3524309131&spec=5&img_type=webp',
