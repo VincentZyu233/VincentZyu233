@@ -52,6 +52,14 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Env Config 环境变量配置',
+            collapsed: false,
+            items: [
+              { text: 'Windows PowerShell', link: '/notes/env-config/win-powershell-env-config' },
+              { text: 'Linux Bash', link: '/notes/env-config/linux-bash-env-config' }
+            ]
+          },
+          {
             text: 'Switch Source 换源',
             collapsed: false,
             items: [

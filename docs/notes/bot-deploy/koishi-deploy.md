@@ -203,8 +203,9 @@ npm view koishi-plugin-onebot-info-image
 在 Koishi 项目中，使用 **yakumo**（官方构建工具）进行 TypeScript 类型检查：
 
 ```bash
+# 先cd到koishi的根路径，比如：
+cd /home/bawuyinguo/SSoftwareFiles/koishi/koishi-dev-4
 # 检查单个插件（最快）
-cd /path/to/koishi-dev-4
 yarn yakumo tsc --noEmit -p external/your-plugin/tsconfig.json
 
 # 检查所有插件（推荐日常使用）
