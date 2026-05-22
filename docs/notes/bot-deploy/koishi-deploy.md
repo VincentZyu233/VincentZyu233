@@ -154,7 +154,7 @@ git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objec
 ### 发布到git workflow
 #### 开发环境：
 ```shell
-cd G:\GGames\Minecraft\shuyeyun\qq-bot\koishi-dev\koishi-dev-3\external\onebot-info-image
+cd G:\GGames\Minecraft\shuyeyun\qq-bot\koishi-dev\koishi-dev-3\external\xxx
 git add .
 git commit -m "message"
 git push origin main
@@ -172,28 +172,30 @@ yarn
 
 ### 发布到npm workflow
 ```shell
-# 确保插件文件夹的名称是*onebot-info-image*, 没有koishi-plugin 前缀，然后:
+# 确保插件文件夹的名称是*xxx*, 没有koishi-plugin 前缀，然后:
 cd G:\GGames\Minecraft\shuyeyun\qq-bot\koishi-dev\koishi-dev-3
 yarn
 yarn dev
-yarn build onebot-info-image
+yarn build xxx
 
 $Env:HTTP_PROXY = "http://127.0.0.1:7890"
 $Env:HTTPS_PROXY = "http://127.0.0.1:7890"
 Invoke-WebRequest -Uri "https://www.google.com" -Method Head -UseBasicParsing
 npm login --registry https://registry.npmjs.org
+# 看看我是谁捏
+npm whoami --registry https://registry.npmjs.org
 # 在浏览器里面登录npm，去邮件里面收验证码
-npm run pub onebot-info-image -- --registry https://registry.npmjs.org
+npm run pub xxx -- --registry https://registry.npmjs.org
 # 带上--debug可以看到更多信息呢
-npm run pub onebot-info-image -- --debug --registry https://registry.npmjs.org
+npm run pub xxx -- --debug --registry https://registry.npmjs.org
 # 或者你cd到插件文件夹 然后再publish呢，比如：
 cd /home/bawuyinguo/SSoftwareFiles/koishi/koishi-dev-4/external/anime-convention-lizard-vincentzyu-fork
 npm publish --access public --registry https://registry.npmjs.org
 
 # 手动更新latest tag
-npm dist-tag add koishi-plugin-onebot-info-image@0.2.0-alpha.11+20251013 latest --registry https://registry.npmjs.org
+npm dist-tag add koishi-plugin-xxx@1.2.3 latest --registry https://registry.npmjs.org
 
-npm view koishi-plugin-onebot-info-image
+npm view koishi-plugin-xxx
 # 或者浏览器打开这个：npm-stat.com
 # 这个也不错捏：socket.dev
 ```
