@@ -72,7 +72,9 @@ export default defineConfig({
             text: 'System Config 系统配置',
             collapsed: false,
             items: [
-              { text: '配置 Swap', link: '/notes/system-config/swap' }
+              { text: '配置 Swap', link: '/notes/system-config/swap' },
+              { text: 'WSL 安装 Ubuntu 24.04', link: '/notes/system-config/wsl-ubuntu24' },
+              { text: 'WSL 安装 Arch Linux', link: '/notes/system-config/wsl-arch' }
             ]
           },
           {
@@ -116,7 +118,7 @@ export default defineConfig({
         link: 'https://gitee.com/vincent-zyu',
         ariaLabel: 'Gitee'
       },
-      { icon: 'github', link: 'https://github.com/VincentZyu233/VincentZyu233' }
+      { icon: 'github', link: 'https://github.com/VincentZyu233' }
     ]
   }
 })
