@@ -49,6 +49,17 @@ const friends = [
       { url: 'https://github.com/bluerosion', label: 'GitHub', icon: '🐙' }
     ],
     bio: '愿你前行的道路，群星闪耀。 愿你走过的旅途，百花绽放。'
+  },
+  {
+    name: '雨欣妍',
+    description: '女同加我，我爱扣扣',
+    frontAvatar: 'https://avatars.githubusercontent.com/u/224879924?v=4',
+    backAvatar: 'https://q1.qlogo.cn/g?b=qq&nk=2745480935&s=640',
+    links: [
+      { url: 'https://ra1nyxin.github.io', label: 'Blog', icon: '☆' },
+      { url: 'https://github.com/ra1nyxin', label: 'GitHub', icon: '☆' }
+    ],
+    bio: '涩...涩涩涩....涩涩...'
   }
 ]
 </script>
