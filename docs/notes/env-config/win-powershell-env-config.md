@@ -26,3 +26,16 @@ cat $PROFILE
 
 - 安装：`scoop install bat`
 - 使用：`bat 文件名`
+
+## grep替代品工具推荐
+
+[`ripgrep`](https://github.com/BurntSushi/ripgrep) 提供 `rg` 命令，适合快速全文搜索。
+
+- 安装：`scoop install ripgrep`
+- 使用：`rg 关键词`
+
+::: tip VS Code Terminal 小技巧
+在 VS Code 的 Terminal 里使用 `rg` 搜索字符串时，输出里的蓝色文件名可以用 `Ctrl + 左键` 点击，直接跳转到 VS Code 里的对应文件。
+
+![VS Code Terminal 中使用 rg 搜索并点击跳转](/image/ripgrep-vscode-usage.png)
+:::

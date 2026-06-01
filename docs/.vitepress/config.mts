@@ -78,6 +78,14 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Tool Config 工具配置',
+            collapsed: false,
+            items: [
+              { text: 'nano 简单说明', link: '/notes/tool-config/nano' },
+              { text: 'tmux 简单说明', link: '/notes/tool-config/tmux' }
+            ]
+          },
+          {
             text: 'Bot Deploy 部署机器人',
             collapsed: false,
             items: [

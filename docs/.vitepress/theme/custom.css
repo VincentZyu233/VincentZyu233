@@ -160,6 +160,7 @@
 .VPHomeFeatures .item:nth-child(2) .VPFeature::after { content: '🔍'; }
 .VPHomeFeatures .item:nth-child(3) .VPFeature::after { content: '❄️'; }
 .VPHomeFeatures .item:nth-child(4) .VPFeature::after { content: '🕯️'; }
+.VPHomeFeatures .item:nth-child(5) .VPFeature::after { content: '💡'; }
 
 /* 特征卡片标题渐变色 */
 .VPFeature .title {
