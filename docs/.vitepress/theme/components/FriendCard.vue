@@ -44,7 +44,15 @@
         target="_blank" 
         class="link-btn"
       >
-        <span class="btn-icon">{{ linkItem.icon }}</span>
+        <span class="btn-icon">
+          <img
+            v-if="linkItem.iconSrc"
+            :src="linkItem.iconSrc"
+            :alt="linkItem.iconAlt || linkItem.label"
+            class="btn-icon-image"
+          />
+          <span v-else>{{ linkItem.icon }}</span>
+        </span>
         <span class="btn-text">{{ linkItem.label }}</span>
       </a>
     </div>
@@ -67,6 +75,8 @@ interface LinkItem {
   url: string
   label: string
   icon?: string
+  iconSrc?: string
+  iconAlt?: string
 }
 
 const props = defineProps<{
@@ -102,6 +112,17 @@ function resolveAvatar(avatar: string, hasError: boolean): string {
   return avatar
 }
 
+function resolveAssetPath(asset: string): string {
+  if (asset.startsWith('http://') || asset.startsWith('https://')) {
+    return asset
+  }
+  const base = site.value.base || '/'
+  if (asset.startsWith('/')) {
+    return base.replace(/\/$/, '') + asset
+  }
+  return asset
+}
+
 const resolvedFrontAvatar = computed(() => resolveAvatar(props.frontAvatar, frontImageError.value))
 const resolvedBackAvatar = computed(() => resolveAvatar(props.backAvatar, backImageError.value))
 
@@ -129,15 +150,25 @@ const normalizedLinks = computed(() => {
   return props.links.map(link => {
     let icon = link.icon || '🔗'
     let label = link.label
+    let iconSrc = link.iconSrc
+    let iconAlt = link.iconAlt
     
     if (link.url.includes('github.com')) {
       icon = link.icon || '🐙'
+      iconSrc = link.iconSrc || '/icons/github-mark-white.svg'
+      iconAlt = link.iconAlt || 'GitHub'
       if (!link.label) label = 'GitHub'
     } else if (!link.label) {
       label = '主页'
     }
     
-    return { ...link, icon, label }
+    return {
+      ...link,
+      icon,
+      label,
+      iconSrc: iconSrc ? resolveAssetPath(iconSrc) : undefined,
+      iconAlt
+    }
   })
 })
 
@@ -363,7 +394,18 @@ function onBackImageError() {
 }
 
 .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
+  line-height: 1;
+}
+
+.btn-icon-image {
+  display: block;
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
 }
 
 /* 装饰元素 */

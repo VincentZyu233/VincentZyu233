@@ -12,8 +12,8 @@ const friends = [
     frontAvatar: 'https://q1.qlogo.cn/g?b=qq&nk=1830540513&s=640',
     backAvatar: '/friends/vincentzyu-qqbot-avatar-mahiro.jpg',
     links: [
-      { url: 'https://vincentzyu233.github.io/VincentZyu233/', label: '博客', icon: '🏠' },
-      { url: 'https://github.com/VincentZyu233', label: 'GitHub', icon: '🐙' }
+      { url: 'https://vincentzyu233.github.io/VincentZyu233/', label: 'Blog', iconSrc: '/icons/blog-globe-white.svg', iconAlt: 'Blog' },
+      { url: 'https://github.com/VincentZyu233', label: 'GitHub', iconSrc: '/icons/github-mark-white.svg', iconAlt: 'GitHub' }
     ],
     bio: '你好~'
   },
@@ -23,10 +23,10 @@ const friends = [
     frontAvatar: '/friends/ChengZhiMeow.jpg',
     backAvatar: 'https://q1.qlogo.cn/g?b=qq&nk=292200693&s=640',
     links: [
-      { url: 'https://cheng.catnies.top/', label: '博客', icon: '🏠' },
-      { url: 'https://github.com/ChengZhiMeow', label: 'GitHub', icon: '🐙' }
+      { url: 'https://cheng.catnies.top/', label: 'Blog', iconSrc: '/icons/blog-globe-white.svg', iconAlt: 'Blog' },
+      { url: 'https://github.com/ChengZhiMeow', label: 'GitHub', iconSrc: '/icons/github-mark-white.svg', iconAlt: 'GitHub' }
     ],
-    bio: '%PLACEHODER%'
+    bio: '喵喵？喵喵喵！'
   },
   {
     name: '牢废物',
@@ -34,8 +34,8 @@ const friends = [
     frontAvatar: 'https://avatars.githubusercontent.com/u/78573256?v=4',
     backAvatar: 'https://q1.qlogo.cn/g?b=qq&nk=2378311279&s=640',
     links: [
-      { url: 'https://www.io.hk.cn/', label: '博客', icon: '🏠' },
-      { url: 'https://github.com/hekuo5310', label: 'GitHub', icon: '🐙' }
+      { url: 'https://www.io.hk.cn/', label: 'Blog', iconSrc: '/icons/blog-globe-white.svg', iconAlt: 'Blog' },
+      { url: 'https://github.com/hekuo5310', label: 'GitHub', iconSrc: '/icons/github-mark-white.svg', iconAlt: 'GitHub' }
     ],
     bio: '我的梦想：学会圈钱'
   },
@@ -45,8 +45,8 @@ const friends = [
     frontAvatar: 'http://q.qlogo.cn/headimg_dl?dst_uin=3524309131&spec=5&img_type=webp',
     backAvatar: 'http://q.qlogo.cn/headimg_dl?dst_uin=3524309131&spec=5&img_type=webp',
     links: [
-      { url: 'https://blog.bruisa.top', label: '博客', icon: '🏠' },
-      { url: 'https://github.com/bluerosion', label: 'GitHub', icon: '🐙' }
+      { url: 'https://blog.bruisa.top', label: 'Blog', iconSrc: '/icons/blog-globe-white.svg', iconAlt: 'Blog' },
+      { url: 'https://github.com/bluerosion', label: 'GitHub', iconSrc: '/icons/github-mark-white.svg', iconAlt: 'GitHub' }
     ],
     bio: '愿你前行的道路，群星闪耀。 愿你走过的旅途，百花绽放。'
   },
@@ -56,8 +56,8 @@ const friends = [
     frontAvatar: 'https://avatars.githubusercontent.com/u/224879924?v=4',
     backAvatar: 'https://q1.qlogo.cn/g?b=qq&nk=2745480935&s=640',
     links: [
-      { url: 'https://ra1nyxin.github.io', label: 'Blog', icon: '☆' },
-      { url: 'https://github.com/ra1nyxin', label: 'GitHub', icon: '☆' }
+      { url: 'https://ra1nyxin.github.io', label: 'Blog', iconSrc: '/icons/blog-globe-white.svg', iconAlt: 'Blog' },
+      { url: 'https://github.com/ra1nyxin', label: 'GitHub', iconSrc: '/icons/github-mark-white.svg', iconAlt: 'GitHub' }
     ],
     bio: '涩...涩涩涩....涩涩...'
   }
