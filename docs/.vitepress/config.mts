@@ -82,7 +82,15 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'nano 简单说明', link: '/notes/tool-config/nano' },
-              { text: 'tmux 简单说明', link: '/notes/tool-config/tmux' }
+              { text: 'tmux 简单说明', link: '/notes/tool-config/tmux' },
+              { text: 'cargo 简单说明', link: '/notes/tool-config/cargo' }
+            ]
+          },
+          {
+            text: 'Win Cmd PowerShell Windows命令行',
+            collapsed: false,
+            items: [
+              { text: 'PowerShell 查看内存条信息', link: '/notes/win-cmd-pwsh/powershell查看内存条' }
             ]
           },
           {
