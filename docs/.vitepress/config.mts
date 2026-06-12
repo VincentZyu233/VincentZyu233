@@ -87,7 +87,7 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Win Cmd PowerShell Windows命令行',
+            text: 'Win Cmd PowerShell 命令行',
             collapsed: false,
             items: [
               { text: 'PowerShell 查看内存条信息', link: '/notes/win-cmd-pwsh/powershell查看内存条' }
