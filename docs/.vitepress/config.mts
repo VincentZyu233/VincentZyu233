@@ -87,10 +87,12 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Win Cmd PowerShell 命令行',
+            text: 'CLI Tools 命令行工具',
             collapsed: false,
             items: [
-              { text: 'PowerShell 查看内存条信息', link: '/notes/win-cmd-pwsh/powershell查看内存条' }
+              { text: 'PowerShell 查看内存条信息', link: '/notes/cli-tools/powershell-check-ram-stick' },
+              { text: 'dust - du 的 Rust 替代品', link: '/notes/cli-tools/du-dust' },
+              { text: 'SSH Server Alive 保持连接', link: '/notes/cli-tools/ssh-server-alive' }
             ]
           },
           {

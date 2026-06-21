@@ -39,4 +39,4 @@ set softwrap
 
 开启后，`nano` 左侧会显示行号，方便定位和编辑配置文件。
 
-![nano 显示行号后的效果](/image/nano-set-linenumbers-set-softwrap-on-windows11-terminal-final-effect.png)
+![nano 配置好 显示行号 和 自动换行 后的效果](/image/nano-set-linenumbers-set-softwrap-on-windows11-terminal-final-effect.png)

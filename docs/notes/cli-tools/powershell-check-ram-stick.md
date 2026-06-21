@@ -55,3 +55,11 @@ A1_Node1_Channel1_Dimm0        16       2133 Micron      36ASF2G72PZ-2G1A2 0F8D6
 | `Manufacturer` | 制造商/品牌 |
 | `PartNumber` | 型号料号，据此可查具体规格 |
 | `SerialNumber` | 序列号，每条内存唯一 |
+
+## 最终效果
+
+执行命令后即可看到每根内存条的详细参数，包括插槽位置、容量、频率、品牌等。
+
+![金士顿内存条信息](/image/powershell-check-2-kingston-ram-stick.png)
+
+![镁光内存条信息](/image/powershell-check-4-mircon-ram-stick.png)
