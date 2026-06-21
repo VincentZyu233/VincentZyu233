@@ -25,8 +25,18 @@ set linenumbers
 
 配置完成后重新打开 `nano` 就会默认显示行号。
 
+## 自动换行（Soft Wrap）
+
+编辑配置文件 `~/.nanorc`，加入：
+
+```conf
+set softwrap
+```
+
+开启后，超出一行显示范围的长文本会自动换行显示，不会横向超出屏幕，方便阅读长段落或代码。
+
 ## 最终效果
 
 开启后，`nano` 左侧会显示行号，方便定位和编辑配置文件。
 
-![nano 显示行号后的效果](/image/nano-linenumbers-set-on-windows11-terminal-final-effect.png)
+![nano 显示行号后的效果](/image/nano-set-linenumbers-set-softwrap-on-windows11-terminal-final-effect.png)
