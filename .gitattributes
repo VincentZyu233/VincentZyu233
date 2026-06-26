@@ -1,1 +1,7 @@
-*.md linguist-detectable=true
+# 让所有 .md 和 .markdown 文件计入语言统计（作为 Markdown 语言）
+*.md linguist-detectable
+*.markdown linguist-detectable
+
+# 可选：强制指定语言为 Markdown（通常不需要，但保险）
+*.md linguist-language=Markdown
+*.markdown linguist-language=Markdown
