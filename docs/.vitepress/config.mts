@@ -90,6 +90,7 @@ export default defineConfig({
             text: 'CLI Tools 命令行工具',
             collapsed: false,
             items: [
+              { text: 'CMD 强制重命名和删除文件夹', link: '/notes/cli-tools/cmd-ren-rmdir' },
               { text: 'PowerShell 查看内存条信息', link: '/notes/cli-tools/powershell-check-ram-stick' },
               { text: 'dust - du 的 Rust 替代品', link: '/notes/cli-tools/du-dust' },
               { text: 'SSH Server Alive 保持连接', link: '/notes/cli-tools/ssh-server-alive' }

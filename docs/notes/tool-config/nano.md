@@ -15,23 +15,21 @@
 
 ## 永久显示行号
 
-编辑配置文件 `~/.nanorc`，加入：
-
-```conf
-set linenumbers
-```
+编辑配置文件 `~/.nanorc`。
 
 如果文件不存在，直接新建即可。
+
+```conf
+# 🔢 显示行号
+set linenumbers
+
+# 📖 自动换行显示长文本
+set softwrap
+```
 
 配置完成后重新打开 `nano` 就会默认显示行号。
 
 ## 自动换行（Soft Wrap）
-
-编辑配置文件 `~/.nanorc`，加入：
-
-```conf
-set softwrap
-```
 
 开启后，超出一行显示范围的长文本会自动换行显示，不会横向超出屏幕，方便阅读长段落或代码。
 

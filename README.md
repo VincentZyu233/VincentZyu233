@@ -5,7 +5,7 @@
 你好
 
 <picture>
- <img src="nggyu.gif" width="666" />
+ <img src="images/nggyu.gif" width="666" />
 </picture>
 
 ---
