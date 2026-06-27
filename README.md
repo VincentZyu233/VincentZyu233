@@ -1,3 +1,11 @@
+### 文档之间的tp
+
+> [📄 README](./readme.md)
+> [🛠️ DEV](./dev.md)
+> [🚀 Deploy](./.github/workflows/deploy.md)
+
+---
+
 <div align="center">
 
 ![VincentZyu233](https://socialify.git.ci/VincentZyu233/VincentZyu233/image?custom_description=VitePress%E7%AB%99%E7%82%B9&description=1&custom_language=Vite&font=KoHo&forks=1&issues=1&language=1&logo=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F142771491%3Fv%3D4&name=1&owner=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Auto)
@@ -40,12 +48,7 @@
 
 ## 📊 GitHub 统计
 
-
-<!-- GitHub 统计 -->
-<!-- ![GitHub Stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=VincentZyu233&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0a1929&title_color=64b5f6&icon_color=1976d2&text_color=ffffff&include_all_commits=true) -->
-
-<!-- 语言统计 -->
-<!-- ![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=VincentZyu233&layout=compact&theme=tokyonight&hide_border=true&bg_color=0a1929&title_color=64b5f6&text_color=ffffff&langs_count=10) -->
+[![GitHub Roast 评分徽章](https://githubroast.icu/api/badge/VincentZyu233)](https://githubroast.icu/u/VincentZyu233)   [![GitHub Roast](https://githubroast.icu/api/card/VincentZyu233)](https://githubroast.icu/u/VincentZyu233)
 
 <!-- Streak Stats -->
 [![GitHub Streak](https://streak-stats.demolab.com?user=VincentZyu233&theme=tokyonight&hide_border=true&background=0a1929&ring=64b5f6&fire=1976d2&currStreakLabel=64b5f6&sideLabels=64b5f6&currStreakNum=ffffff&sideNums=ffffff&dates=ffffff)](https://git.io/streak-stats)
@@ -57,5 +60,8 @@
 
 ---
 
-### tp:
-> [📄 README](./README.md) | [🛠️ DEV](./DEV.md) | [🚀 Deploy](./.github/workflows/deploy.md)
+### 文档之间的tp
+
+> [📄 README](./readme.md)
+> [🛠️ DEV](./dev.md)
+> [🚀 Deploy](./.github/workflows/deploy.md)

@@ -1,5 +1,14 @@
-# 部署流程说明 (Deploy Workflow)
+### 文档之间的tp
 
+> [📄 README](./readme.md)
+> [🛠️ DEV](./dev.md)
+> [🚀 Deploy](./.github/workflows/deploy.md)
+
+---
+
+![VincentZyu233](https://socialify.git.ci/VincentZyu233/VincentZyu233/image?custom_language=GitHub+Actions&description=1&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Auto)
+
+# 部署流程说明 (Deploy Workflow)
 
 本项目使用 GitHub Actions 自动构建并部署 VitePress 文档。
 
@@ -72,5 +81,8 @@ git commit -m "docs: update install guide (build page)"
 
 --- 
 
-### tp:
-> [📄 README](./README.md) | [🛠️ DEV](./DEV.md) | [🚀 Deploy](./.github/workflows/deploy.md)
+### 文档之间的tp
+
+> [📄 README](./readme.md)
+> [🛠️ DEV](./dev.md)
+> [🚀 Deploy](./.github/workflows/deploy.md)

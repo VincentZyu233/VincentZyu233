@@ -1,6 +1,12 @@
-# 开发环境搭建指南
+### 文档之间的tp
 
-> [📄 README](./README.md) | [🛠️ DEV](./DEV.md) | [🚀 Deploy](./.github/workflows/deploy.md)
+> [📄 README](./readme.md)
+> [🛠️ DEV](./dev.md)
+> [🚀 Deploy](./.github/workflows/deploy.md)
+
+---
+
+# 开发环境搭建指南
 
 本文档说明如何在新设备上复现本项目的开发环境。
 
@@ -68,7 +74,7 @@ npm run docs:dev
 │   └── index.md               # 首页
 ├── .github/workflows/         # GitHub Actions 配置
 ├── package.json               # 项目依赖
-└── README.md                  # 项目说明
+└── readme.md                  # 项目说明
 ```
 
 ## 部署说明
@@ -88,5 +94,8 @@ npm run docs:dev
 
 --- 
 
-### tp:
-> [📄 README](./README.md) | [🛠️ DEV](./DEV.md) | [🚀 Deploy](./.github/workflows/deploy.md)
+### 文档之间的tp
+
+> [📄 README](./readme.md)
+> [🛠️ DEV](./dev.md)
+> [🚀 Deploy](./.github/workflows/deploy.md)
