@@ -5,7 +5,9 @@
 ## 安装
 
 - Debian/Ubuntu：`apt install nano`
-- Windows（Scoop）：`scoop install nano`
+- Windows：`scoop install nano`
+- Termux：`pkg install nano`
+- Arch Linux：`pacman -Syu nano`
 
 ## 常用操作
 
