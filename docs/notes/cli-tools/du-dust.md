@@ -5,7 +5,8 @@
 ## 安装
 
 - **Debian/Ubuntu**：`apt install du-dust`
-- **Windows (Scoop)**：`scoop install dust`
+- **Windows**：`scoop install dust`
+- **Arch Linux**：`pacman -Syu dust`
 - **GitHub Releases**：下载二进制放到 PATH 即可
 
 ## 用法
