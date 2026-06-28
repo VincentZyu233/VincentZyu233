@@ -2,6 +2,11 @@
 
 pip 是 Python 的包管理工具，更换为国内镜像源可以显著提升下载速度。
 
+> **🚀 推荐使用 uv 替代 pip**  
+> UV 是 pip 的现代替代品，速度提升 **10-100 倍**，支持虚拟环境管理、项目依赖管理，完全兼容 pip 命令。  
+> 👉 [查看 uv 安装指南](/notes/language-env/linux-uv)  
+> 👉 [uv 一键安装脚本（国内镜像）](https://gitee.com/wangnov/uv-custom/releases)
+
 ::: tip 安装 pip
 部分 Linux 发行版（比如 Debian）会自带 Python 解释器，但可能不会自带 `venv` 和 `pip`，需要手动安装：
 
@@ -82,5 +87,5 @@ pip 的配置文件位置：
 
 ## 相关链接
 - [pip 换源](./pip.md)
-- [Ubuntu 22 换源](./ubuntu22.md)
+- [Ubuntu 换源](./ubuntu)
 - [Debian 换源](./debian.md)

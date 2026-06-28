@@ -74,3 +74,18 @@ wsl -d Ubuntu-24.04
 ```
 
 重启后再 `echo $PATH` 看看，应该就干净了。
+
+## 换源
+
+Ubuntu 24.04 更换国内镜像源可以显著提升软件包下载速度。
+
+> 👉 [Ubuntu 换源](/notes/switch-source/ubuntu)
+
+## 安装 fastfetch
+
+```bash
+sudo apt install fastfetch -y
+fastfetch
+```
+
+![WSL Ubuntu 24.04 fastfetch](/image/WSL.Ubuntu.fastfetch.png)

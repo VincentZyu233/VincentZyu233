@@ -1,6 +1,18 @@
 # Linux 安装 UV
 
-⚡️UV 是一个极快的 Python 包管理器和项目管理工具，由 Astral 团队开发。
+⚡️UV 是一个极快的 Python 包管理器和项目管理工具，由 Astral 团队开发，**旨在取代 pip + pip-tools + pipx + poetry + pyenv + virtualenv**。
+
+## UV 的优势
+
+| 特性 | uv | pip |
+|------|----|-----|
+| ⚡ 安装速度 | **快 10-100 倍**（Rust 编写） | 慢 |
+| 📦 虚拟环境 | 内置 `uv venv`，一条命令创建 | 需额外安装 `virtualenv` |
+| 🔄 依赖解析 | 全局锁文件 `uv.lock`，依赖解析极快 | `pip freeze` 不可靠 |
+| 🐍 Python 版本管理 | 内置 `uv python install`，自动下载 Python | 需额外安装 `pyenv` |
+| 🌍 项目级管理 | `uv init` / `uv add` / `uv sync` 一站式 | 仅包安装，不管理项目 |
+| 🔗 pip 兼容 | 完全兼容 `uv pip install` 语法 | — |
+| 🌐 国内镜像 | 一键安装脚本自动配置清华源 | 需手动 `pip config set` |
 
 ## 官方安装方式（国际网络环境）
 

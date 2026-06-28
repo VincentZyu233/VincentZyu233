@@ -32,77 +32,81 @@ export default defineConfig({
         text: '📝 Notes 备忘录',
         items: [
           {
-            text: 'Proxy Config 代理配置',
+            text: '🌐 Proxy Config 代理配置',
             collapsed: false,
             items: [
-              { text: 'CMD 使用代理', link: '/notes/shell-proxy/cmd-clash' },
-              { text: 'Git Bash 使用代理', link: '/notes/shell-proxy/gitbash-clash' },
-              { text: 'PowerShell 使用代理', link: '/notes/shell-proxy/powershell-clash' },
-              { text: 'Linux Bash 使用代理', link: '/notes/shell-proxy/linux-bash-clash' },
-              { text: 'proxychains 使用指南', link: '/notes/shell-proxy/proxychains' },
-              { text: 'Docker 配置代理', link: '/notes/shell-proxy/docker-proxy' }
+              { text: '💻 CMD 使用代理', link: '/notes/shell-proxy/cmd-clash' },
+              { text: '🐚 Git Bash 使用代理', link: '/notes/shell-proxy/gitbash-clash' },
+              { text: '🪟 PowerShell 使用代理', link: '/notes/shell-proxy/powershell-clash' },
+              { text: '🐧 Linux Bash 使用代理', link: '/notes/shell-proxy/linux-bash-clash' },
+              { text: '🔗 proxychains 使用指南', link: '/notes/shell-proxy/proxychains' },
+              { text: '🐳 Docker 配置代理', link: '/notes/shell-proxy/docker-proxy' }
             ]
           },
           {
-            text: 'Language Environment 语言环境配置',
+            text: '🔧 Language Environment 语言环境配置',
             collapsed: false,
             items: [
-              { text: 'Linux 安装 Node.js', link: '/notes/language-env/linux-nodejs' },
-              { text: 'Linux 安装 UV', link: '/notes/language-env/linux-uv' }
+              { text: '⬇️ Linux 安装 Node.js', link: '/notes/language-env/linux-nodejs' },
+              { text: '⬇️ Linux 安装 UV', link: '/notes/language-env/linux-uv' }
             ]
           },
           {
-            text: 'Env Config 环境变量与配置文件',
+            text: '⚙️ Env Config 环境变量与配置文件',
             collapsed: false,
             items: [
-              { text: 'Windows PowerShell 的 环境变量与配置文件', link: '/notes/env-config/win-powershell-env-config' },
-              { text: 'Linux Bash 的 环境变量与配置文件', link: '/notes/env-config/linux-bash-env-config' }
+              { text: '🪟 Windows PowerShell 的 环境变量与配置文件', link: '/notes/env-config/win-powershell-env-config' },
+              { text: '🐧 Linux Bash 的 环境变量与配置文件', link: '/notes/env-config/linux-bash-env-config' }
             ]
           },
           {
-            text: 'Switch Source 换源',
+            text: '🔄 Switch Source 换源',
             collapsed: false,
             items: [
-              { text: 'pip 换源', link: '/notes/switch-source/pip' },
-              { text: 'Ubuntu 22 换源', link: '/notes/switch-source/ubuntu22' },
-              { text: 'Debian 换源', link: '/notes/switch-source/debian' }
+              { text: '🐍 pip 换源', link: '/notes/switch-source/pip' },
+              { text: '🟠 Ubuntu 换源', link: '/notes/switch-source/ubuntu' },
+              { text: '🔴 Debian 换源', link: '/notes/switch-source/debian' },
+              { text: '📦 Arch Linux 换源', link: '/notes/switch-source/arch' }
             ]
           },
           {
-            text: 'System Config 系统配置',
+            text: '🖥️ System Config 系统配置',
             collapsed: false,
             items: [
-              { text: '配置 Swap', link: '/notes/system-config/swap' },
-              { text: 'WSL 安装 Ubuntu 24.04', link: '/notes/system-config/wsl-ubuntu24' },
-              { text: 'WSL 安装 Arch Linux', link: '/notes/system-config/wsl-arch' }
+              { text: '💾 配置 Swap', link: '/notes/system-config/swap' },
+              { text: '🪟 WSL 安装 Ubuntu 24.04', link: '/notes/system-config/wsl-ubuntu24' },
+              { text: '🪟 WSL 安装 Arch Linux', link: '/notes/system-config/wsl-arch' }
             ]
           },
           {
-            text: 'Tool Config 工具配置',
+            text: '📱 Termux',
             collapsed: false,
             items: [
-              { text: 'nano 简单说明', link: '/notes/tool-config/nano' },
-              { text: 'tmux 简单说明', link: '/notes/tool-config/tmux' },
-              { text: 'cargo 简单说明', link: '/notes/tool-config/cargo' }
+              { text: '📱 Termux 基础配置', link: '/notes/termux/termux-basic' },
+              { text: '📦 proot-distro 与 opencode 安装', link: '/notes/termux/termux-proot-opencode' }
             ]
           },
           {
-            text: 'CLI Tools 命令行工具',
+            text: '🛠️ CLI Tools 命令行工具',
             collapsed: false,
             items: [
-              { text: 'CMD 强制重命名和删除（文件 & 文件夹）', link: '/notes/cli-tools/cmd-ren-rmdir' },
-              { text: 'PowerShell 查看内存条信息', link: '/notes/cli-tools/powershell-check-ram-stick' },
-              { text: 'dust - du 的 Rust 替代品', link: '/notes/cli-tools/du-dust' },
-              { text: 'SSH Server Alive 保持连接', link: '/notes/cli-tools/ssh-server-alive' }
+              { text: '📝 nano 简单说明', link: '/notes/cli-tools/nano' },
+              { text: '💻 tmux 简单说明', link: '/notes/cli-tools/tmux' },
+              { text: '📦 cargo 简单说明', link: '/notes/cli-tools/cargo' },
+              { text: '🗑️ du-dust 简单说明', link: '/notes/cli-tools/du-dust' },
+              { text: '📁 CMD 强制重命名和删除（文件 & 文件夹）', link: '/notes/cli-tools/cmd-ren-rmdir' },
+              { text: '🧠 PowerShell 查看内存条信息', link: '/notes/cli-tools/powershell-check-ram-stick' },
+              { text: '🗑️ dust - du 的 Rust 替代品', link: '/notes/cli-tools/du-dust' },
+              { text: '🔌 SSH Server Alive 保持连接', link: '/notes/cli-tools/ssh-server-alive' }
             ]
           },
           {
-            text: 'Bot Deploy 部署机器人',
+            text: '🤖 Bot Deploy 部署机器人',
             collapsed: false,
             items: [
-              { text: 'MaiBot 麦麦部署', link: '/notes/bot-deploy/maibot-deploy' },
-              { text: 'NoneBot2 部署', link: '/notes/bot-deploy/nonebot2-deploy' },
-              { text: 'Koishi 部署', link: '/notes/bot-deploy/koishi-deploy' }
+              { text: '🤖 MaiBot 麦麦部署', link: '/notes/bot-deploy/maibot-deploy' },
+              { text: '🤖 NoneBot2 部署', link: '/notes/bot-deploy/nonebot2-deploy' },
+              { text: '🤖 Koishi 部署', link: '/notes/bot-deploy/koishi-deploy' }
             ]
           }
         ]

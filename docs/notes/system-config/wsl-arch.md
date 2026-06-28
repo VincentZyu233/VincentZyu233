@@ -27,21 +27,14 @@ wsl -d Arch
 
 ## 换源
 
-国内直接 `pacman` 会很慢，先换成清华源。
+国内直接 `pacman` 会很慢，建议先换源。
+
+> 👉 [Arch Linux 换源](/notes/switch-source/arch)
+
+换源后执行：
 
 ```bash
-# 备份原镜像列表
-sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-
-# 编辑镜像列表
-sudo nano /etc/pacman.d/mirrorlist
-```
-
-把下面两行加到文件最前面：
-
-```
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+pacman -Syyu
 ```
 
 ## 初始化 pacman 并更新
@@ -179,3 +172,5 @@ fisher install IlanCosman/tide@v6
 ```
 
 装完后终端会自动进入 Tide 的交互配置向导，选你喜欢的样式一路确认就行。以后想改可以随时运行 `tide configure` 重新配置。
+
+![WSL Arch Linux fastfetch](/image/WSL.Arch.fastfetch.png)

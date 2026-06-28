@@ -27,7 +27,61 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-## 各版本镜像源配置
+## DEB822 格式（Debian 12+）
+
+从 Debian 12 (Bookworm) 开始，容器镜像和 Trixie 已使用 DEB822 格式，路径为 `/etc/apt/sources.list.d/debian.sources`。
+
+### 一键替换（USTC）
+
+```bash
+sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources
+```
+
+### 手动编辑
+
+编辑 `/etc/apt/sources.list.d/debian.sources`：
+
+**Debian 13 (Trixie)**：
+
+```conf
+Types: deb
+URIs: http://mirrors.ustc.edu.cn/debian
+Suites: trixie trixie-updates trixie-backports
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+Types: deb
+URIs: http://mirrors.ustc.edu.cn/debian-security
+Suites: trixie-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+```
+
+**Debian 12 (Bookworm)**：
+
+```conf
+Types: deb
+URIs: http://mirrors.ustc.edu.cn/debian
+Suites: bookworm bookworm-updates bookworm-backports
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+Types: deb
+URIs: http://mirrors.ustc.edu.cn/debian-security
+Suites: bookworm-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+```
+
+> 如需使用清华源，将 `mirrors.ustc.edu.cn` 替换为 `mirrors.tuna.tsinghua.edu.cn` 即可。
+
+更新软件源：
+
+```bash
+sudo apt-get update
+```
+
+## 各版本镜像源配置（传统格式）
 
 ### Debian 13 (Trixie)
 
@@ -153,5 +207,35 @@ sudo apt-get update
 ## 相关链接
 
 - [pip 换源](./pip.md)
-- [Ubuntu 22 换源](./ubuntu22.md)
+- [Ubuntu 换源](./ubuntu)
 - [Debian 换源](./debian.md)
+
+---
+
+## 🎬 Debian 版本代号彩蛋：玩具总动员（Toy Story）
+
+Debian 的创始人 Ian Murdock 是一个大影迷。1996 年 Debian 准备发布 1.1 版本时，恰逢皮克斯的第一部《玩具总动员》电影大火。Ian 决定用电影里的角色来命名版本，这个传统就此流传了下来。
+
+| 版本号 | 代号 | 角色原型 |
+|--------|------|----------|
+| 1.1 | buzz | 巴斯光年（Buzz Lightyear），Debian 第一个有代号的版本 |
+| 1.2 | rex | 抱抱龙（Rex），那只看起来威猛实际胆小的绿色恐龙 |
+| 1.3 | bo | 牧羊女（Bo Peep），胡迪的女朋友 |
+| 2.0 | hamm | 火腿（Hamm），小猪储蓄罐 |
+| 2.1 | slink | 弹簧狗（Slinky Dog） |
+| 2.2 | potato | 蛋头先生（Mr. Potato Head） |
+| 3.0 | woody | 胡迪（Woody），绝对主角，Debian 走向成熟的里程碑 |
+| 4.0 | etch | 神奇画板（Etch），红框两个旋钮的画板 |
+| 5.0 | lenny | 望远镜（Lenny），双筒望远镜腿的小家伙 |
+| 6.0 | squeeze | 三眼仔（Squeeze Toy Aliens），抓娃娃机里的绿色外星人 |
+| 7.0 | wheezy | 企鹅（Wheezy），坏了吱吱声芯片的玩具企鹅 |
+| 8.0 | jessie | 翠丝（Jessie），第二部登场的女牛仔 |
+| 9.0 | stretch | 小玛（Stretch），第三部里紫色的章鱼玩具 |
+| 10.0 | buster | 红心 / 巴斯特（Buster），安迪家的宠物狗 |
+| 11.0 | bullseye | 红心（Bullseye），胡迪的坐骑马 |
+| 12.0 | bookworm | 书虫（Bookworm），第三部戴眼镜的绿条纹书虫 |
+| 13.0 | trixie | 三角龙（Trixie），喜欢玩电脑游戏的蓝色三角龙 |
+| 14.0 | forky | 叉叉（Forky），第四部用一次性叉勺改造的主角 |
+| 15.0 | galloping | 奔驰，来自 Bullseye 的全称 "Galloping Bullseye" |
+
+**永远的测试版 sid**：阿布 / 席德，电影里那个专门摧毁、肢解玩具的邻居坏小孩。Debian 把永远处于非稳定、随时可能滚坏系统的 `unstable` 分支命名为 Sid，简直是神来之笔。
