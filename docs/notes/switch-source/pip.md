@@ -4,7 +4,7 @@ pip 是 Python 的包管理工具，更换为国内镜像源可以显著提升�
 
 > **🚀 推荐使用 uv 替代 pip**  
 > UV 是 pip 的现代替代品，速度提升 **10-100 倍**，支持虚拟环境管理、项目依赖管理，完全兼容 pip 命令。  
-> 👉 [查看 uv 安装指南](/notes/language-env/linux-uv)  
+> 👉 [查看 uv 安装指南](/notes/language-env/uv)  
 > 👉 [uv 一键安装脚本（国内镜像）](https://gitee.com/wangnov/uv-custom/releases)
 
 ::: tip 安装 pip

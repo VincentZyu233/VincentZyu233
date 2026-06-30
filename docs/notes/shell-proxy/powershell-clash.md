@@ -3,14 +3,26 @@
 在 PowerShell 中配置代理，可以让命令行工具和脚本通过 Clash 访问网络。在 PowerShell 中配置代理，可以让命令行工具和脚本通过 Clash 访问网络。
 
 ## 设置本地代理
+
+> 想自动生成不同 Shell 的代理命令，可以使用：[代理配置生成器](./proxy-generator)。
+
 ```powershell
 $Env:HTTP_PROXY = "http://127.0.0.1:7890"
 $Env:HTTPS_PROXY = "http://127.0.0.1:7890"
 ```
 
-::: info 提示
+::: info 建议
 默认情况下，Clash 的本地代理端口为 `7890`。如果你修改了 Clash 的端口设置，请相应调整上述命令中的端口号。
 :::
+
+> 建议优先使用 HTTP 协议。个人经验是命令行工具里 HTTP 代理通常比 SOCKS5 更稳定，兼容性也更好。
+
+> 当然你也可以使用其他 IP 的代理，比如局域网内另一台机器的代理：`http://192.168.31.233:7890`。
+
+```powershell
+$Env:HTTP_PROXY = "http://192.168.31.233:7890"
+$Env:HTTPS_PROXY = "http://192.168.31.233:7890"
+```
 
 ::: tip 提示
 PowerShell 使用 `$Env:` 前缀来设置环境变量，这是 PowerShell 特有的语法。PowerShell 使用 `$Env:` 前缀来设置环境变量，这是 PowerShell 特有的语法。

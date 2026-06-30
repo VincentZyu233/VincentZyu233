@@ -63,10 +63,10 @@ Koishi 基于 Node.js 构建，因此首先需要安装 Node.js。Koishi 官方�
 1. 配置命令行代理
 2. 使用国内镜像源
 
-*具体可以参考这里 [Linux 安装 Node.js](/notes/language-env/linux-nodejs) 的文档*
+*具体可以参考这里 [安装 Node.js](/notes/language-env/nodejs) 的文档*
 ::: tip 
 ### 推荐阅读
-详细的 Node.js 安装方法和在特殊网络环境下的解决方案，可以参考：[Linux 安装 Node.js](/notes/language-env/linux-nodejs)
+详细的 Node.js 安装方法和在特殊网络环境下的解决方案，可以参考：[安装 Node.js](/notes/language-env/nodejs)
 
 该文档包括：
 - 官方安装方法（国际网络环境）
@@ -109,7 +109,7 @@ yarn -v
     
     - 比如 Windows 上的 .msi 安装程序 `https://nodejs.org/dist/v22.21.1/node-v22.21.1-x64.msi`，双击运行，可以自动配置好环境变量
     - 当然我个人更倾向于下载预编译的压缩包二进制，比如 Windows 的 zip、Linux 的 xz，然后自己配环境变量
-- 有关手动配置环境变量可参考 [Linux 安装 Node.js](/notes/language-env/linux-nodejs) 中的环境变量配置部分
+- 有关手动配置环境变量可参考 [安装 Node.js](/notes/language-env/nodejs) 中的 Windows 安装说明
 :::
 
 ### 使用项目模板部署koishi并启动

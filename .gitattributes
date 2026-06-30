@@ -5,3 +5,14 @@
 # 可选：强制指定语言为 Markdown（通常不需要，但保险）
 *.md linguist-language=Markdown
 *.markdown linguist-language=Markdown
+
+# 让 VitePress 主题代码计入 GitHub 语言统计
+docs/.vitepress/** -linguist-documentation
+docs/.vitepress/**/*.vue linguist-detectable
+docs/.vitepress/**/*.vue linguist-language=Vue
+docs/.vitepress/**/*.ts linguist-detectable
+docs/.vitepress/**/*.ts linguist-language=TypeScript
+docs/.vitepress/**/*.mts linguist-detectable
+docs/.vitepress/**/*.mts linguist-language=TypeScript
+docs/.vitepress/**/*.css linguist-detectable
+docs/.vitepress/**/*.css linguist-language=CSS

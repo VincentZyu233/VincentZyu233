@@ -1,5 +1,7 @@
 # cargo 简单说明
 
+> <https://github.com/rust-lang/cargo>
+
 `cargo` 是 Rust 的包管理器，可以用来安装 Rust 编写的命令行工具。以下是在 Debian 12 上安装 Rust/Cargo 并配置镜像源的步骤。
 
 ## 安装 Rust/Cargo
@@ -77,3 +79,7 @@ eza --version
 fd --version
 dust --version
 ```
+
+## 相关链接
+
+- [Cargo GitHub 仓库](https://github.com/rust-lang/cargo)

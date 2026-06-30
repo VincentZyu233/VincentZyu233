@@ -1,13 +1,15 @@
 # nano 简单说明
 
+> <https://github.com/madnight/nano>
+
 `nano` 是一个轻量级终端文本编辑器，适合快速改配置文件、写小段文本。
 
 ## 安装
 
-- Debian/Ubuntu：`apt install nano`
-- Windows：`scoop install nano`
-- Termux：`pkg install nano`
-- Arch Linux：`pacman -Syu nano`
+- **Window**：`scoop install nano`
+- **Debian/Ubuntu**：`apt install nano`
+- **Termux**：`pkg install nano`
+- **Arch Linux**：`pacman -Syu nano`
 
 ## 常用操作
 
@@ -40,3 +42,8 @@ set softwrap
 开启后，`nano` 左侧会显示行号，方便定位和编辑配置文件。
 
 ![nano 配置好 显示行号 和 自动换行 后的效果](/image/nano-set-linenumbers-set-softwrap-on-windows11-terminal-final-effect.png)
+
+## 相关链接
+
+- [nano GitHub 仓库](https://github.com/madnight/nano)
+- [nano 官网](https://nano-editor.org/)

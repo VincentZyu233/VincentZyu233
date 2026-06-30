@@ -1,4 +1,4 @@
-# Linux 安装 UV
+# 安装 UV
 
 ⚡️UV 是一个极快的 Python 包管理器和项目管理工具，由 Astral 团队开发，**旨在取代 pip + pip-tools + pipx + poetry + pyenv + virtualenv**。
 
@@ -18,16 +18,54 @@
 
 如果处于国际网络环境，可以直接使用官方安装脚本：
 
+Linux/macOS：
+
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Windows PowerShell：
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 ## 国内镜像源安装（推荐）
 
 在特殊网络环境下，推荐使用国内镜像源安装：
 
+### Gitee 固定版本示例
+
+> 下面以 `0.10.10` 为例，方便理解下载地址里的版本号位置。
+
+Linux/macOS：
+
 ```bash
-curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/0.9.16/uv-installer-custom.sh | sh
+curl -LsSf https://gitee.com/wangnov/uv-custom/releases/download/0.10.10/uv-installer-custom.sh | sh
+```
+
+Windows PowerShell：
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/download/0.10.10/uv-installer-custom.ps1 | iex"
+```
+
+### Gitee 自动获取最新版
+
+> 日常使用更推荐自动获取最新版，避免文档里的版本号过时。
+
+Linux/macOS：
+
+```bash
+UV_CUSTOM_VERSION="$(curl -fsSL https://gitee.com/api/v5/repos/wangnov/uv-custom/releases/latest | sed -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p')"
+curl -LsSf "https://gitee.com/wangnov/uv-custom/releases/download/${UV_CUSTOM_VERSION}/uv-installer-custom.sh" | sh
+```
+
+Windows PowerShell：
+
+```powershell
+$version = (irm https://gitee.com/api/v5/repos/wangnov/uv-custom/releases/latest).tag_name
+powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/releases/download/$version/uv-installer-custom.ps1 | iex"
 ```
 
 ::: tip 安装失败的解决方案
@@ -88,11 +126,36 @@ root@S43LYjdh3w4zO:/data/maibot#
 
 ## UV 配置文件
 
-国内镜像源安装脚本会自动配置 UV，配置文件位于 `/root/.config/uv/uv.toml`（或 `~/.config/uv/uv.toml`）。
+上面的 Gitee 安装脚本可以一键安装 UV，并自动配置 Python 下载代理和 PyPI 镜像源。
 
-配置内容包括：
-- **Python 下载代理**：加速 Python 解释器下载
-- **PyPI 镜像源**：使用清华源加速包下载
+配置文件位于 `/root/.config/uv/uv.toml`（或 `~/.config/uv/uv.toml`）。当然，也可以自己手动给 UV 换源，比如参考中科大 PyPI 镜像说明：<https://mirrors.ustc.edu.cn/help/pypi.html>。
+
+### 手动换源到 USTC
+
+如果想手动改成中科大 PyPI 镜像，可以编辑全局配置：
+
+```bash
+mkdir -p ~/.config/uv
+nano ~/.config/uv/uv.toml
+```
+
+写入：
+
+```toml
+[[index]]
+url = "https://mirrors.ustc.edu.cn/pypi/simple"
+default = true
+```
+
+也可以只给当前项目配置，在项目根目录的 `uv.toml` 或 `pyproject.toml` 中写入同样内容。
+
+::: warning
+设置 `index` 可能会改变 `uv.lock` 内容。如果需要提交 `uv.lock`，可以在提交前临时执行：
+
+```bash
+UV_INDEX=https://pypi.org/simple uv lock --refresh
+```
+:::
 
 ## 基本使用
 

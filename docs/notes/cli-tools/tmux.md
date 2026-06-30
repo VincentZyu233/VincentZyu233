@@ -1,5 +1,7 @@
 # tmux 简单说明
 
+> <https://github.com/tmux/tmux>
+
 `tmux` 是终端复用工具，可以把一个终端拆成多个 session、window、pane，适合长期挂任务和多窗口并行操作。
 
 ## 安装
@@ -56,6 +58,10 @@ bind T command-prompt -p "请输入当前 Pane 的新标题:" "select-pane -T '%
 ```bash
 tmux source-file ~/.tmux.conf
 ```
+
+## 相关链接
+
+- [tmux GitHub 仓库](https://github.com/tmux/tmux)
 
 ::: tip 快捷键操作示意
 下面这张图演示了 `Ctrl + B` 之后再按大写 `T`，然后输入标题的效果。

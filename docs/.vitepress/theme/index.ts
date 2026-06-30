@@ -12,6 +12,7 @@ import GlowCard from './components/GlowCard.vue'
 import FriendCard from './components/FriendCard.vue'
 import FontToggle from './components/FontToggle.vue'
 import GlowFollower from './components/GlowFollower.vue'
+import GenerateProxyConfig from './components/Generator/GenerateProxyConfig.vue'
 
 // 交互动画组件
 import CursorGlow from './components/CursorGlow.vue'
@@ -45,5 +46,6 @@ export default {
     app.component('MagneticButton', MagneticButton)
     app.component('FontToggle', FontToggle)
     app.component('GlowFollower', GlowFollower)
+    app.component('GenerateProxyConfig', GenerateProxyConfig)
   }
 } satisfies Theme

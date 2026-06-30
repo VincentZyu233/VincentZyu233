@@ -6,17 +6,29 @@
 
 在当前终端会话中设置代理：
 
+> 想自动生成不同 Shell 的代理命令，可以使用：[代理配置生成器](./proxy-generator)。
+
 ```bash
 export HTTP_PROXY="http://127.0.0.1:7890"
 export HTTPS_PROXY="http://127.0.0.1:7890"
 export ALL_PROXY="socks5://127.0.0.1:7891"
 ```
 
-::: info 提示
-- 默认情况下，Clash 的 HTTP 代理端口为 `7890`，SOCKS5 代理端口为 `7891`
+::: info 建议
+- 默认情况下，我用的 Clash Cli 的 HTTP 代理端口为 `7890`，SOCKS5 代理端口为 `7891`
 - 如果你修改了 Clash 的端口设置，请相应调整上述命令中的端口号
 - 如果 Clash 运行在其他机器上，将 `127.0.0.1` 替换为该机器的 IP 地址
 :::
+
+> 建议优先使用 HTTP 协议。个人经验是命令行工具里 HTTP 代理通常比 SOCKS5 更稳定，兼容性也更好。
+
+> 当然你也可以使用其他 IP 的代理，比如局域网内另一台机器的代理：`http://192.168.31.233:7890`。
+
+```bash
+export HTTP_PROXY="http://192.168.31.233:7890"
+export HTTPS_PROXY="http://192.168.31.233:7890"
+export ALL_PROXY="socks5://192.168.31.233:7891"
+```
 
 ## 验证代理是否生效
 
