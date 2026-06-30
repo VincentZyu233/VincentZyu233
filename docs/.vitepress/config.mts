@@ -131,7 +131,7 @@ export default defineConfig({
       },
       { 
         icon: { 
-          svg: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24" height="24"><image xlink:href="/VincentZyu233/icons/koishi_forum_logo.png" width="24" height="24"/></svg>'
+          svg: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="24" height="24"><image href="${base}icons/koishi_forum_logo.png" xlink:href="${base}icons/koishi_forum_logo.png" width="24" height="24"/></svg>`
         },
         link: 'https://forum.koishi.xyz/u/vincentzyu233/summary',
         ariaLabel: 'Koishi Forum'
