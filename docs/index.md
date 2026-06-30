@@ -27,7 +27,7 @@ features:
     title: "Keep things pure and joyful"
     details: "保持纯粹，保持乐趣。"
   - icon: 🔍
-    title: "真实，自有万钧之力"
+    title: "<a href=\"https://www.youtube.com/watch?v=_cekUfCopMs\" target=\"_blank\" rel=\"noreferrer\">真实，自有万钧之力</a>"
     details: "<br>—— <a href=\"https://www.youtube.com/@chaijing2023\" target=\"_blank\" rel=\"noreferrer\"><u><i>柴静</i></u></a>"
   - icon: ❄️
     title: "你看那通天的巨塔，每时每刻都有人往下跳。"
