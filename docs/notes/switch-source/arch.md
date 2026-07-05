@@ -1,13 +1,13 @@
 # Arch Linux 换源
 
-## 镜像站地址
+## 🔹 镜像站地址
 
 | 镜像站 | URL |
 |--------|-----|
 | TUNA（清华） | `https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch` |
 | USTC（中科大） | `https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch` |
 
-## 换源步骤
+## 🔹 换源步骤
 
 ### 1. 备份原文件
 

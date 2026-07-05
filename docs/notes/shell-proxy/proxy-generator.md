@@ -6,13 +6,13 @@
 
 <GenerateProxyConfig />
 
-## 验证代理是否生效
+## 🔹 验证代理是否生效
 
 ```bash
 curl -I https://www.google.com
 ```
 
-## 相关链接
+## 🔹 相关链接
 
 - [CMD 使用代理](./cmd-clash.md)
 - [Git Bash 使用 Clash](./gitbash-clash.md)

@@ -1,31 +1,31 @@
 # 安装 proot-distro 并在其中运行 opencode
 
-## 背景
+## 🔹 背景
 
 Termux 使用 bionic libc，而 opencode 依赖 Bun 运行时 + 大量 glibc 编译的 native addon，无法直接在 Termux 中运行。
 
 **方案**：通过 `proot-distro` 安装 Debian 发行版，在 proot 容器中运行 opencode，并 bind mount Termux 目录实现文件互通。
 
-## 安装 proot-distro
+## 🔹 安装 proot-distro
 
 ```bash
 pkg update && pkg upgrade
 pkg install proot-distro
 ```
 
-## 安装 Debian 发行版
+## 🔹 安装 Debian 发行版
 
 ```bash
 proot-distro install debian
 ```
 
-## 登录 Debian
+## 🔹 登录 Debian
 
 ```bash
 proot-distro login debian
 ```
 
-## 登录 Debian 并 bind mount Termux 目录
+## 🔹 登录 Debian 并 bind mount Termux 目录
 
 如果需要在 proot 容器中访问 Termux 的文件：
 
@@ -39,7 +39,7 @@ proot-distro login debian --bind /data/data/com.termux/files/home:/mnt/termux
 cd /mnt/termux
 ```
 
-## Debian 换源
+## 🔹 Debian 换源
 
 进入 Debian 后，推荐更换为国内镜像源以加速软件包下载。
 
@@ -85,7 +85,7 @@ fastfetch
 
 ![proot-distro Debian 13 fastfetch 效果](/image/termux-android-proot-distro-debian13-bash-fastfetch-c-all.png)
 
-## 在 Debian 中安装 opencode
+## 🔹 在 Debian 中安装 opencode
 
 ### 安装 Bun
 

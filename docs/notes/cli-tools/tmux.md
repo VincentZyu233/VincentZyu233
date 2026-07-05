@@ -4,13 +4,13 @@
 
 `tmux` 是终端复用工具，可以把一个终端拆成多个 session、window、pane，适合长期挂任务和多窗口并行操作。
 
-## 安装
+## 🔹 安装
 
 - Debian/Ubuntu：`apt install tmux`
 - Termux：`pkg install tmux`
 - Arch Linux：`pacman -Syu tmux`
 
-## 配置小标题快捷键
+## 🔹 配置小标题快捷键
 
 ### 开启 Pane 顶部标题栏
 
@@ -59,7 +59,7 @@ bind T command-prompt -p "请输入当前 Pane 的新标题:" "select-pane -T '%
 tmux source-file ~/.tmux.conf
 ```
 
-## 相关链接
+## 🔹 相关链接
 
 - [tmux GitHub 仓库](https://github.com/tmux/tmux)
 
@@ -75,7 +75,7 @@ tmux source-file ~/.tmux.conf
 
 ![tmux pane 小标题最终效果](/image/tmux-border-status-set-done-final-effect-on-ubuntu24-lxqt-x11-desktop.png)
 
-## 配置翻页快捷键
+## 🔹 配置翻页快捷键
 
 ### 问题背景
 

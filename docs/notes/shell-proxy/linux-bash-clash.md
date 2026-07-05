@@ -2,7 +2,7 @@
 
 在 Linux Bash 中配置代理环境变量，可以让命令行工具通过 Clash 访问网络。
 
-## 临时设置代理
+## 🔹 临时设置代理
 
 在当前终端会话中设置代理：
 
@@ -30,7 +30,7 @@ export HTTPS_PROXY="http://192.168.31.233:7890"
 export ALL_PROXY="socks5://192.168.31.233:7891"
 ```
 
-## 验证代理是否生效
+## 🔹 验证代理是否生效
 
 使用 `curl` 命令测试代理：
 
@@ -46,7 +46,7 @@ curl -I https://www.google.com
 git clone https://github.com/torvalds/linux.git
 ```
 
-## 取消代理设置
+## 🔹 取消代理设置
 
 在当前终端会话中取消代理：
 
@@ -57,7 +57,7 @@ unset ALL_PROXY
 ```
 
 
-## 注意事项
+## 🔹 注意事项
 
 - ✅ 环境变量在**当前终端会话**中有效
 - ✅ 关闭终端后，临时设置会失效
@@ -66,7 +66,7 @@ unset ALL_PROXY
 - ⚠️ 部分程序可能不支持环境变量代理，需要单独配置
 - ⚠️ 如果使用 zsh，需要将配置写入 `~/.zshrc` 而不是 `~/.bashrc`
 
-## 相关链接
+## 🔹 相关链接
 
 - [CMD 使用代理](./cmd-clash.md)
 - [Git Bash 使用 Clash](./gitbash-clash.md)

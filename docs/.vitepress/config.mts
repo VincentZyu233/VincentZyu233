@@ -24,8 +24,8 @@ export default defineConfig({
       {
         text: '🚀 Vitepress Examples效果示例',
         items: [
-          { text: 'Markdown Examples', link: '/vitepress-example/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/vitepress-example/api-examples' }
+          { text: '📝 Markdown Examples', link: '/vitepress-example/markdown-examples' },
+          { text: '⚙️ Runtime API Examples', link: '/vitepress-example/api-examples' }
         ]
       },
       {

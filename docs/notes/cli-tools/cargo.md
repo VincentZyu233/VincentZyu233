@@ -4,7 +4,7 @@
 
 `cargo` 是 Rust 的包管理器，可以用来安装 Rust 编写的命令行工具。以下是在 Debian 12 上安装 Rust/Cargo 并配置镜像源的步骤。
 
-## 安装 Rust/Cargo
+## 🔹 安装 Rust/Cargo
 
 使用国内镜像安装 `rustup`，避免网络问题：
 
@@ -38,7 +38,7 @@ source "$HOME/.cargo/env.tcsh"  # tcsh
 source "$HOME/.cargo/env.xsh"   # xonsh
 ```
 
-## 配置镜像源
+## 🔹 配置镜像源
 
 写入 `~/.cargo/config.toml`，主用阿里云稀疏源，备用中科大和清华：
 
@@ -58,7 +58,7 @@ registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
 EOF
 ```
 
-## 安装 CLI 工具
+## 🔹 安装 CLI 工具
 
 ```bash
 cargo install eza -j 1        # 现代 ls
@@ -70,7 +70,7 @@ cargo install du-dust -j 1    # 现代 du（命令是 dust）
 加上 `RUSTFLAGS="-C target-cpu=native"` 可针对本机 CPU 优化编译，运行效率更高，但编译时间会稍长。
 :::
 
-## 验证安装
+## 🔹 验证安装
 
 ```bash
 cargo --version
@@ -80,6 +80,6 @@ fd --version
 dust --version
 ```
 
-## 相关链接
+## 🔹 相关链接
 
 - [Cargo GitHub 仓库](https://github.com/rust-lang/cargo)

@@ -10,7 +10,7 @@
 
 请注意：文档可能会过时，本文档仅供参考，请记得随时查看最新仓库和最新文档。
 
-## **请牢记：**
+## 🔹 **请牢记：**
 ### **善用搜索引擎，善用大模型：**
 - 用 Google，不要百度
 - 用 Stack Overflow，不要 CSDN
@@ -41,7 +41,7 @@ root@S43LYjdh3w4zO:~# neofetch
 ```
 :::
 
-## 前置准备
+## 🔹 前置准备
 
 部分指令需要 sudo 权限，如果有提示 `permission denied` 等信息，可以切换 root 或者使用 sudo。
 
@@ -116,7 +116,7 @@ uv --version
 which uv
 ```
 
-## 克隆仓库
+## 🔹 克隆仓库
 
 ```bash
 # 创建工作目录
@@ -185,7 +185,7 @@ root@S43LYjdh3w4zO:/data/maibot# tree -L 3
 ```
 :::
 
-## 配置 MaiBot
+## 🔹 配置 MaiBot
 
 ### 创建虚拟环境并安装依赖
 
@@ -216,7 +216,7 @@ uv pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple --u
 更多关于 `quick-algo` 的信息，可以参考：[LPMM 配置文档](https://docs.mai-mai.org/manual/configuration/lpmm)
 :::
 
-## 配置 MaiBot-Napcat-Adapter
+## 🔹 配置 MaiBot-Napcat-Adapter
 
 ```bash
 cd ../MaiBot-Napcat-Adapter
@@ -284,7 +284,7 @@ heartbeat_interval = 30 # 不要修改
 默认是白名单模式，需要在群号列表和 QQ 号列表里面添加内容，才会回复群消息/私聊消息。
 :::
 
-## 部署 NapCat
+## 🔹 部署 NapCat
 
 ### 安装 Docker
 
@@ -386,7 +386,7 @@ exit
 或者打开：`http://<服务器IP>:6099/webui`
 然后在中间文本框里面输入token
 
-## 启动 MaiBot-Napcat-Adapter
+## 🔹 启动 MaiBot-Napcat-Adapter
 
 ```bash
 cd /data/maibot/MaiBot-Napcat-Adapter
@@ -405,7 +405,7 @@ uv run python main.py
 - `MCSM面板`(系统资源较丰富的话 推荐使用)（[点我看文档 https://docs.mcsmanager.com/zh_cn/](https://docs.mcsmanager.com/zh_cn/)）
 :::
 
-## 配置 NapCat 连接
+## 🔹 配置 NapCat 连接
 
 ### 获取宿主机 IP
 
@@ -466,7 +466,7 @@ root@S43LYjdh3w4zO:~# ip a
 WebSocket反向服务: ws://192.168.0.1:58095, : 已启动
 ```
 
-## 启动 MaiBot
+## 🔹 启动 MaiBot
 
 ### 创建配置文件
 
@@ -512,7 +512,7 @@ screen -S MaiBot
 uv run python3 bot.py
 ```
 
-## Screen 常用命令
+## 🔹 Screen 常用命令
 
 ```bash
 # 创建会话
@@ -534,7 +534,7 @@ exit
 screen -S <会话名或ID> -X quit
 ```
 
-## 相关链接
+## 🔹 相关链接
 
 **MaiBot 相关：**
 - [MaiBot 官方文档 [https://docs.mai-mai.org/] ](https://docs.mai-mai.org/)

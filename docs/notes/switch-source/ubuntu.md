@@ -2,7 +2,7 @@
 
 Ubuntu 更换为国内镜像源可以显著提升软件包下载速度。
 
-## 查看当前版本
+## 🔹 查看当前版本
 
 ```bash
 cat /etc/os-release
@@ -17,7 +17,7 @@ cat /etc/os-release
 | Ubuntu 22.04 | jammy |
 | Ubuntu 20.04 | focal |
 
-## 备份原文件
+## 🔹 备份原文件
 
 ```bash
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
@@ -29,7 +29,7 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo cp /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak
 ```
 
-## 传统格式（/etc/apt/sources.list）
+## 🔹 传统格式（/etc/apt/sources.list）
 
 适用于 **Ubuntu 22.04 及更早版本**。
 
@@ -65,7 +65,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted 
 
 将上述配置中的 `mirrors.tuna.tsinghua.edu.cn` 替换为 `mirrors.ustc.edu.cn` 即可。
 
-## DEB822 格式（/etc/apt/sources.list.d/ubuntu.sources）
+## 🔹 DEB822 格式（/etc/apt/sources.list.d/ubuntu.sources）
 
 适用于 **Ubuntu 24.04 及更新版本**。
 
@@ -111,14 +111,14 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
 > 如需使用 USTC 源，将 `mirrors.tuna.tsinghua.edu.cn` 替换为 `mirrors.ustc.edu.cn`。
 
-## 更新软件源
+## 🔹 更新软件源
 
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-## 注意事项
+## 🔹 注意事项
 
 ::: warning 安全更新源
 因镜像站同步有延迟，可能会导致生产环境系统不能及时检查、安装上最新的安全更新，**不建议替换 security 源**。
@@ -132,7 +132,7 @@ sudo apt-get upgrade
 
 ---
 
-## 🎬 Ubuntu 版本代号趣闻
+## 🔹 Ubuntu 版本代号趣闻
 
 Ubuntu 的创始人 Mark Shuttleworth（马克·沙特尔沃思，南非富豪，上过太空）给 Ubuntu 定的规则：
 

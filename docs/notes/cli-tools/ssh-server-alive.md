@@ -1,6 +1,6 @@
 # SSH Server Alive 保持连接
 
-## Windows PowerShell
+## 🔹 Windows PowerShell
 
 编辑 `$PROFILE`：
 
@@ -38,7 +38,7 @@ function sshsa {
 sshsa --help
 ```
 
-## Linux Bash
+## 🔹 Linux Bash
 
 编辑 `~/.bashrc`：
 

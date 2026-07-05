@@ -14,7 +14,7 @@
 
 请注意：文档可能会过时，本文档仅供参考，请记得随时查看最新仓库和最新文档。
 
-## **请牢记：**
+## 🔹 **请牢记：**
 ### **善用搜索引擎，善用大模型：**
 - 用 Google，不要百度
 - 用 Stack Overflow，不要 CSDN
@@ -45,11 +45,11 @@ root@S43LYjdh3w4zO:~# neofetch
 ```
 :::
 
-## 前置准备
+## 🔹 前置准备
 
 部分指令需要 sudo 权限，如果有提示 `permission denied` 等信息，可以切换 root 或者使用 sudo。
 
-## 安装 Node.js
+## 🔹 安装 Node.js
 
 Koishi 基于 Node.js 构建，因此首先需要安装 Node.js。Koishi 官方文档提供的安装脚本在某些特殊网络环境下可能无法"一键执行安装"。
 
@@ -142,7 +142,7 @@ yarn start
 你可以把上面的*`npm`*替换成`<node绝对路径> <npm绝对路径>`，*`yarn`*替换成`<node绝对路径> <yarn绝对路径>`作为兜底。
 :::
 
-## 从开发、测试 到 生产、运维的一些实践指令
+## 🔹 从开发、测试 到 生产、运维的一些实践指令
 
 ### 查看git大文件
 ```shell
@@ -221,7 +221,7 @@ yarn build
 `yakumo tsc --noEmit` 只做类型检查不生成文件，比 `yarn build` 快很多，适合快速验证语法和类型错误。没有报错输出即为通过。
 :::
 
-## 保持进程运行
+## 🔹 保持进程运行
 
 ::: tip 推荐方案
 可以使用以下工具保持进程运行：
@@ -274,7 +274,7 @@ external文件夹里面的代码进行了更新，比如从远程仓库`git pull
 
 ![mcsm的 开启 重启 按钮](/image/mcsm-start-update.png)
 
-## 相关链接
+## 🔹 相关链接
 
 **Koishi 相关：**
 - [Koishi 官方文档 [https://koishi.chat/zh-CN/] ](https://koishi.chat/zh-CN/)

@@ -2,7 +2,7 @@
 
 部分指令需要root权限，要么用root操作 要么用sudo
 
-## 创建 Swap 文件
+## 🔹 创建 Swap 文件
 
 ```shell
 # 比如我需要一个2G的swapfile
@@ -11,7 +11,7 @@ fallocate -l 2G /swapfile
 dd if=/dev/zero of=/swapfile bs=1M count=2048
 ```
 
-## 设置权限并启用 Swap
+## 🔹 设置权限并启用 Swap
 
 ```shell
 # 为了安全，只有 root 用户应该能够读写这个 swapfile。
@@ -20,7 +20,7 @@ mkswap /swapfile
 swapon /swapfile
 ```
 
-## 验证 Swap 是否启用
+## 🔹 验证 Swap 是否启用
 
 ```shell
 # 验证是否启用
@@ -30,7 +30,7 @@ apt install htop
 htop
 ```
 
-## 持久化配置
+## 🔹 持久化配置
 
 ### 重启自动挂载
 
@@ -63,7 +63,7 @@ sysctl -p
 cat /proc/sys/vm/swappiness
 ```
 
-## 适用系统
+## 🔹 适用系统
 
 ::: info 适用的 Linux 发行版
 以上操作适用于大多数主流 Linux 发行版，包括但不限于：
@@ -88,7 +88,7 @@ cat /proc/sys/vm/swappiness
 我自己已经在多台 Debian 和 Ubuntu 服务器上成功配置过 Swap，都没有遇到问题。其他发行版就不知道了，因为用的不多(
 :::
 
-## 配置示例
+## 🔹 配置示例
 
 ::: details 在 Debian 12 (bookworm) 上的配置示例
 刚刚在一台 Debian 云服务器上测试通过：

@@ -37,7 +37,7 @@ proxychains 是一个在 Linux/Unix 系统中强制应用程序通过代理连�
 > 其他的linux发行版应该也是分两个版本的。但是我基本上就只用过debian系的(
 
 
-## 安装 proxychains
+## 🔹 安装 proxychains
 ### 安装 proxychains4（推荐）
 
 在 Debian 系的 Linux 发行版中，推荐安装新版本 `proxychains4`：
@@ -58,7 +58,7 @@ sudo pacman -S proxychains-ng
 sudo apk add proxychains-ng
 ```
 
-## 配置代理
+## 🔹 配置代理
 安装后使用 `proxychains4` 命令。编辑 proxychains 的配置文件：
 
 ```bash
@@ -76,13 +76,13 @@ socks5 127.0.0.1 7891
 ```
 
 
-## 基本使用方法
+## 🔹 基本使用方法
 使用 proxychains4 运行任何命令，让其通过代理访问网络：
 ```bash
 proxychains4 curl -I https://www.google.com
 ```
 
-## 使用 proxychains 启动 Bash
+## 🔹 使用 proxychains 启动 Bash
 可以启动一个完全代理化的 Bash 会话，在这个会话中运行的所有命令都会自动通过代理：
 
 ```bash
@@ -96,7 +96,7 @@ wget https://example.com/file.zip
 git clone https://github.com/xxx/xxx.git
 ```
 
-## 使用 proxychains 启动 Screen 会话
+## 🔹 使用 proxychains 启动 Screen 会话
 
 如果需要在后台运行长期任务，可以结合 `screen` 使用：
 
@@ -107,7 +107,7 @@ proxychains screen -S foo
 curl -I https://www.google.com
 ```
 
-## 配置选项
+## 🔹 配置选项
 
 ### 动态链（推荐）
 
@@ -136,7 +136,7 @@ quiet_mode
 proxychains4 -q curl -I https://www.google.com
 ```
 
-## 常见使用场景
+## 🔹 常见使用场景
 
 ### 1. 通过代理克隆 GitHub 仓库
 
@@ -162,7 +162,7 @@ proxychains4 python3 script.py
 proxychains4 docker pull nginx:latest
 ```
 
-## 注意事项
+## 🔹 注意事项
 
 - ✅ proxychains 仅适用于 **Linux/Unix 系统**，不支持 Windows
 - ✅ 适用于几乎所有命令行程序
@@ -171,7 +171,7 @@ proxychains4 docker pull nginx:latest
 - ⚠️ UDP 流量可能无法被正确代理（取决于代理类型）
 - ⚠️ 确保 Clash 的 SOCKS5 端口已启用（通常为 7891）
 
-## 故障排查
+## 🔹 故障排查
 
 ### 代理不生效
 
@@ -197,7 +197,7 @@ curl -I http://127.0.0.1:7890
 proxychains4 curl -I https://www.google.com
 ```
 
-## 相关链接
+## 🔹 相关链接
 
 - [CMD 使用 代理](./cmd-clash.md)
 - [Git Bash 使用 Clash](./gitbash-clash.md)

@@ -10,7 +10,7 @@
 
 请注意：文档可能会过时，本文档仅供参考，请记得随时查看最新仓库和最新文档。
 
-## **请牢记：**
+## 🔹 **请牢记：**
 ### **善用搜索引擎，善用大模型：**
 - 用 Google，不要百度
 - 用 Stack Overflow，不要 CSDN
@@ -41,7 +41,7 @@ root@S43LYjdh3w4zO:~# neofetch
 ```
 :::
 
-## 前置准备
+## 🔹 前置准备
 
 部分指令需要 sudo 权限，如果有提示 `permission denied` 等信息，可以切换 root 或者使用 sudo。
 
@@ -66,7 +66,7 @@ apt install tree htop btop nload neofetch curl wget git proxychains4 proxychains
 # 在一些更新的发行版里面，neofetch 用不了，可以换成 fastfetch
 ```
 
-## 安装 pipx
+## 🔹 安装 pipx
 
 pipx 是一个用于安装和运行 Python 应用程序的工具。
 
@@ -151,7 +151,7 @@ root@S43LYjdh3w4zO:/data# which pipx
 ```
 :::
 
-## 安装 NoneBot CLI
+## 🔹 安装 NoneBot CLI
 
 ::: tip 换源建议
 特殊网络环境下，建议先更换 pip 源：[pip 换源文档](/notes/switch-source/pip)
@@ -190,7 +190,7 @@ root@S43LYjdh3w4zO:/data# which nb
 ```
 :::
 
-## 创建 NoneBot 项目
+## 🔹 创建 NoneBot 项目
 
 ```bash
 # 创建工作目录
@@ -267,7 +267,7 @@ root@S43LYjdh3w4zO:/data/nonebot/nonebot-test# tree -L 3 -a
 ```
 :::
 
-## 配置对接 NapCat
+## 🔹 配置对接 NapCat
 
 ::: tip 参考文档
 对接 NapCat 可以参考官方文档：[NapCat Integration of NoneBot](https://napneko.github.io/use/integration#nonebot)
@@ -366,7 +366,7 @@ root@S43LYjdh3w4zO:/data/nonebot/nonebot-test# ip a
 - **重连间隔**：`1111ms`（这个小点没事）
 :::
 
-## 安装插件
+## 🔹 安装插件
 
 ### 浏览插件市场
 
@@ -404,7 +404,7 @@ root@S43LYjdh3w4zO:/data/nonebot/nonebot-test# tree -L 2
 ```
 :::
 
-## 解决常见问题
+## 🔹 解决常见问题
 
 ### Playwright 环境问题
 
@@ -448,7 +448,7 @@ Using python: /data/nonebot/nonebot-test/.venv/bin/python
 /data/nonebot/nonebot-test/.venv/bin/python -m playwright install
 ```
 
-## 保持进程运行
+## 🔹 保持进程运行
 
 ::: tip 推荐方案
 可以使用以下工具保持进程运行：
@@ -482,7 +482,7 @@ screen -ls
 screen -S nonebot -X quit
 ```
 
-## 相关链接
+## 🔹 相关链接
 
 **NoneBot2 相关：**
 - [NoneBot2 官方文档 [https://nonebot.dev/] ](https://nonebot.dev/)

@@ -15,7 +15,7 @@ apt install python3-pip
 ```
 :::
 
-## 常用国内镜像源
+## 🔹 常用国内镜像源
 
 ### 清华源
 
@@ -41,7 +41,7 @@ pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple
 pip config set global.index-url http://pypi.douban.com/simple/
 ```
 
-## 换回默认源
+## 🔹 换回默认源
 
 如需恢复使用 pip 官方源：
 
@@ -49,7 +49,7 @@ pip config set global.index-url http://pypi.douban.com/simple/
 pip config unset global.index-url
 ```
 
-## 临时使用镜像源
+## 🔹 临时使用镜像源
 
 如果只想临时使用某个镜像源安装包，而不修改全局配置：
 
@@ -58,7 +58,7 @@ pip config unset global.index-url
 pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 查看当前配置
+## 🔹 查看当前配置
 
 查看 pip 的当前配置：
 
@@ -66,26 +66,26 @@ pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip config list
 ```
 
-## 配置文件位置
+## 🔹 配置文件位置
 
 pip 的配置文件位置：
 
 - **Linux/macOS**：`~/.pip/pip.conf` 或 `~/.config/pip/pip.conf`
 - **Windows**：`%APPDATA%\pip\pip.ini` 或 `C:\Users\<用户名>\pip\pip.ini`
 
-## 注意事项
+## 🔹 注意事项
 
 ::: warning 注意
 - 某些镜像源可能不支持 HTTPS，如果遇到 SSL 错误，可以尝试使用 HTTP 协议
 - 镜像源的同步可能存在延迟，如果找不到最新版本的包，可以临时切换回官方源
 :::
 
-## 参考来源
+## 🔹 参考来源
 
 > 作者：waws520  
 > 链接：[https://juejin.cn/post/7141566114412101662](https://juejin.cn/post/7141566114412101662)
 
-## 相关链接
+## 🔹 相关链接
 - [pip 换源](./pip.md)
 - [Ubuntu 换源](./ubuntu)
 - [Debian 换源](./debian.md)

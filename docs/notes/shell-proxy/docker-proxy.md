@@ -2,7 +2,7 @@
 
 在 Linux 系统中为 Docker 配置代理，可以让 Docker 拉取镜像时通过代理服务器访问网络，解决国内访问 Docker Hub 速度慢或无法访问的问题。
 
-## `daemon.json` 配置方法
+## 🔹 `daemon.json` 配置方法
 
 ### 1. 创建或编辑 Docker 配置文件
 
@@ -90,7 +90,7 @@ docker info | grep -i proxy
 docker pull hello-world
 ```
 
-## 取消 `daemon.json` 代理
+## 🔹 取消 `daemon.json` 代理
 
 如需取消 `/etc/docker/daemon.json` 中的代理配置，有两种方法：
 
@@ -120,7 +120,7 @@ sudo systemctl restart docker
 
 然后重启 Docker 服务。
 
-## systemd `.conf` 配置方法
+## 🔹 systemd `.conf` 配置方法
 
 除了直接写 `/etc/docker/daemon.json`，Linux 上也可以通过 systemd 的 drop-in 配置文件给 Docker daemon 设置代理。这种方式会把代理写成 Docker 服务的环境变量，配置文件通常放在 `/etc/systemd/system/docker.service.d/http-proxy.conf`。
 
@@ -207,7 +207,7 @@ No Proxy: localhost,127.0.0.1,172.17.0.0/16
 systemctl cat docker
 ```
 
-## 取消 systemd `.conf` 代理
+## 🔹 取消 systemd `.conf` 代理
 
 如果使用的是 `/etc/systemd/system/docker.service.d/http-proxy.conf` 这种方式，删除该文件后重载并重启 Docker 即可：
 
@@ -223,7 +223,7 @@ sudo systemctl restart docker
 docker info | grep -i proxy
 ```
 
-## Docker Compose 代理配置
+## 🔹 Docker Compose 代理配置
 
 如果使用 Docker Compose 构建镜像时需要代理，可以在 `docker-compose.yml` 中配置：
 
@@ -239,7 +239,7 @@ services:
         NO_PROXY: localhost,127.0.0.1
 ```
 
-## 常见问题
+## 🔹 常见问题
 
 ### 配置后无法拉取镜像
 
@@ -273,7 +273,7 @@ sudo cp /etc/docker/daemon.json.bak /etc/docker/daemon.json
 sudo systemctl restart docker
 ```
 
-## 注意事项
+## 🔹 注意事项
 
 ::: tip 建议
 - 修改配置文件前建议先备份：`sudo cp /etc/docker/daemon.json /etc/docker/daemon.json.bak`
@@ -297,7 +297,7 @@ sudo systemctl restart docker
 
 # Docker Desktop GUI 界面配置代理
 
-## Docker Desktop GUI on Windows 配置步骤
+## 🔹 Docker Desktop GUI on Windows 配置步骤
 
 ### 1. 点击右上角的 **⚙️ 设置图标**，进入设置页面。
 
@@ -328,7 +328,7 @@ sudo systemctl restart docker
 填写完成后，点击右下角的 **Apply & Restart** 或 **Close** 按钮，Docker 会自动应用配置并重启。
 
 
-## 验证配置
+## 🔹 验证配置
 
 配置完成后，可以在终端中测试拉取镜像：
 
@@ -337,7 +337,7 @@ docker pull hello-world
 ```
 如果能够成功拉取，说明代理配置生效。
 
-## 相关链接
+## 🔹 相关链接
 
 - [CMD 使用 代理](./cmd-clash.md)
 - [Git Bash 使用 Clash](./gitbash-clash.md)

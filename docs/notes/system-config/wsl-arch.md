@@ -2,7 +2,7 @@
 
 Arch Linux 不在 WSL 官方应用商店里，需要用第三方打包的 [ArchWSL](https://github.com/yuk7/ArchWSL)。这里记录一下安装、换源、装工具的完整流程。
 
-## 安装
+## 🔹 安装
 
 用 PowerShell 操作：
 
@@ -25,7 +25,7 @@ wget -O Arch.zip https://github.com/yuk7/ArchWSL/releases/download/26.4.2.0/Arch
 wsl -d Arch
 ```
 
-## 换源
+## 🔹 换源
 
 国内直接 `pacman` 会很慢，建议先换源。
 
@@ -37,7 +37,7 @@ wsl -d Arch
 pacman -Syyu
 ```
 
-## 初始化 pacman 并更新
+## 🔹 初始化 pacman 并更新
 
 新装的 Arch 需要先初始化 keyring：
 
@@ -47,7 +47,7 @@ pacman-key --populate archlinux
 pacman -Syyu --noconfirm
 ```
 
-## 安装常用工具
+## 🔹 安装常用工具
 
 ```bash
 pacman -Syu fish curl git proxychains-ng fastfetch
@@ -63,7 +63,7 @@ whereis fish
 chsh -s /usr/bin/fish
 ```
 
-## 配置 proxychains
+## 🔹 配置 proxychains
 
 ```bash
 sudo nano /etc/proxychains.conf
@@ -75,7 +75,7 @@ sudo nano /etc/proxychains.conf
 http 172.19.176.1 7890
 ```
 
-## 安装 Paru（AUR 助手）
+## 🔹 安装 Paru（AUR 助手）
 
 先创建一个普通用户（不建议用 root 编译 AUR 包）：
 
@@ -124,7 +124,7 @@ paru --version
 paru -S winload-rust-bin
 ```
 
-## 禁用宿主机环境变量
+## 🔹 禁用宿主机环境变量
 
 和 Ubuntu 一样，建议关掉 Windows 的环境变量继承。
 
@@ -150,7 +150,7 @@ wsl --list
 wsl -d Arch
 ```
 
-## 可选：安装 Fisher 和 Tide 主题
+## 🔹 可选：安装 Fisher 和 Tide 主题
 
 Fish 开箱即用体验已经很好，但如果你想要更强大的插件管理和漂亮的提示符，可以装个插件管理器。
 

@@ -2,7 +2,7 @@
 
 Windows 下可以用 PowerShell 查看物理硬盘信息，Linux 下可以用 `lsblk`、`smartctl`、`nvme-cli` 查看物理硬盘的型号、序列号、介质类型、总线类型、容量、健康状态和固件版本，不需要拆机。
 
-## Windows PowerShell
+## 🔹 Windows PowerShell
 
 ### 查看原始字段列表
 
@@ -77,7 +77,7 @@ ATA WDC WD5000AAKX-2      465.8 HDD  SAS  Healthy  OK       WDC         WDC WD50
 | `FirmwareVersion` | 固件版本 |
 | `SpindleSpeed` | 机械硬盘转速，SSD 通常显示为 0 |
 
-## Linux Bash
+## 🔹 Linux Bash
 
 ### 安装工具
 

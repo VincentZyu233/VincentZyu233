@@ -2,7 +2,7 @@
 
 Debian 系统更换为国内镜像源可以显著提升软件包下载速度。本文提供 Debian 11、12、13 的中科大镜像源配置。
 
-## 快速换源步骤
+## 🔹 快速换源步骤
 
 ### 1. 备份原文件
 
@@ -27,7 +27,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-## DEB822 格式（Debian 12+）
+## 🔹 DEB822 格式（Debian 12+）
 
 从 Debian 12 (Bookworm) 开始，容器镜像和 Trixie 已使用 DEB822 格式，路径为 `/etc/apt/sources.list.d/debian.sources`。
 
@@ -81,7 +81,7 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 sudo apt-get update
 ```
 
-## 各版本镜像源配置（传统格式）
+## 🔹 各版本镜像源配置（传统格式）
 
 ### Debian 13 (Trixie)
 
@@ -125,7 +125,7 @@ deb http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib non-free
 # deb-src http://mirrors.ustc.edu.cn/debian bullseye-backports main contrib non-free
 ```
 
-## Debian 版本代号
+## 🔹 Debian 版本代号
 
 | 版本号 | 代号 (Codename) | 发布时间 |
 |--------|----------------|----------|
@@ -134,7 +134,7 @@ deb http://mirrors.ustc.edu.cn/debian bullseye-updates main contrib non-free
 | Debian 11 | Bullseye | 2021 年 8 月 |
 | Debian 10 | Buster | 2019 年 7 月 |
 
-## 查看当前 Debian 版本
+## 🔹 查看当前 Debian 版本
 
 如果不确定当前系统的版本，可以使用以下命令查看：
 
@@ -148,14 +148,14 @@ cat /etc/debian_version
 lsb_release -a
 ```
 
-## 软件源组件说明
+## 🔹 软件源组件说明
 
 - **main**：完全自由的软件包
 - **contrib**：自由软件，但依赖非自由软件
 - **non-free**：非自由软件包
 - **non-free-firmware**：非自由固件（Debian 12+ 新增）
 
-## 其他国内镜像源
+## 🔹 其他国内镜像源
 
 除了中科大源，还可以使用以下镜像源：
 
@@ -183,7 +183,7 @@ mirrors.aliyun.com
 mirrors.163.com
 ```
 
-## 注意事项
+## 🔹 注意事项
 
 ::: tip 提示
 - Debian 12 及以上版本新增了 `non-free-firmware` 组件，用于非自由固件
@@ -200,11 +200,11 @@ sudo apt-get update
 ```
 :::
 
-## 参考来源
+## 🔹 参考来源
 
 > 链接：[https://mirrors.ustc.edu.cn/help/debian.html](https://mirrors.ustc.edu.cn/help/debian.html)
 
-## 相关链接
+## 🔹 相关链接
 
 - [pip 换源](./pip.md)
 - [Ubuntu 换源](./ubuntu)
@@ -212,7 +212,7 @@ sudo apt-get update
 
 ---
 
-## 🎬 Debian 版本代号彩蛋：玩具总动员（Toy Story）
+## 🔹 Debian 版本代号彩蛋：玩具总动员（Toy Story）
 
 Debian 的创始人 Ian Murdock 是一个大影迷。1996 年 Debian 准备发布 1.1 版本时，恰逢皮克斯的第一部《玩具总动员》电影大火。Ian 决定用电影里的角色来命名版本，这个传统就此流传了下来。
 

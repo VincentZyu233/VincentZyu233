@@ -2,7 +2,7 @@
 
 Windows 下可以用 PowerShell 的 WMI 命令查看物理内存条信息，Linux 下可以用 `dmidecode` 查看物理内存插槽、容量、频率、品牌、型号和序列号，不需要拆机。
 
-## Windows PowerShell
+## 🔹 Windows PowerShell
 
 ### 查看内存条概览
 
@@ -66,7 +66,7 @@ A1_Node1_Channel1_Dimm0        16       2133 Micron      36ASF2G72PZ-2G1A2 0F8D6
 
 ![镁光内存条信息](/image/powershell-check-4-mircon-ram-stick.png)
 
-## Linux Bash
+## 🔹 Linux Bash
 
 ### 安装工具
 

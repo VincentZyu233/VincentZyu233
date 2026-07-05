@@ -10,13 +10,13 @@
 
 本文档说明如何在新设备上复现本项目的开发环境。
 
-## 环境要求
+## 🔹 环境要求
 
 - [Node.js](https://nodejs.org/) (推荐 v20 或更高版本)
 - [npm](https://www.npmjs.com/) 或 [Yarn](https://yarnpkg.com/)
 - Git
 
-## 快速开始
+## 🔹 快速开始
 
 ### 1. 克隆仓库
 
@@ -45,7 +45,7 @@ npm run docs:dev
 
 启动后访问 `http://localhost:5173/VincentZyu233/` 即可预览。
 
-## 常用命令
+## 🔹 常用命令
 
 | 命令 | 说明 |
 |------|------|
@@ -53,7 +53,7 @@ npm run docs:dev
 | `npm run docs:build` | 构建生产版本 |
 | `npm run docs:preview` | 预览生产构建 |
 
-## 项目结构
+## 🔹 项目结构
 
 ```
 .
@@ -77,7 +77,7 @@ npm run docs:dev
 └── readme.md                  # 项目说明
 ```
 
-## 部署说明
+## 🔹 部署说明
 
 项目配置了双平台自动部署：
 
@@ -86,7 +86,7 @@ npm run docs:dev
 
 触发条件：推送代码时 commit message 包含 `build page`
 
-## 技术栈
+## 🔹 技术栈
 
 - [VitePress](https://vitepress.dev/) - 静态站点生成器
 - [Vue 3](https://vuejs.org/) - 前端框架

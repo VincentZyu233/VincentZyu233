@@ -2,7 +2,7 @@
 
 Linux 推荐使用 `nvm` 安装和管理 Node.js 版本。Windows 可以直接下载 MSI 安装程序，或者手动下载 ZIP 解压后配置环境变量。
 
-## Linux 安装 Node.js 24
+## 🔹 Linux 安装 Node.js 24
 
 ```bash
 # 下载并安装 nvm
@@ -24,7 +24,7 @@ corepack enable yarn
 yarn -v
 ```
 
-## Windows 安装 Node.js 24
+## 🔹 Windows 安装 Node.js 24
 
 打开 Node.js 下载页，选择 Windows：
 
@@ -43,7 +43,7 @@ yarn -v
 这两种方法都可以帮助你在网络受限的环境下成功下载和安装 Node.js。
 :::
 
-## 相关链接
+## 🔹 相关链接
 
 - [Node.js 官方网站](https://nodejs.org/zh-cn/)
 - [nvm GitHub 仓库](https://github.com/nvm-sh/nvm)

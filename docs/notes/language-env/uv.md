@@ -2,7 +2,7 @@
 
 ⚡️UV 是一个极快的 Python 包管理器和项目管理工具，由 Astral 团队开发，**旨在取代 pip + pip-tools + pipx + poetry + pyenv + virtualenv**。
 
-## UV 的优势
+## 🔹 UV 的优势
 
 | 特性 | uv | pip |
 |------|----|-----|
@@ -14,7 +14,7 @@
 | 🔗 pip 兼容 | 完全兼容 `uv pip install` 语法 | — |
 | 🌐 国内镜像 | 一键安装脚本自动配置清华源 | 需手动 `pip config set` |
 
-## 官方安装方式（国际网络环境）
+## 🔹 官方安装方式（国际网络环境）
 
 如果处于国际网络环境，可以直接使用官方安装脚本：
 
@@ -30,7 +30,7 @@ Windows PowerShell：
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-## 国内镜像源安装（推荐）
+## 🔹 国内镜像源安装（推荐）
 
 在特殊网络环境下，推荐使用国内镜像源安装：
 
@@ -76,7 +76,7 @@ powershell -ExecutionPolicy Bypass -c "irm https://gitee.com/wangnov/uv-custom/r
 这两种方法都可以帮助你在网络受限的环境下成功下载和安装 UV。
 :::
 
-## 验证安装
+## 🔹 验证安装
 
 ```bash
 # 打印版本号和绝对路径
@@ -124,7 +124,7 @@ root@S43LYjdh3w4zO:/data/maibot#
 ```
 :::
 
-## UV 配置文件
+## 🔹 UV 配置文件
 
 上面的 Gitee 安装脚本可以一键安装 UV，并自动配置 Python 下载代理和 PyPI 镜像源。
 
@@ -157,7 +157,7 @@ UV_INDEX=https://pypi.org/simple uv lock --refresh
 ```
 :::
 
-## 基本使用
+## 🔹 基本使用
 
 ### 创建虚拟环境
 
@@ -182,7 +182,7 @@ uv pip install -r requirements.txt
 uv pip install package-name -i https://mirrors.aliyun.com/pypi/simple
 ```
 
-## 相关链接
+## 🔹 相关链接
 
 - [UV 官方文档 [https://docs.astral.sh/uv/] ](https://docs.astral.sh/uv/)
 - [UV GitHub 仓库 [https://github.com/astral-sh/uv] ](https://github.com/astral-sh/uv)

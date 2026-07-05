@@ -1,6 +1,6 @@
 # CMD 使用 Clash 代理# CMD 使用 代理
 
-## 设置代理
+## 🔹 设置代理
 
 > 想自动生成不同 Shell 的代理命令，可以使用：[代理配置生成器](./proxy-generator)。
 
@@ -26,14 +26,14 @@ set https_proxy=http://192.168.31.233:7890
 CMD 使用 `set` 命令来设置环境变量，语法为 `set 变量名=值`，这是 Windows 命令提示符的传统语法。
 :::
 
-## 验证代理是否生效
+## 🔹 验证代理是否生效
 
 ```cmd
 curl -I https://www.google.com
 ```
 如果返回了 Google 的响应头信息，说明代理配置成功。如果返回了 Google 的响应头信息，说明代理配置成功。
 
-## 注意事项
+## 🔹 注意事项
 
 
 - ✅ 这些环境变量仅在**当前 CMD 窗口**中有效
@@ -42,7 +42,7 @@ curl -I https://www.google.com
 - ⚠️ 确保 Clash 正在运行且代理端口未被占用
 
 
-## 取消代理
+## 🔹 取消代理
 
 如需临时取消代理设置，可以执行：如需临时取消代理设置，可以执行：
 
@@ -51,11 +51,11 @@ set http_proxy=
 set https_proxy=
 ```
 
-## 效果示例
+## 🔹 效果示例
 
 ![/image/cmd-proxy.png](/image/cmd-proxy.png)
 
-## 相关链接
+## 🔹 相关链接
 
 - [CMD 使用 代理](./cmd-clash.md)
 - [Git Bash 使用 Clash](./gitbash-clash.md)

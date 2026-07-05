@@ -2,7 +2,7 @@
 
 > <https://github.com/bootandy/dust>
 
-## 安装
+## 🔹 安装
 
 - **Windows**：`scoop install dust`
 - **Debian/Ubuntu**：`apt install du-dust`
@@ -12,7 +12,7 @@
 
 > 如果你已经安装并配置好了 Cargo，也可以使用 Cargo 安装。参考：[cargo 简单说明](/notes/cli-tools/cargo)
 
-## 用法
+## 🔹 用法
 
 | 命令 | 说明 |
 |------|------|
@@ -21,7 +21,7 @@
 | `dust -x` | 不跨文件系统，跳过 `/proc` `/sys` 等挂载点 |
 | `dust -I "\.mp4$"` | 排除匹配正则的文件，这里排除所有 `.mp4` |
 
-## 配置文件
+## 🔹 配置文件
 
 dust 支持配置文件，可以把常用命令行参数写进去，避免每次手动输入。
 
@@ -73,12 +73,12 @@ collapse = ["node_modules", "target", ".git"]
 命令行参数优先级更高，比如配置里写了 `depth = 5`，临时运行 `dust -d 5` 还是会按 `-d 3` 来。
 :::
 
-## 最终效果
+## 🔹 最终效果
 
 dust 会智能排序并显示最大的目录和文件，彩色条直观展示各目录的磁盘占用占比。
 
 ![dust 扫描 C 盘示例](/image/du-dust-scanning-C-drive-in-windows11-terminal.png)
 
-## 相关链接
+## 🔹 相关链接
 
 - [dust GitHub 仓库](https://github.com/bootandy/dust)
