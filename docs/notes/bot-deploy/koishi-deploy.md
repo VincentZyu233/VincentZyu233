@@ -194,7 +194,11 @@ npm publish --access public --registry https://registry.npmjs.org
 
 # 手动更新latest tag
 npm dist-tag add koishi-plugin-xxx@1.2.3 latest --registry https://registry.npmjs.org
+# 手动更新 next tag（beta / rc 预发布版本常用）
+npm dist-tag add koishi-plugin-xxx@1.2.3 next --registry https://registry.npmjs.org
 
+# 查看当前 dist-tags / 包信息
+npm dist-tag ls koishi-plugin-xxx --registry https://registry.npmjs.org
 npm view koishi-plugin-xxx --registry https://registry.npmjs.org
 # 或者浏览器打开这个：npm-stat.com
 # 这个也不错捏：socket.dev
