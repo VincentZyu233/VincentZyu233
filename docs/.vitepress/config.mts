@@ -99,6 +99,7 @@ export default defineConfig({
               { text: '📊 onefetch 简单说明', link: '/notes/cli-tools/onefetch' },
               { text: '📁 CMD 强制重命名和删除（文件 & 文件夹）', link: '/notes/cli-tools/cmd-ren-rmdir' },
               { text: '🧠 PowerShell 查看内存条信息', link: '/notes/cli-tools/powershell-check-ram-stick' },
+              { text: '💽 PowerShell 查看物理硬盘信息', link: '/notes/cli-tools/powershell-check-disk' },
               { text: '🔌 SSH Server Alive 保持连接', link: '/notes/cli-tools/ssh-server-alive' }
             ]
           },
