@@ -43,7 +43,7 @@ sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/deb
 
 **Debian 13 (Trixie)**：
 
-```conf
+```yaml
 Types: deb
 URIs: http://mirrors.ustc.edu.cn/debian
 Suites: trixie trixie-updates trixie-backports
@@ -59,7 +59,7 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
 **Debian 12 (Bookworm)**：
 
-```conf
+```yaml
 Types: deb
 URIs: http://mirrors.ustc.edu.cn/debian
 Suites: bookworm bookworm-updates bookworm-backports

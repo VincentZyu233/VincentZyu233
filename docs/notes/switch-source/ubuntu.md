@@ -85,7 +85,7 @@ sudo sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt
 
 **Ubuntu 24.04 (noble)**：
 
-```conf
+```yaml
 Types: deb
 URIs: https://mirrors.tuna.tsinghua.edu.cn/ubuntu
 Suites: noble noble-updates noble-backports

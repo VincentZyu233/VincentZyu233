@@ -2,7 +2,7 @@
 
 在 Linux 系统中为 Docker 配置代理，可以让 Docker 拉取镜像时通过代理服务器访问网络，解决国内访问 Docker Hub 速度慢或无法访问的问题。
 
-## Linux Bash 配置方法
+## `daemon.json` 配置方法
 
 ### 1. 创建或编辑 Docker 配置文件
 
@@ -37,33 +37,8 @@ sudo nano /etc/docker/daemon.json
 - `no-proxy`：不使用代理的地址列表，多个地址用逗号分隔
 :::
 
-### 3. 重载配置并重启 Docker
-
-配置完成后，需要重载 systemd 配置并重启 Docker 服务：
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-```
-
-### 4. 验证配置是否生效
-
-检查 Docker 配置信息，确认代理配置已加载：
-
-```bash
-cat /etc/docker/daemon.json
-docker info | grep -i proxy
-```
-
-或者尝试拉取镜像测试：
-
-```bash
-docker pull hello-world
-```
-
-## 完整配置示例
-
-如果 `daemon.json` 中还有其他配置（如镜像加速器），完整配置示例如下：
+::: tip 完整配置示例
+如果 `daemon.json` 中还有其他配置（如镜像加速器），可以在现有内容基础上加入 `proxies` 配置项：
 
 ```json
 {
@@ -89,10 +64,35 @@ docker pull hello-world
   }
 }
 ```
+:::
 
-## 取消代理配置
+### 3. 重载配置并重启 Docker
 
-如需取消 Docker 的代理配置，有两种方法：
+配置完成后，需要重载 systemd 配置并重启 Docker 服务：
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+### 4. 验证配置是否生效
+
+检查 Docker 配置信息，确认代理配置已加载：
+
+```bash
+cat /etc/docker/daemon.json
+docker info | grep -i proxy
+```
+
+或者尝试拉取镜像测试：
+
+```bash
+docker pull hello-world
+```
+
+## 取消 `daemon.json` 代理
+
+如需取消 `/etc/docker/daemon.json` 中的代理配置，有两种方法：
 
 ### 方法一：删除 proxies 配置项
 
@@ -119,6 +119,109 @@ sudo systemctl restart docker
 ```
 
 然后重启 Docker 服务。
+
+## systemd `.conf` 配置方法
+
+除了直接写 `/etc/docker/daemon.json`，Linux 上也可以通过 systemd 的 drop-in 配置文件给 Docker daemon 设置代理。这种方式会把代理写成 Docker 服务的环境变量，配置文件通常放在 `/etc/systemd/system/docker.service.d/http-proxy.conf`。
+
+::: tip 适用场景
+- 适用于使用 systemd 管理 Docker 服务的 Linux 发行版
+- 适合不想改动 `/etc/docker/daemon.json`，只想单独管理 Docker 服务代理的情况
+- 如果 `daemon.json` 已经配置了 `proxies`，建议二选一，避免排查时混淆
+:::
+
+::: warning 注意
+如果不需要在 `daemon.json` 中配置代理，可以让它保持为空对象：`echo '{}' | sudo tee /etc/docker/daemon.json`。如果 `daemon.json` 里还有 `registry-mirrors`、日志、运行时等其他 Docker 配置，不要直接清空文件，应该只删除其中的 `proxies` 配置项。
+:::
+
+### 1. 创建 systemd drop-in 目录
+
+```bash
+sudo mkdir -p /etc/systemd/system/docker.service.d
+```
+
+### 2. 写入代理配置文件
+
+创建并编辑 `/etc/systemd/system/docker.service.d/http-proxy.conf`：
+
+```bash
+sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
+```
+
+写入以下内容：
+
+```ini
+[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:7890"
+Environment="HTTPS_PROXY=http://127.0.0.1:7890"
+Environment="NO_PROXY=localhost,127.0.0.1,172.17.0.0/16"
+```
+
+::: tip 提示
+也可以不用 `nano`，直接用 `tee` 写入配置。比如代理服务在局域网主机 `192.168.31.233:7890` 上时：
+
+```bash
+sudo tee /etc/systemd/system/docker.service.d/http-proxy.conf > /dev/null <<'EOF'
+[Service]
+Environment="HTTP_PROXY=http://192.168.31.233:7890"
+Environment="HTTPS_PROXY=http://192.168.31.233:7890"
+Environment="NO_PROXY=localhost,127.0.0.1,192.168.31.0/24,172.17.0.0/16"
+EOF
+```
+:::
+
+其中：
+
+- `HTTP_PROXY`：HTTP 代理地址
+- `HTTPS_PROXY`：HTTPS 代理地址
+- `NO_PROXY`：不走代理的地址，建议包含本机地址、局域网网段和 Docker 默认网段
+
+::: tip 示例说明
+上面的代理地址 `127.0.0.1:7890` 表示代理服务运行在 Docker 所在机器本机。如果代理服务在局域网其他机器上，请改成对应的局域网 IP 和端口。
+:::
+
+### 3. 重载 systemd 并重启 Docker
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+### 4. 验证配置是否生效
+
+```bash
+docker info | grep -i proxy
+```
+
+正常情况下会看到类似输出：
+
+```text
+HTTP Proxy: http://127.0.0.1:7890
+HTTPS Proxy: http://127.0.0.1:7890
+No Proxy: localhost,127.0.0.1,172.17.0.0/16
+```
+
+也可以查看当前 drop-in 配置：
+
+```bash
+systemctl cat docker
+```
+
+## 取消 systemd `.conf` 代理
+
+如果使用的是 `/etc/systemd/system/docker.service.d/http-proxy.conf` 这种方式，删除该文件后重载并重启 Docker 即可：
+
+```bash
+sudo rm /etc/systemd/system/docker.service.d/http-proxy.conf
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+再执行下面命令确认代理已经移除：
+
+```bash
+docker info | grep -i proxy
+```
 
 ## Docker Compose 代理配置
 

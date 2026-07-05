@@ -37,11 +37,25 @@ proxychains 是一个在 Linux/Unix 系统中强制应用程序通过代理连�
 > 其他的linux发行版应该也是分两个版本的。但是我基本上就只用过debian系的(
 
 
-## 安装 proxychains## 安装 proxychains
+## 安装 proxychains
 ### 安装 proxychains4（推荐）
-在 Debian系的Linux发行版中：
+
+在 Debian 系的 Linux 发行版中，推荐安装新版本 `proxychains4`：
+
 ```bash
-sudo apt install proxychains proxychains4
+sudo apt install proxychains4
+```
+
+在 Arch Linux 中，新版本包名是 `proxychains-ng`：
+
+```bash
+sudo pacman -S proxychains-ng
+```
+
+在 Alpine Linux 中，新版本包名也是 `proxychains-ng`：
+
+```bash
+sudo apk add proxychains-ng
 ```
 
 ## 配置代理
@@ -99,7 +113,7 @@ curl -I https://www.google.com
 
 在配置文件中启用 `dynamic_chain`，可以自动跳过不可用的代理：
 
-```conf
+```ini
 # 注释掉 strict_chain
 # strict_chain
 
@@ -111,7 +125,7 @@ dynamic_chain
 
 如果不想看到 proxychains 的调试信息，可以启用静默模式：
 
-```conf
+```ini
 # 在配置文件中添加
 quiet_mode
 ```

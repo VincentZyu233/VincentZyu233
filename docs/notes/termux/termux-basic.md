@@ -50,7 +50,7 @@ sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.ustc.edu.cn/termux/apt
 
 编辑 `$PREFIX/etc/apt/sources.list`：
 
-```conf
+```python
 # The termux repository mirror
 deb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main
 ```

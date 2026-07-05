@@ -16,13 +16,13 @@
 
 编辑 `~/.tmux.conf`，加入：
 
-```conf
+```python
 set -g pane-border-status top
 ```
 
 ### 显示 Pane 编号和自定义标题
 
-```conf
+```python
 set -g pane-border-format " ─ #P: #{pane_title} ─ "
 ```
 
@@ -30,7 +30,7 @@ set -g pane-border-format " ─ #P: #{pane_title} ─ "
 
 在 `~/.tmux.conf` 中绑定快捷键：
 
-```conf
+```bash
 bind T command-prompt -p "请输入当前 Pane 的新标题:" "select-pane -T '%%'"
 ```
 
@@ -117,7 +117,7 @@ tmux set -g mouse on
 
 持久化配置（写入 `~/.tmux.conf`）：
 
-```conf
+```python
 set -g mouse on
 ```
 

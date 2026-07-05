@@ -53,7 +53,7 @@ sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.s
 
 编辑 `/etc/apt/sources.list.d/debian.sources`，替换为以下内容：
 
-```conf
+```yaml
 Types: deb
 URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
 Suites: trixie trixie-updates trixie-backports

@@ -23,7 +23,7 @@
 
 如果文件不存在，直接新建即可。
 
-```conf
+```python
 # 🔢 显示行号
 set linenumbers
 
