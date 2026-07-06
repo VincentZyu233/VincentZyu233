@@ -48,6 +48,10 @@ Desktop.ini
 .Trashes
 
 # Package manager lock files (optional, uncomment if you want to ignore)
-# yarn.lock
-# package-lock.json
-# pnpm-lock.yaml
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# 
+**/tmp/
+**/temp/

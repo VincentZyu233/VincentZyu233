@@ -67,17 +67,46 @@ git rev-list --objects --all | git cat-file --batch-check="%(objectsize:disk) %(
 git rev-list --objects --all \
   | git cat-file --batch-check="%(objectsize:disk) %(objectname) %(rest)" \
   | sort -rn \
-  | head -n 10
+  | head -n 10 \
+  | numfmt --field=1 --to=iec-i --suffix=B --format="%.2f"
+```
+输出效果像这样：
+```bash
+14.83MiB dcd6014822d6b4af5273de6f147495d0830553eb images/nggyu.gif
+13.01MiB 749383b65a28357e7b62cea3df40025cfde94204 docs/.vitepress/theme/fonts/LXGWWenKaiMono-Medium.ttf
+12.87MiB 244f0dbac38243a1c06b6a163661ecb583e201f9 docs/.vitepress/theme/fonts/LXGWWenKaiMono-Regular.ttf
+1.20MiB 75fdddb7b7e57232f6502c229e8f3cd0699da787 docs/public/image/tmux-border-status-set-done-final-effect-on-ubuntu24-lxqt-x11-desktop.png
+1.00MiB 9f26e7990d048cd1f84d02724508e83ec7008529 docs/public/mahiro/mahiro-pfp-2.png
+760.66KiB cb54a426627ac750fea6102d4abd38c9e6351c3f docs/public/mahiro/mahiro-pfp-13.jpg
+654.99KiB b8f3a3f25274a46d5f9a86a2cbaf8201dfeb61ea docs/public/friends/ChengZhiMeow.jpg
+581.66KiB 2d192876a9a9f0f012987f4f1dcf9bf0d371386e docs/public/avatar/koishi-plugin-onebot-info-image???.aui??.VincentZyu?QQ~.png
+479.56KiB 6d4a672a45043230b71b297bdbf2ee539b19b759 docs/public/mahiro/mahiro-pfp-12.jpeg
+458.86KiB 94eae4609bab7fa1279ffdcbfba041cf19b734bc docs/public/mahiro/mahiro-pfp-7.png
 ```
 :::
 
 ::: tip PowerShell
 ```powershell
-git rev-list --objects --all \
-  | git cat-file --batch-check="%(objectsize:disk) %(objectname) %(rest)" \
-  | Sort-Object { [long]($_ -split ' ')[0] } -Descending \
-  | Select-Object -First 10
+git rev-list --objects --all `
+  | git cat-file --batch-check="%(objectsize:disk) %(objectname) %(rest)" `
+  | Where-Object { $_ -match '^\d+ ' } `
+  | Sort-Object { [long]($_ -split ' ', 2)[0] } -Descending `
+  | Select-Object -First 10 `
+  | ForEach-Object {
+      $parts = $_ -split ' ', 3
+      $size = [double]$parts[0]
+      $units = 'B', 'KiB', 'MiB', 'GiB'
+      $unitIndex = 0
+      while ($size -ge 1024 -and $unitIndex -lt $units.Length - 1) {
+        $size /= 1024
+        $unitIndex++
+      }
+      '{0:N2}{1} {2} {3}' -f $size, $units[$unitIndex], $parts[1], $parts[2]
+    }
 ```
+
+::: warning 注意
+`git cat-file --batch-check` 可能输出 `missing` 等非数字行，`Where-Object { $_ -match '^\d+ ' }` 会先过滤掉它们，避免 `Sort-Object` 转数字时报错。
 :::
 
 ## 🔹 git-sizer 跨平台分析工具
