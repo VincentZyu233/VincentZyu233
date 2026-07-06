@@ -92,6 +92,7 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: '📦 cargo 简单配置说明', link: '/notes/cli-tools/cargo' },
+              { text: '🔶 Git 跨平台通用指令与安装', link: '/notes/cli-tools/git' },
               { text: '📝 nano 简单配置说明', link: '/notes/cli-tools/nano' },
               { text: '💻 tmux 简单配置说明', link: '/notes/cli-tools/tmux' },
               { text: '🗑️ du-dust 简单配置说明 - 更快的Rust重构版du', link: '/notes/cli-tools/du-dust' },
