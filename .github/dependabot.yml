@@ -1,0 +1,28 @@
+# 🤖 Dependabot 自动依赖更新配置
+# 文档：https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options
+
+version: 2
+updates:
+  # ═══════════════════════════════════════════
+  # 📦 监控 npm 依赖（package.json + yarn.lock）
+  # ═══════════════════════════════════════════
+  # 自动检查 vitepress、vue、@vueuse/* 等依赖的新版本
+  # 有更新时自动开 PR，标签为 "dependencies"
+  - package-ecosystem: "npm"
+    directory: "/"                    # 📂 扫描项目根目录的 package.json
+    schedule:
+      interval: "weekly"              # 📅 每周检查一次更新
+    labels:
+      - "dependencies"                # 🏷️ PR 标签，方便筛选
+
+  # ═══════════════════════════════════════════
+  # ⚙️ 监控 GitHub Actions 版本
+  # ═══════════════════════════════════════════
+  # 自动检查 .github/workflows/*.yml 里 actions/checkout@v4 等版本
+  # 有新版时自动开 PR，标签为 "ci"
+  - package-ecosystem: "github-actions"
+    directory: "/"                    # 📂 扫描项目根目录的 .github/workflows/
+    schedule:
+      interval: "weekly"              # 📅 每周检查一次更新
+    labels:
+      - "ci"                          # 🏷️ PR 标签，方便筛选

@@ -1,3 +1,7 @@
+# 🚀 VitePress 双平台部署工作流
+# 同时部署到 GitHub Pages 和 Cloudflare Pages
+# 触发条件：push 到 main 分支，且 commit message 包含 "build page"
+
 name: Deploy VitePress Sites
 
 on:
@@ -5,78 +9,101 @@ on:
     branches:
       - main
 
+# 🔐 权限配置
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-  deployments: write # 👈 新增这一行：允许 Cloudflare Action 创建 GitHub Deployment 状态
+  contents: read          # 📖 读取仓库代码
+  pages: write            # 📄 写入 GitHub Pages
+  id-token: write         # 🪪 用于 Pages 部署的身份验证
+  deployments: write      # ☁️ 允许 Cloudflare Action 创建 Deployment 状态
 
+# 🔄 并发控制：同一时间只跑一个部署，新的不会取消正在跑的
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  # Job 1: 部署到 GitHub Pages (带子路径 /VincentZyu233/)
+  # ═══════════════════════════════════════════════════
+  # 📦 Job 1: 部署到 GitHub Pages（子路径 /VincentZyu233/）
+  # ═══════════════════════════════════════════════════
   deploy-gh-pages:
     runs-on: ubuntu-latest
+    # 🔍 只有 commit message 包含 "build page" 才触发部署
     if: "contains(github.event.head_commit.message, 'build page')"
     steps:
+      # 📥 拉取代码
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 🟢 安装 Node.js 并启用 yarn 缓存
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'yarn'
 
+      # 📦 严格按 yarn.lock 安装依赖，不更新版本号
       - name: Install dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile
 
+      # 🔨 构建 GitHub Pages 版本（带子路径 base）
       - name: Build for GitHub Pages
         env:
           VITEPRESS_BASE: '/VincentZyu233/'
-        run: npm run docs:build
+        run: yarn docs:build
 
+      # ⚙️ 配置 GitHub Pages 环境
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      # 📤 上传构建产物
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
 
+      # 🚀 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Job 2: 部署到 Cloudflare Pages (根路径 /)
+  # ═══════════════════════════════════════════════════
+  # ☁️ Job 2: 部署到 Cloudflare Pages（根路径 /）
+  # ═══════════════════════════════════════════════════
   deploy-cf-pages:
     runs-on: ubuntu-latest
+    # 🔍 同样需要 commit message 包含 "build page"
     if: "contains(github.event.head_commit.message, 'build page')"
     steps:
+      # 📥 拉取代码
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 🟢 安装 Node.js 并启用 yarn 缓存
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: 'yarn'
 
+      # 📦 严格按 yarn.lock 安装依赖，不更新版本号
       - name: Install dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile
 
+      # 🔨 构建 Cloudflare 版本（根路径 base）
       - name: Build for Cloudflare Pages
         env:
           VITEPRESS_BASE: '/'
-        run: npm run docs:build
+        run: yarn docs:build
 
+      # ☁️ 发布到 Cloudflare Pages
+      # 🔑 需要在 repo Settings > Secrets 配置以下密钥：
+      #    - CLOUDFLARE_API_TOKEN
+      #    - CLOUDFLARE_ACCOUNT_ID
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: vincentzyu-vitepress # 需要在 Cloudflare 仪表盘确认项目名称
+          projectName: vincentzyu-vitepress  # 📝 Cloudflare 仪表盘中的项目名称
           directory: docs/.vitepress/dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
