@@ -9,7 +9,6 @@ Windows 下可以用 PowerShell 查看物理硬盘信息，Linux 下可以用 `l
 ```powershell
 Get-PhysicalDisk |
   Select-Object FriendlyName,
-                Manufacturer,
                 Model,
                 SerialNumber,
                 MediaType,
@@ -32,11 +31,6 @@ Get-PhysicalDisk | ForEach-Object {
         "总线"        = $_.BusType
         "健康状态"    = $_.HealthStatus
         "运行状态"    = $_.OperationalStatus
-        "制造商/品牌" = if ([string]::IsNullOrWhiteSpace($_.Manufacturer) -or $_.Manufacturer -eq "ATA") {
-            ($_.Model -split " ")[0]
-        } else {
-            $_.Manufacturer
-        }
         "型号"        = $_.Model
         "序列号"      = $_.SerialNumber
         "固件版本"    = $_.FirmwareVersion
@@ -48,13 +42,13 @@ Get-PhysicalDisk | ForEach-Object {
 输出示例：
 
 ```text
-硬盘名称              容量 (GB) 类型 总线 健康状态 运行状态 制造商/品牌 型号                  序列号                                   固件版本
---------              --------- ---- ---- -------- -------- ----------- ----                  ------                                   --------
-ATA faspeed H5-60G         55.9 SSD  SAS  Healthy  OK       faspeed     faspeed H5-60G        SCRW17122102F0166                        1A
-ZHITAI TiPlus7100 1TB     953.9 SSD  NVMe Healthy  OK       ZHITAI      ZHITAI TiPlus7100 1TB 0000_0000_0000_0000_A428_B70C_708C_0002. ZTA22006
-ATA WDC WD5000AAKX-2      465.8 HDD  SAS  Healthy  OK       WDC         WDC WD5000AAKX-2      WD-WCC2ED0M2PEX                          1H17
-ATA WDC WD5000AAKX-7      465.8 HDD  SAS  Healthy  OK       WDC         WDC WD5000AAKX-7      WD-WCC2EYD98608                          1H19
-ATA WDC WD5000AAKX-2      465.8 HDD  SAS  Healthy  OK       WDC         WDC WD5000AAKX-2      WD-WCC2EPF4H96T                          1H17
+硬盘名称              容量 (GB) 类型 总线 健康状态 运行状态 型号                  序列号                                   固件版本
+--------              --------- ---- ---- -------- -------- ----                  ------                                   --------
+ATA faspeed H5-60G         55.9 SSD  SAS  Healthy  OK       faspeed H5-60G        SCRW17122102F0166                        1A
+ZHITAI TiPlus7100 1TB     953.9 SSD  NVMe Healthy  OK       ZHITAI TiPlus7100 1TB 0000_0000_0000_0000_A428_B70C_708C_0002. ZTA22006
+ATA WDC WD5000AAKX-2      465.8 HDD  SAS  Healthy  OK       WDC WD5000AAKX-2      WD-WCC2ED0M2PEX                          1H17
+ATA WDC WD5000AAKX-7      465.8 HDD  SAS  Healthy  OK       WDC WD5000AAKX-7      WD-WCC2EYD98608                          1H19
+ATA WDC WD5000AAKX-2      465.8 HDD  SAS  Healthy  OK       WDC WD5000AAKX-2      WD-WCC2EPF4H96T                          1H17
 ```
 
 ### 最终效果
@@ -66,7 +60,6 @@ ATA WDC WD5000AAKX-2      465.8 HDD  SAS  Healthy  OK       WDC         WDC WD50
 | 字段 | 说明 |
 |------|------|
 | `FriendlyName` | Windows 识别到的硬盘友好名称 |
-| `Manufacturer` | 制造商信息，有些硬盘可能为空或显示为接口类型 |
 | `Model` | 硬盘型号 |
 | `SerialNumber` | 硬盘序列号 |
 | `MediaType` | 硬盘类型，例如 SSD / HDD |
@@ -77,21 +70,37 @@ ATA WDC WD5000AAKX-2      465.8 HDD  SAS  Healthy  OK       WDC         WDC WD50
 | `FirmwareVersion` | 固件版本 |
 | `SpindleSpeed` | 机械硬盘转速，SSD 通常显示为 0 |
 
+`Get-PhysicalDisk` 的 `Manufacturer` 字段在不同硬盘和桥接芯片上不稳定，可能为空、显示为 `ATA`，也可能只返回截断后的词（例如把 `Great Wall` 显示成 `Great`）。因此这里不再单独展示制造商 / 品牌列，优先保留 `FriendlyName` 和 `Model` 作为可核对信息。
+
 ## 🔹 Linux Bash
 
 ### 安装工具
 
+Debian / Ubuntu：
+
 ```bash
-# Debian / Ubuntu
-sudo apt install lshw smartmontools nvme-cli
-# Arch Linux
+sudo apt update
+sudo apt install lshw smartmontools nvme-cli bsdextrautils
+```
+
+Arch Linux：
+
+```bash
 sudo pacman -S lshw smartmontools nvme-cli
-# Alpine Linux
+```
+
+Alpine Linux：
+
+```bash
 sudo apk add lshw smartmontools nvme-cli
 ```
 
 ::: tip 提示
 `lsblk` 和 `column` 通常由 `util-linux` 系列工具提供。如果系统提示 `column: command not found`，Debian / Ubuntu 可安装 `bsdextrautils`，Arch / Alpine 可安装 `util-linux`。
+:::
+
+::: warning WSL 提示
+WSL2 里看到的 `/mnt/c`、`/mnt/d` 等挂载点是 Windows 文件系统透传，不等价于 Linux 直接访问真实物理硬盘。要查看 Windows 主机的真实硬盘型号、序列号、总线和健康状态，优先用上面的 Windows PowerShell 命令。
 :::
 
 ### 查看物理硬盘概览
@@ -132,7 +141,7 @@ function value(key,    re) {
 
 ### 查看带品牌的横向表格
 
-这个版本会用 `smartctl -i` 读取 `Model Family`，对西数、希捷等已在 smartmontools 数据库里的硬盘，品牌识别会比 `lsblk` 的 `VENDOR` 字段更可靠。
+这个版本会优先用 `smartctl -i` 读取 `Model Family`，对西数、希捷等已在 smartmontools 数据库里的硬盘，品牌识别会比 `lsblk` 的 `VENDOR` 字段更可靠。如果硬盘不在 smartmontools 数据库里、没有 `Model Family`，会退回到 `Device Model`、NVMe 的 `Model Number` 或 `lsblk` 的 `MODEL` 做启发式识别。脚本只保留 `TYPE=disk` 且容量不是 `0B` 的设备，避免把 loop 镜像和空读卡器当成硬盘。
 
 ```bash
 lsblk -d -P -o NAME,MODEL,SERIAL,SIZE,ROTA,TYPE,TRAN,REV | awk '
@@ -153,36 +162,55 @@ function trim(s) {
   sub(/[[:space:]]+$/, "", s)
   return s
 }
-function detect_brand(name,    cmd, line, family, brand) {
+function brand_from_text(text,    brand) {
+  text = trim(text)
+  if (text == "") return ""
+
+  if (text ~ /^Western Digital/ || text ~ /^WDC([[:space:]]|$)/) return "Western Digital"
+  if (text ~ /^Seagate/ || text ~ /^ST[0-9A-Z]/) return "Seagate"
+  if (text ~ /^Samsung/) return "Samsung"
+  if (text ~ /(^|[[:space:]])(TOSHIBA|Toshiba)([[:space:]]|$)/) return "Toshiba"
+  if (text ~ /(^|[[:space:]])(KIOXIA|Kioxia)([[:space:]]|$)/) return "Kioxia"
+  if (text ~ /^HGST/) return "HGST"
+  if (text ~ /^Hitachi/) return "Hitachi"
+
+  split(text, brand, " ")
+  return brand[1]
+}
+function detect_brand(name, fallback_model,    cmd, line, family, device_model, brand) {
   cmd = "sudo smartctl -i /dev/" name " 2>/dev/null"
   while ((cmd | getline line) > 0) {
     if (line ~ /^Model Family:/) {
       sub(/^Model Family:[[:space:]]*/, "", line)
       family = trim(line)
-      break
+    } else if (line ~ /^Device Model:/) {
+      sub(/^Device Model:[[:space:]]*/, "", line)
+      device_model = trim(line)
+    } else if (line ~ /^Model Number:/) {
+      sub(/^Model Number:[[:space:]]*/, "", line)
+      device_model = trim(line)
     }
   }
   close(cmd)
 
-  if (family ~ /^Western Digital/) return "Western Digital"
-  if (family ~ /^Seagate/) return "Seagate"
-  if (family ~ /^Samsung/) return "Samsung"
-  if (family ~ /^TOSHIBA|^Toshiba/) return "Toshiba"
-  if (family ~ /^HGST/) return "HGST"
-  if (family ~ /^Hitachi/) return "Hitachi"
-  if (family != "") {
-    split(family, brand, " ")
-    return brand[1]
-  }
+  brand = brand_from_text(family)
+  if (brand != "") return brand
+  brand = brand_from_text(device_model)
+  if (brand != "") return brand
+  brand = brand_from_text(fallback_model)
+  if (brand != "") return brand
 
   return "Unknown"
 }
 {
+  if (value("TYPE") != "disk") next
+  if (value("SIZE") == "0B") next
+
   name = value("NAME")
   model = value("MODEL")
   rota = value("ROTA")
   media = (rota == "0" ? "SSD/NVMe" : (rota == "1" ? "HDD" : "Unknown"))
-  print name, detect_brand(name), model, value("SERIAL"), value("SIZE"), media, value("TRAN"), value("REV")
+  print name, detect_brand(name, model), model, value("SERIAL"), value("SIZE"), media, value("TRAN"), value("REV")
 }' | column -t -s $'\t'
 ```
 

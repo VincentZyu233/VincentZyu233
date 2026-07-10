@@ -99,23 +99,54 @@ sudo dmidecode -t memory
 sudo dmidecode -t memory | grep -E "Locator:|Bank Locator:|Size:|Speed:|Manufacturer:|Part Number:|Serial Number:"
 ```
 
-### 查看横向表格
+### 查看不带品牌名的横向表格
+
+这个版本不读取和展示 `Manufacturer`，只保留插槽位置、容量、频率、型号/料号和序列号，适合快速核对内存条规格。
 
 ```bash
 sudo dmidecode -t memory | awk '
-/Memory Device$/ {slot=""; size=""; speed=""; mfg=""; part=""; serial=""}
-/^[[:space:]]*Locator:/ {slot=$2}
-/^[[:space:]]*Size:/ {size=$2" "$3}
-/^[[:space:]]*Speed:/ {speed=$2" "$3}
-/^[[:space:]]*Manufacturer:/ {mfg=$2}
-/^[[:space:]]*Part Number:/ {part=$3}
+BEGIN {
+  OFS="\t"
+  print "插槽位置", "容量", "频率", "型号/料号", "序列号"
+  print "--------", "----", "----", "---------", "------"
+}
+function print_mem() {
+  if (size != "" && size !~ /No Module/) {
+    print slot, size, speed, part, serial
+  }
+}
+/Memory Device$/ {
+  print_mem()
+  slot=""; size=""; speed=""; part=""; serial=""
+}
+/^[[:space:]]*Locator:/ {
+  sub(/^[[:space:]]*Locator:[[:space:]]*/, "")
+  slot=$0
+}
+/^[[:space:]]*Size:/ {
+  sub(/^[[:space:]]*Size:[[:space:]]*/, "")
+  size=$0
+}
+/^[[:space:]]*Speed:/ && $0 !~ /Configured/ {
+  sub(/^[[:space:]]*Speed:[[:space:]]*/, "")
+  speed=$0
+}
+/^[[:space:]]*Part Number:/ {
+  sub(/^[[:space:]]*Part Number:[[:space:]]*/, "")
+  part=$0
+}
 /^[[:space:]]*Serial Number:/ {
-  serial=$3
-  if (size != "No Module") printf "%-20s %-10s %-10s %-15s %-25s %-20s\n", slot, size, speed, mfg, part, serial
-}'
+  sub(/^[[:space:]]*Serial Number:[[:space:]]*/, "")
+  serial=$0
+}
+END {
+  print_mem()
+}' | column -t -s $'\t'
 ```
 
-### 查看带中文表头的横向表格
+### 查看带品牌名的横向表格
+
+这个版本会参考 fastfetch 的常见内存厂商码映射，把 `0x80AD` 这类 DMI/SMBIOS 原始厂商码显示成 `SK Hynix`、`Samsung`、`Micron` 等可读品牌名；不认识的值会原样显示。
 
 ```bash
 sudo dmidecode -t memory | awk '
@@ -123,6 +154,28 @@ BEGIN {
   OFS="\t"
   print "插槽位置", "容量", "频率", "制造商/品牌", "型号/料号", "序列号"
   print "--------", "----", "----", "-----------", "---------", "------"
+}
+function trim(s) {
+  sub(/^[[:space:]]+/, "", s)
+  sub(/[[:space:]]+$/, "", s)
+  return s
+}
+function decode_mfg(mfg,    id) {
+  id = toupper(trim(mfg))
+  if (id == "0X017A") return "Apacer"
+  if (id == "0X0198") return "Kingston"
+  if (id == "0X029E") return "Corsair"
+  if (id == "0X04CB") return "A-DATA"
+  if (id == "0X04CD") return "G-Skill"
+  if (id == "0X059B" || id == "0X859B") return "Crucial"
+  if (id == "0X00CE" || id == "0X80CE" || id == "0XCE00") return "Samsung"
+  if (id == "0X014F") return "Transcend"
+  if (id == "0X2C00" || id == "0X802C") return "Micron"
+  if (id == "0XAD00" || id == "0X80AD") return "SK Hynix"
+  if (id == "0X5105" || id == "0X8551") return "Qimonda"
+  if (id == "0X02FE") return "Elpida"
+  if (id == "0X0467") return "Ramaxel"
+  return trim(mfg)
 }
 function print_mem() {
   if (size != "" && size !~ /No Module/) {
@@ -147,7 +200,7 @@ function print_mem() {
 }
 /^[[:space:]]*Manufacturer:/ {
   sub(/^[[:space:]]*Manufacturer:[[:space:]]*/, "")
-  mfg=$0
+  mfg=decode_mfg($0)
 }
 /^[[:space:]]*Part Number:/ {
   sub(/^[[:space:]]*Part Number:[[:space:]]*/, "")
