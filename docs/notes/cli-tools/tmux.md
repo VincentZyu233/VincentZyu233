@@ -61,7 +61,7 @@ tmux source-file ~/.tmux.conf
 
 ## 🔹 相关链接
 
-- [tmux GitHub 仓库](https://github.com/tmux/tmux)
+- [tmux GitHub 仓库 [https://github.com/tmux/tmux] ](https://github.com/tmux/tmux)
 
 ::: tip 快捷键操作示意
 下面这张图演示了 `Ctrl + B` 之后再按大写 `T`，然后输入标题的效果。

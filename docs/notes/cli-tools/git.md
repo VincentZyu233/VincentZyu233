@@ -209,6 +209,6 @@ Processing references: 3
 
 ## 🔹 相关链接
 
-- [Git 官网](https://git-scm.com/)
-- [Git 官方文档](https://git-scm.com/doc)
-- [git-sizer GitHub 仓库](https://github.com/github/git-sizer)
+- [Git 官网 [https://git-scm.com/] ](https://git-scm.com/)
+- [Git 官方文档 [https://git-scm.com/doc] ](https://git-scm.com/doc)
+- [git-sizer GitHub 仓库 [https://github.com/github/git-sizer] ](https://github.com/github/git-sizer)

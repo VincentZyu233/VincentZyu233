@@ -146,10 +146,18 @@ replace-with = "rsproxy"
 Debian、Ubuntu 及其衍生发行版可以执行：
 
 ```bash
-sudo apt update
-sudo apt install -y build-essential pkg-config
-sudo apt install -y cmake libssl-dev libgit2-dev git
+sudo apt update                       # 更新 APT 软件包索引，本身不会安装或升级软件
+sudo apt install -y build-essential  # 基础依赖：提供 cc/GCC、G++、make 和 C 标准库头文件，最终链接及原生依赖通常需要
+sudo apt install -y pkg-config       # 按需依赖：供构建脚本查询系统库的版本、头文件路径和链接参数
+sudo apt install -y cmake            # 按需依赖：编译使用 CMake 构建的 C/C++ 原生依赖
+sudo apt install -y libssl-dev       # 按需依赖：提供系统 OpenSSL 的头文件和链接库，部分 TLS/HTTPS 相关 crate 需要
+sudo apt install -y libgit2-dev      # 按需依赖：提供系统 libgit2 的头文件和链接库，部分 Git 相关 crate 需要
+sudo apt install -y git              # 常用工具：克隆仓库，并支持 Cargo 获取 Git 来源的依赖
 ```
+
+并不是所有 Cargo 操作都需要上面的全部软件包。`cargo metadata` 等只读取元数据的操作不需要 C/C++ 工具链；纯 Rust 项目在生成最终可执行文件时通常仍需要系统链接器，因此 Debian/Ubuntu 环境一般建议安装 `build-essential`。`pkg-config`、`cmake`、`libssl-dev` 和 `libgit2-dev` 只在依赖的 crate 需要查找或编译对应系统库时使用；如果项目改用 Rustls、内置源码或 vendored 特性，则可能不需要相应的系统开发库。
+
+安装完成后，记得打印基础编译工具的版本，确认这些命令能够被当前 Shell 找到并正常运行。如果下面三条命令都能输出版本信息，通常说明 `build-essential` 提供的 C 编译器和 Make 构建工具已经正确安装：
 
 ```bash
 cc --version    # 检查默认 C 编译器
@@ -253,10 +261,10 @@ rustup self uninstall
 
 ## 🔹 相关链接
 
-- [Cargo GitHub 仓库](https://github.com/rust-lang/cargo)
-- [Cargo Book](https://doc.rust-lang.org/cargo/)
-- [Rustup](https://rustup.rs/)
-- [RsProxy](https://rsproxy.cn/)
-- [eza](https://github.com/eza-community/eza)
-- [fd](https://github.com/sharkdp/fd)
-- [dust](https://github.com/bootandy/dust)
+- [Cargo GitHub 仓库 [https://github.com/rust-lang/cargo] ](https://github.com/rust-lang/cargo)
+- [Cargo Book [https://doc.rust-lang.org/cargo/] ](https://doc.rust-lang.org/cargo/)
+- [Rustup [https://rustup.rs/] ](https://rustup.rs/)
+- [RsProxy [https://rsproxy.cn/] ](https://rsproxy.cn/)
+- [eza [https://github.com/eza-community/eza] ](https://github.com/eza-community/eza)
+- [fd [https://github.com/sharkdp/fd] ](https://github.com/sharkdp/fd)
+- [dust [https://github.com/bootandy/dust] ](https://github.com/bootandy/dust)

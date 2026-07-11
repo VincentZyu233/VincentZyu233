@@ -67,4 +67,4 @@ oal
 
 ## 🔹 相关链接
 
-- [onefetch GitHub 仓库](https://github.com/o2sh/onefetch)
+- [onefetch GitHub 仓库 [https://github.com/o2sh/onefetch] ](https://github.com/o2sh/onefetch)

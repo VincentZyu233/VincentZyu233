@@ -45,5 +45,5 @@ set softwrap
 
 ## 🔹 相关链接
 
-- [nano GitHub 仓库](https://github.com/madnight/nano)
-- [nano 官网](https://nano-editor.org/)
+- [nano GitHub 仓库 [https://github.com/madnight/nano] ](https://github.com/madnight/nano)
+- [nano 官网 [https://nano-editor.org/] ](https://nano-editor.org/)

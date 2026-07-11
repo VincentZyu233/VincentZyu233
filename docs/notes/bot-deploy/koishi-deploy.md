@@ -287,8 +287,8 @@ external文件夹里面的代码进行了更新，比如从远程仓库`git pull
 - [Koishi Docs [https://github.com/koishijs/docs] ](https://github.com/koishijs/docs)
 
 **运维相关工具：**
-- [Node.js [https://nodejs.org/zh-cn] ](https://nodejs.org/zh-cn/)
+- [Node.js [https://nodejs.org/zh-cn/] ](https://nodejs.org/zh-cn/)
 - [PM2 [https://pm2.keymetrics.io/] ](https://pm2.keymetrics.io/)
-- [GNU Screen[https://www.gnu.org/software/screen/]](https://www.gnu.org/software/screen/)
-- [RUNOOB tmux命令参考[https://www.runoob.com/linux/linux-comm-tmux.html]](https://www.runoob.com/linux/linux-comm-tmux.html)
-- [MCSManager 文档[https://docs.mcsmanager.com/zh_cn/]](https://docs.mcsmanager.com/zh_cn/)
+- [GNU Screen [https://www.gnu.org/software/screen/] ](https://www.gnu.org/software/screen/)
+- [RUNOOB tmux命令参考 [https://www.runoob.com/linux/linux-comm-tmux.html] ](https://www.runoob.com/linux/linux-comm-tmux.html)
+- [MCSManager 文档 [https://docs.mcsmanager.com/zh_cn/] ](https://docs.mcsmanager.com/zh_cn/)

@@ -81,4 +81,4 @@ dust 会智能排序并显示最大的目录和文件，彩色条直观展示各
 
 ## 🔹 相关链接
 
-- [dust GitHub 仓库](https://github.com/bootandy/dust)
+- [dust GitHub 仓库 [https://github.com/bootandy/dust] ](https://github.com/bootandy/dust)

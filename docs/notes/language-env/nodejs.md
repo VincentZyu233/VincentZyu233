@@ -45,5 +45,5 @@ yarn -v
 
 ## 🔹 相关链接
 
-- [Node.js 官方网站](https://nodejs.org/zh-cn/)
-- [nvm GitHub 仓库](https://github.com/nvm-sh/nvm)
+- [Node.js 官方网站 [https://nodejs.org/zh-cn/] ](https://nodejs.org/zh-cn/)
+- [nvm GitHub 仓库 [https://github.com/nvm-sh/nvm] ](https://github.com/nvm-sh/nvm)

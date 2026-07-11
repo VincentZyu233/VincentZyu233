@@ -92,4 +92,4 @@ Qwq: Awa
 
 ## 🔹 相关链接
 
-- [fastfetch GitHub 仓库](https://github.com/fastfetch-cli/fastfetch)
+- [fastfetch GitHub 仓库 [https://github.com/fastfetch-cli/fastfetch] ](https://github.com/fastfetch-cli/fastfetch)
