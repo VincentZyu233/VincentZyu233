@@ -71,3 +71,36 @@ sshsa() {
 . ~/.bashrc
 sshsa --help
 ```
+
+## 🔹 远端 Linux 终端中文显示问题修复
+
+::: tip 终端中的中文显示异常
+
+以下操作在 SSH 登录后的 Linux 服务器上执行。
+
+如果 `ls` 显示中文文件名时出现 `\345...` 一类的转义字节，或 `cat`、`nano` 等命令输出中文内容时显示异常，通常是远端登录环境使用了 `C/POSIX` locale。
+
+编辑当前用户的 `~/.profile`：
+
+```bash
+nano ~/.profile
+```
+
+加入以下配置：
+
+```bash
+export LANG=C.UTF-8
+```
+
+当前会话立即生效并确认 locale：
+
+```bash
+source ~/.profile
+locale
+```
+
+重新 SSH 登录后会自动生效。
+
+该配置只影响当前用户的登录环境，不会修改 systemd 服务或系统级 locale。
+
+:::
