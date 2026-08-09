@@ -84,7 +84,7 @@ npm run docs:dev
 - **GitHub Pages**: 访问 `https://vincentzyu233.github.io/VincentZyu233/`
 - **Cloudflare Pages**: 访问 `https://vincentzyu-vitepress.pages.dev/`
 
-触发条件：推送代码时 commit message 包含 `build-page`
+触发条件：推送代码时 commit message 包含 `pub-page`
 
 ## 🔹 技术栈
 

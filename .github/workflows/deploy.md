@@ -20,14 +20,14 @@
 
 | 关键词 | 说明 | 触发动作 |
 | :--- | :--- | :--- |
-| `build-page` | 构建页面 | ✅ 触发 GitHub Pages 部署<br>✅ 触发 Cloudflare Pages 部署 |
+| `pub-page` | 构建页面 | ✅ 触发 GitHub Pages 部署<br>✅ 触发 Cloudflare Pages 部署 |
 
 **示例 Commit：**
 ```bash
-git commit -m "docs: update install guide (build-page)"
+git commit -m "docs: update install guide (pub-page)"
 ```
 
-如果提交信息中**不包含** `build-page`，GitHub Action 将**不会运行**。
+如果提交信息中**不包含** `pub-page`，GitHub Action 将**不会运行**。
 
 ## 🚀 前置准备：手动创建 Cloudflare 项目 (重要)
 

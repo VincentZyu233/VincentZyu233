@@ -28,6 +28,6 @@
 ## 🔹 Commit Message 习惯
 
 - 文档相关提交使用中文说明，标题使用 conventional commit 风格，例如 `docs(cli-tools): ...`。
-- 需要触发 Pages / CI 构建时，在 commit 标题中带上 `build-page`。
+- 需要触发 Pages / CI 构建时，在 commit 标题中带上 `pub-page`。
 - commit body 尽量写清楚主要改动点。
 - 按用户要求添加 `Co-authored-by: Codex <codex@openai.com>`。

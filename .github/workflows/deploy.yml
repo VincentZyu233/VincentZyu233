@@ -1,6 +1,6 @@
 # 🚀 VitePress 双平台部署工作流
 # 同时部署到 GitHub Pages 和 Cloudflare Pages
-# 触发条件：push 到 main 分支，且 commit message 包含 "build-page"
+# 触发条件：push 到 main 分支，且 commit message 包含 "pub-page"
 
 name: Deploy VitePress Sites
 
@@ -27,8 +27,8 @@ jobs:
   # ═══════════════════════════════════════════════════
   deploy-gh-pages:
     runs-on: ubuntu-latest
-    # 🔍 只有 commit message 包含 "build-page" 才触发部署
-    if: "contains(github.event.head_commit.message, 'build-page')"
+    # 🔍 只有 commit message 包含 "pub-page" 才触发部署
+    if: "contains(github.event.head_commit.message, 'pub-page')"
     steps:
       # 📥 拉取代码
       - name: Checkout code
@@ -71,8 +71,8 @@ jobs:
   # ═══════════════════════════════════════════════════
   deploy-cf-pages:
     runs-on: ubuntu-latest
-    # 🔍 同样需要 commit message 包含 "build-page"
-    if: "contains(github.event.head_commit.message, 'build-page')"
+    # 🔍 同样需要 commit message 包含 "pub-page"
+    if: "contains(github.event.head_commit.message, 'pub-page')"
     steps:
       # 📥 拉取代码
       - name: Checkout code
