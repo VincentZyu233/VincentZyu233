@@ -101,7 +101,7 @@ export default defineConfig({
               { text: '📁 CMD 强制重命名和删除（文件 & 文件夹）', link: '/notes/cli-tools/cmd-ren-rmdir' },
               { text: '🧠 命令行 查看内存条信息', link: '/notes/cli-tools/shell-check-ram-stick' },
               { text: '💽 命令行 查看物理硬盘信息', link: '/notes/cli-tools/shell-check-disk' },
-              { text: '命令行 ssh', link: '/notes/cli-tools/ssh-cli' }
+              { text: '🔌 命令行 ssh', link: '/notes/cli-tools/ssh-cli' }
             ]
           },
           {
