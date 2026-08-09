@@ -12,17 +12,30 @@ updates:
     directory: "/"                    # 📂 扫描项目根目录的 package.json
     schedule:
       interval: "weekly"              # 📅 每周检查一次更新
+    open-pull-requests-limit: 5
+    groups:
+      npm-minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
     labels:
       - "dependencies"                # 🏷️ PR 标签，方便筛选
 
   # ═══════════════════════════════════════════
   # ⚙️ 监控 GitHub Actions 版本
   # ═══════════════════════════════════════════
-  # 自动检查 .github/workflows/*.yml 里 actions/checkout@v4 等版本
+  # 自动检查 .github/workflows/*.yml 里 actions/checkout 等 Action 版本
   # 有新版时自动开 PR，标签为 "ci"
   - package-ecosystem: "github-actions"
     directory: "/"                    # 📂 扫描项目根目录的 .github/workflows/
     schedule:
       interval: "weekly"              # 📅 每周检查一次更新
+    open-pull-requests-limit: 2
+    groups:
+      github-actions:
+        patterns:
+          - "*"
     labels:
       - "ci"                          # 🏷️ PR 标签，方便筛选
