@@ -13,7 +13,7 @@
 ## 🔹 环境要求
 
 - [Node.js](https://nodejs.org/) (推荐 v20 或更高版本)
-- [npm](https://www.npmjs.com/) 或 [Yarn](https://yarnpkg.com/)
+- [Yarn Classic](https://classic.yarnpkg.com/)
 - Git
 
 ## 🔹 快速开始
@@ -27,20 +27,14 @@ cd VincentZyu233
 
 ### 2. 安装依赖
 
-使用 npm：
 ```bash
-npm install
-```
-
-或使用 Yarn：
-```bash
-yarn install
+yarn install --frozen-lockfile
 ```
 
 ### 3. 启动开发服务器
 
 ```bash
-npm run docs:dev
+yarn docs:dev
 ```
 
 启动后访问 `http://localhost:5173/VincentZyu233/` 即可预览。
@@ -49,9 +43,9 @@ npm run docs:dev
 
 | 命令 | 说明 |
 |------|------|
-| `npm run docs:dev` | 启动开发服务器 |
-| `npm run docs:build` | 构建生产版本 |
-| `npm run docs:preview` | 预览生产构建 |
+| `yarn docs:dev` | 启动开发服务器 |
+| `yarn docs:build` | 构建生产版本 |
+| `yarn docs:preview` | 预览生产构建 |
 
 ## 🔹 项目结构
 
@@ -64,7 +58,6 @@ npm run docs:dev
 │   │       ├── custom.css     # 自定义样式
 │   │       ├── index.ts       # 主题入口
 │   │       ├── components/    # Vue 组件
-│   │       └── fonts/         # 字体文件
 │   ├── public/                # 静态资源
 │   │   ├── avatar/            # 头像、favicon
 │   │   ├── icons/             # 图标

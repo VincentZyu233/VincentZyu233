@@ -28,6 +28,7 @@
 ## 🔹 Commit Message 习惯
 
 - 文档相关提交使用中文说明，标题使用 conventional commit 风格，例如 `docs(cli-tools): ...`。
-- 需要触发 Pages / CI 构建时，在 commit 标题中带上 `pub-page`。
+- 需要发布 Pages 时，在 commit 标题或正文中使用独立标记，推荐格式为 `docs(site): 更新首页 [pub-page]`；兼容格式 `[pub page]` 同样有效。
+- Pages 部署规则见[中文部署说明](.github/workflows/deploy.md)。
 - commit body 尽量写清楚主要改动点。
 - 按用户要求添加 `Co-authored-by: Codex <codex@openai.com>`。

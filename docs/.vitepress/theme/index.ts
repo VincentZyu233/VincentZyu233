@@ -3,6 +3,7 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
+import '@free-fonts/lxgw-wenkai/lxgw-wenkai.css'
 
 // 自定义组件
 import TypeWriter from './components/TypeWriter.vue'

@@ -28,62 +28,31 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
 
-const isCustomFontEnabled = ref(true) // 默认开启
-const isTransitioning = ref(false)
+const isCustomFontEnabled = ref(true)
 
 const toggleFont = () => {
-  // 开始过渡动画
-  isTransitioning.value = true
-  document.documentElement.classList.add('font-transitioning')
-  
-  // 等待淡出完成后切换字体
-  setTimeout(() => {
-    isCustomFontEnabled.value = !isCustomFontEnabled.value
-    
-    // 等待字体切换后淡入
-    setTimeout(() => {
-      isTransitioning.value = false
-      document.documentElement.classList.remove('font-transitioning')
-    }, 50)
-  }, 200)
+  isCustomFontEnabled.value = !isCustomFontEnabled.value
 }
 
 const updateFontClass = () => {
   const html = document.documentElement
   if (isCustomFontEnabled.value) {
-    html.classList.add('custom-font-enabled')
+    html.dataset.font = 'lxgw'
   } else {
-    html.classList.remove('custom-font-enabled')
+    delete html.dataset.font
   }
 }
 
 // 监听字体状态变化
 watch(isCustomFontEnabled, () => {
   updateFontClass()
-  // 保存到 localStorage
   localStorage.setItem('vitepress-font-preference', isCustomFontEnabled.value ? 'custom' : 'system')
 })
 
 onMounted(() => {
-  // 从 localStorage 读取用户偏好
   const savedPreference = localStorage.getItem('vitepress-font-preference')
-  if (savedPreference) {
-    isCustomFontEnabled.value = savedPreference === 'custom'
-  }
-  
-  // 应用初始字体设置
+  isCustomFontEnabled.value = savedPreference !== 'system'
   updateFontClass()
-  
-  // 监听字体加载完成事件，实现 swap 时的渐变效果
-  if ('fonts' in document) {
-    // 先添加过渡类
-    document.documentElement.classList.add('font-loaded-transition')
-    
-    document.fonts.ready.then(() => {
-      // 字体加载完成后，触发渐变效果
-      document.documentElement.classList.add('fonts-loaded')
-    })
-  }
 })
 </script>
 

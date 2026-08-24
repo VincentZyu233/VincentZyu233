@@ -8,7 +8,8 @@ export default defineConfig({
   title: "VincentZyuVitePress",
   description: "A VitePress Site",
   head: [
-    ['link', { rel: 'icon', href: `${base}avatar/favicon.ico` }]
+    ['link', { rel: 'icon', href: `${base}avatar/favicon.ico` }],
+    ['script', {}, "(function(){try{var saved=localStorage.getItem('vitepress-font-preference');if(saved!=='system')document.documentElement.dataset.font='lxgw'}catch(_){}})()"]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

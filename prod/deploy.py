@@ -46,7 +46,7 @@ def run_command(cmd, shell=True):
 def deploy():
     # 1. 编译项目
     print("🚀 正在编译 VitePress...")
-    run_command("npm run docs:build")
+    run_command("yarn docs:build")
 
     # 2. 打包文件
     # -tzip 指定 zip 格式，-r 递归，-y 自动确认覆盖

@@ -169,6 +169,11 @@
   resolved "https://registry.npmmirror.com/@esbuild/win32-x64/-/win32-x64-0.25.12.tgz#9bdad8176be7811ad148d1f8772359041f46c6c5"
   integrity sha512-alJC0uCZpTFrSL0CCDjcgleBXPnCrEAhTBILpeAp7M/OFgoqtAetfBzX0xM00MUsVVPpVjlPuMbREqnZCXaTnA==
 
+"@free-fonts/lxgw-wenkai@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/@free-fonts/lxgw-wenkai/-/lxgw-wenkai-1.0.1.tgz#1503d0d93fcfcc1dabbced4fdafc95ec88c202c9"
+  integrity sha512-tZfaxwLHq6ymYrixILhvdBuenxg3Jau1PX/kg/fVRQiX85evf7o4GjRaxt1ucmPpw60HvVa08BVXiLHScw46Nw==
+
 "@iconify-json/simple-icons@^1.2.47":
   version "1.2.57"
   resolved "https://registry.npmmirror.com/@iconify-json/simple-icons/-/simple-icons-1.2.57.tgz#4bb2527408a75ec7283c8740f26a5cdaf6291728"

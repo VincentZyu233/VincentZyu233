@@ -1,6 +1,6 @@
 # 🚀 VitePress 双平台部署工作流
 # 同时部署到 GitHub Pages 和 Cloudflare Pages
-# 触发条件：push 到 main 分支，且 commit message 包含 "pub-page"
+# 所有 PR 和 main 推送都会验证构建；带独立发布标记的 main 最新提交才会部署
 
 name: Deploy VitePress Sites
 
@@ -8,13 +8,11 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 # 🔐 权限配置
 permissions:
   contents: read          # 📖 读取仓库代码
-  pages: write            # 📄 写入 GitHub Pages
-  id-token: write         # 🪪 用于 Pages 部署的身份验证
-  deployments: write      # ☁️ 允许 Cloudflare Action 创建 Deployment 状态
 
 # 🔄 并发控制：同一时间只跑一个部署，新的不会取消正在跑的
 concurrency:
@@ -22,13 +20,52 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Verify documentation build
+        run: yarn docs:build
+
+  should-deploy:
+    needs: verify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.marker.outputs.should_deploy }}
+    steps:
+      - id: marker
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          if [[ "$COMMIT_MESSAGE" =~ (^|[^[:alnum:]_-])\[pub(-|\ )page\]($|[^[:alnum:]_-]) ]]; then
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+          fi
+
   # ═══════════════════════════════════════════════════
   # 📦 Job 1: 部署到 GitHub Pages（子路径 /VincentZyu233/）
   # ═══════════════════════════════════════════════════
   deploy-gh-pages:
+    needs:
+      - verify
+      - should-deploy
     runs-on: ubuntu-latest
-    # 🔍 只有 commit message 包含 "pub-page" 才触发部署
-    if: "contains(github.event.head_commit.message, 'pub-page')"
+    # 🔍 验证通过且最新提交带独立发布标记时才部署
+    if: needs.should-deploy.outputs.should_deploy == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       # 📥 拉取代码
       - name: Checkout code
@@ -70,9 +107,15 @@ jobs:
   # ☁️ Job 2: 部署到 Cloudflare Pages（根路径 /）
   # ═══════════════════════════════════════════════════
   deploy-cf-pages:
+    needs:
+      - verify
+      - should-deploy
     runs-on: ubuntu-latest
-    # 🔍 同样需要 commit message 包含 "pub-page"
-    if: "contains(github.event.head_commit.message, 'pub-page')"
+    # 🔍 验证通过且最新提交带独立发布标记时才部署
+    if: needs.should-deploy.outputs.should_deploy == 'true'
+    permissions:
+      contents: read
+      deployments: write
     steps:
       # 📥 拉取代码
       - name: Checkout code

@@ -73,8 +73,6 @@ git rev-list --objects --all \
 输出效果像这样：
 ```bash
 14.83MiB dcd6014822d6b4af5273de6f147495d0830553eb images/nggyu.gif
-13.01MiB 749383b65a28357e7b62cea3df40025cfde94204 docs/.vitepress/theme/fonts/LXGWWenKaiMono-Medium.ttf
-12.87MiB 244f0dbac38243a1c06b6a163661ecb583e201f9 docs/.vitepress/theme/fonts/LXGWWenKaiMono-Regular.ttf
 1.20MiB 75fdddb7b7e57232f6502c229e8f3cd0699da787 docs/public/image/tmux-border-status-set-done-final-effect-on-ubuntu24-lxqt-x11-desktop.png
 1.00MiB 9f26e7990d048cd1f84d02724508e83ec7008529 docs/public/mahiro/mahiro-pfp-2.png
 760.66KiB cb54a426627ac750fea6102d4abd38c9e6351c3f docs/public/mahiro/mahiro-pfp-13.jpg
@@ -83,6 +81,8 @@ git rev-list --objects --all \
 479.56KiB 6d4a672a45043230b71b297bdbf2ee539b19b759 docs/public/mahiro/mahiro-pfp-12.jpeg
 458.86KiB 94eae4609bab7fa1279ffdcbfba041cf19b734bc docs/public/mahiro/mahiro-pfp-7.png
 ```
+
+本站的霞鹜文楷通过 `@free-fonts/lxgw-wenkai` 提供按 Unicode 范围拆分的 WOFF2 字体文件，不再在仓库中维护完整 TTF 资源。
 :::
 
 ::: tip PowerShell
