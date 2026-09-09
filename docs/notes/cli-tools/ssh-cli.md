@@ -119,10 +119,10 @@ ssh-keygen -t ed25519 -C "YourName-Win"
 
 # 2. 先读公钥到变量，再通过 echo 上传到服务器（需输入一次密码）
 $key = Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub"
-ssh root@<YOUR_SERVER> "mkdir -p ~/.ssh && echo '$key' >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+ssh -p 22 root@<YOUR_SERVER> "mkdir -p ~/.ssh && echo '$key' >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 
 # 3. 验证免密登录（不会再要密码即成功）
-ssh root@<YOUR_SERVER> "echo '✅ SSH 免密登录配置成功！'"
+ssh -p 22 root@<YOUR_SERVER> "echo '✅ SSH 免密登录配置成功！'"
 ```
 
 ### Windows CMD
