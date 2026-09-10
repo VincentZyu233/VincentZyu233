@@ -119,10 +119,10 @@ ssh-keygen -t ed25519 -C "YourName-Win"
 
 # 2. 先读公钥到变量，再通过 echo 上传到服务器（需输入一次密码）
 $key = Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub"
-ssh -p 22 root@<YOUR_SERVER> "mkdir -p ~/.ssh && echo '$key' >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+ssh -p <PORT> <USER>@<IP> "mkdir -p ~/.ssh && echo '$key' >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 
 # 3. 验证免密登录（不会再要密码即成功）
-ssh -p 22 root@<YOUR_SERVER> "echo '✅ SSH 免密登录配置成功！'"
+ssh -p <PORT> <USER>@<IP> "echo '✅ SSH 免密登录配置成功！'"
 ```
 
 ### Windows CMD
@@ -132,10 +132,10 @@ REM 1. 生成密钥（已有可跳过）
 ssh-keygen -t ed25519 -C "YourName-Win"
 
 REM 2. 上传公钥到服务器（需输入一次密码）
-type "%USERPROFILE%\.ssh\id_ed25519.pub" | ssh -p 22 root@<YOUR_SERVER> "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+type "%USERPROFILE%\.ssh\id_ed25519.pub" | ssh -p <PORT> <USER>@<IP> "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 
 REM 3. 验证免密登录
-ssh root@<YOUR_SERVER> "echo '✅ SSH 免密登录配置成功！'"
+ssh -p <PORT> <USER>@<IP> "echo '✅ SSH 免密登录配置成功！'"
 ```
 
 ### Linux / WSL
@@ -145,10 +145,10 @@ ssh root@<YOUR_SERVER> "echo '✅ SSH 免密登录配置成功！'"
 ssh-keygen -t ed25519 -C "YourName-Linux"
 
 # 2. 一键上传公钥（需输入一次密码）
-ssh-copy-id -p 22 root@<YOUR_SERVER>
+ssh-copy-id -p <PORT> <USER>@<IP>
 
 # 3. 验证免密登录
-ssh root@<YOUR_SERVER> "echo '✅ SSH 免密登录配置成功！'"
+ssh -p <PORT> <USER>@<IP> "echo '✅ SSH 免密登录配置成功！'"
 ```
 
 > 🔐 建议使用 `ed25519` 算法（比 RSA 更安全且密钥更短）。私钥文件权限应为 `600`。
