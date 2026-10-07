@@ -30,7 +30,7 @@ GitHub Pages 与 Cloudflare Pages job 都依赖验证和该判断结果。
 | 平台 | 构建命令 | `VITEPRESS_BASE` | 发布方式 |
 | --- | --- | --- | --- |
 | GitHub Pages | `yarn docs:build` | `/VincentZyu233/` | `actions/deploy-pages` |
-| Cloudflare Pages | `yarn docs:build` | `/` | `cloudflare/pages-action` |
+| Cloudflare Pages | `yarn docs:build` | `/` | `cloudflare/wrangler-action` |
 
 ## Cloudflare 配置
 

@@ -143,10 +143,9 @@ jobs:
       #    - CLOUDFLARE_API_TOKEN
       #    - CLOUDFLARE_ACCOUNT_ID
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: vincentzyu-vitepress  # 📝 Cloudflare 仪表盘中的项目名称
-          directory: docs/.vitepress/dist
+          command: pages deploy docs/.vitepress/dist --project-name=vincentzyu-vitepress
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
