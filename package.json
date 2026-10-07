@@ -5,11 +5,12 @@
     "vue": "^3.5.41"
   },
   "scripts": {
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs --port 30821",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs --port 30821"
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@free-fonts/lxgw-wenkai": "^1.0.1",
     "@vueuse/core": "^14.4.0",
     "@vueuse/motion": "^3.0.3"

@@ -11,7 +11,7 @@
   
   /* 字体变量 */
   --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --vp-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --vp-font-family-mono: ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 .dark {
@@ -327,6 +327,7 @@
 /* 字体切换功能 */
 html[data-font="lxgw"] {
   --vp-font-family-base: 'LXGW WenKai', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 /* 应用字体到主要元素，增大字体大小并使用更粗的字重 */
@@ -422,11 +423,13 @@ code, pre, .vp-code {
 html[data-font="lxgw"] code {
   font-weight: 500;
   font-size: 14px;
+  font-variant-ligatures: normal;
 }
 
 html[data-font="lxgw"] pre code {
   font-weight: 400; /* 代码块保持 Regular 字重 */
   font-size: 14px;
+  font-variant-ligatures: normal;
 }
 
 /* 字体切换按钮在导航栏中的样式 */

@@ -4,7 +4,7 @@
       class="font-toggle-btn"
       :class="{ active: isCustomFontEnabled }"
       @click="toggleFont"
-      :title="isCustomFontEnabled ? '切换到系统字体' : '切换到霞鹜文楷字体'"
+      :title="isCustomFontEnabled ? '切换到系统默认字体' : '切换到自定义字体 (霞鹜文楷 + JetBrains Mono)'"
     >
       <svg
         class="font-icon"
