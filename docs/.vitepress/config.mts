@@ -62,6 +62,14 @@ export default defineConfig({
             ]
           },
           {
+            text: '📂 Shell Explorer 资源管理器',
+            collapsed: false,
+            items: [
+              { text: '🪟 PowerShell 快速打开资源管理器', link: '/notes/shell-explorer/powershell-explorer' },
+              { text: '🐧 Linux Bash 快速打开文件管理器', link: '/notes/shell-explorer/linux-bash-explorer' }
+            ]
+          },
+          {
             text: '🔄 Switch Source 换源',
             collapsed: false,
             items: [
