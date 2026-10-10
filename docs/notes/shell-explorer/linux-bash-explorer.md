@@ -100,6 +100,12 @@ ee /var/log
 
 ---
 
+## 🔹 效果示例
+
+![Debian 13 KDE 环境下配置全局 ee 脚本并运行效果](/image/explorer.shell.ee.config.debian13.kde.png)
+
+---
+
 ## 🔹 相关链接
 
 - [PowerShell 快速打开文件资源管理器](./powershell-explorer.md)

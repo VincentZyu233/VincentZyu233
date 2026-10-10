@@ -96,6 +96,12 @@ ee D:\Projects
 
 ---
 
+## 🔹 效果示例
+
+![Windows 11 PowerShell 配置 ee 指令并运行效果](/image/explorer.shell.ee.config.windows11.png)
+
+---
+
 ## 🔹 相关链接
 
 - [Linux Bash 快速打开文件管理器](./linux-bash-explorer.md)
