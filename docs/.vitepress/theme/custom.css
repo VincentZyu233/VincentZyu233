@@ -510,3 +510,74 @@ html[data-font="lxgw"] pre code {
   position: relative;
   z-index: 1;
 }
+
+
+/* 代码块复制 Markdown 按钮 */
+.vp-doc [class*='language-'] > button.copy-md {
+  direction: ltr;
+  position: absolute;
+  top: 12px;
+  right: 56px;
+  z-index: 3;
+  border: 1px solid var(--vp-code-copy-code-border-color);
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--vp-code-copy-code-bg);
+  opacity: 0;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='rgba(128,128,128,1)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Crect width='20' height='15' x='2' y='4.5' rx='2'/%3E%3Cpath d='M6 15.5V8.5l2.5 3 2.5-3v7'/%3E%3Cpath d='M15 12.5l2 3 2-3'/%3E%3Cpath d='M17 8.5v7'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s,
+    opacity 0.25s;
+}
+
+.vp-doc [class*='language-']:hover > button.copy-md,
+.vp-doc [class*='language-'] > button.copy-md:focus {
+  opacity: 1;
+}
+
+.vp-doc [class*='language-'] > button.copy-md:hover,
+.vp-doc [class*='language-'] > button.copy-md.copied {
+  border-color: var(--vp-code-copy-code-hover-border-color);
+  background-color: var(--vp-code-copy-code-hover-bg);
+}
+
+.vp-doc [class*='language-'] > button.copy-md.copied,
+.vp-doc [class*='language-'] > button.copy-md:hover.copied {
+  border-radius: 0 4px 4px 0;
+  background-color: var(--vp-code-copy-code-hover-bg);
+  background-image: var(--vp-icon-copied);
+}
+
+.vp-doc [class*='language-'] > button.copy-md.copied::before,
+.vp-doc [class*='language-'] > button.copy-md:hover.copied::before {
+  position: relative;
+  top: -1px;
+  transform: translateX(calc(-100% - 1px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--vp-code-copy-code-hover-border-color);
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  padding: 0 10px;
+  width: fit-content;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vp-code-copy-code-active-text);
+  background-color: var(--vp-code-copy-code-hover-bg);
+  white-space: nowrap;
+  content: 'Copied MD!';
+}
+
+.vp-doc [class*='language-']:hover > button.copy-md ~ span.lang,
+.vp-doc [class*='language-'] > button.copy-md:focus ~ span.lang {
+  opacity: 0;
+}

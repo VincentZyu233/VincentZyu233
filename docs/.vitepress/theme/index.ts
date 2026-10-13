@@ -22,9 +22,13 @@ import ScrollProgress from './components/ScrollProgress.vue'
 import MagneticButton from './components/MagneticButton.vue'
 import FloatingIcons from './components/FloatingIcons.vue'
 import ClickEffect from './components/ClickEffect.vue'
+import { useCopyMarkdown } from './composables/copyMarkdown'
 
 export default {
   extends: DefaultTheme,
+  setup() {
+    useCopyMarkdown()
+  },
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // 在 layout 顶部添加全局组件

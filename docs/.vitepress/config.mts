@@ -11,6 +11,33 @@ export default defineConfig({
     ['link', { rel: 'icon', href: `${base}avatar/favicon.ico` }],
     ['script', {}, "(function(){try{var saved=localStorage.getItem('vitepress-font-preference');if(saved!=='system')document.documentElement.dataset.font='lxgw'}catch(_){}})()"]
   ],
+  markdown: {
+    config(md) {
+      const fence = md.renderer.rules.fence
+      if (fence) {
+        md.renderer.rules.fence = (...args) => {
+          const [tokens, idx] = args
+          const token = tokens[idx]
+          const rawInfo = token.info || ''
+          const lang = rawInfo
+            .trim()
+            .replace(/\[.*\]/, '')
+            .replace(/ active( |$)/, '')
+            .replace(/=(-?\d*)/, '')
+            .replace(/:(no-)?line-numbers({| |$|=-?\d*).*/, '')
+            .replace(/(-vue|{| ).*$/, '')
+            .replace(/^vue-html$/, 'template')
+            .replace(/^ansi$/, '')
+
+          const rawHtml = fence(...args)
+          return rawHtml.replace(
+            /(<button\b[^>]*\bclass="copy"[^>]*><\/button>)/,
+            `<button title="复制 Markdown 代码块" class="copy-md" data-lang="${lang}"></button>$1`
+          )
+        }
+      }
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/avatar/mahiro-pfp-VincentZyu.jpg',
