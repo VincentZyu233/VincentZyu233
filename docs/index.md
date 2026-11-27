@@ -34,7 +34,7 @@ features:
     details: "小时候我不懂，以为那是雪花。<br><a href=\"https://x.com/whyyoutouzhele\" target=\"_blank\" rel=\"noreferrer\"><u><i>—— whyyoutouzhele</i></u></a>"
   - icon: 🕯️
     title: "More than machinery, we need humanity"
-    details: "<a href=\"https://www.youtube.com/watch?v=_2U6c22kyEQ&list=RD_2U6c22kyEQ&start_radio=1\" target=\"_blank\" rel=\"noreferrer\">More than cleverness, we need kindness and gentleness, without these qualities, life will be violent and lost.......</a><br><a href=\"https://www.youtube.com/watch?v=J7GY1Xg6X20\" target=\"_blank\" rel=\"noreferrer\"><u><i>—— Charlie Chaplin</i></u></a>"
+    details: "<a href=\"https://www.youtube.com/watch?v=_2U6c22kyEQ&list=RD_2U6c22kyEQ&start_radio=1\" target=\"_blank\" rel=\"noreferrer\">More than cleverness, we need kindness and gentleness. Without these qualities, life will be violent, and all will be lost...</a><br><a href=\"https://www.youtube.com/watch?v=J7GY1Xg6X20\" target=\"_blank\" rel=\"noreferrer\"><u><i>—— Charlie Chaplin</i></u></a>"
   - icon: 💡
     title: "寻找改变世界的力量"
     details: "<a href=\"https://nju-projectn.github.io/ics-pa-gitbook/ics2025\" target=\"_blank\" rel=\"noreferrer\">我们都是活生生的人, 从小就被不由自主地教导用最小的付出获得最大的得到, 经常会忘记我们究竟要的是什么. 我承认我完美主义, 但我想每个人心中都有那一份求知的渴望和对真理的向往, \"大学\"的灵魂也就在于超越世俗, 超越时代的纯真和理想 -- 我们不是要讨好企业的毕业生, 而是要寻找改变世界的力量.</a><br><a href=\"https://space.bilibili.com/202224425\" target=\"_blank\" rel=\"noreferrer\"><u><i>—— nju jyy</i></u></a>"
