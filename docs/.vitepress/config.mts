@@ -182,6 +182,10 @@ export default defineConfig({
         ariaLabel: 'Gitee'
       },
       { icon: 'github', link: 'https://github.com/VincentZyu233' }
-    ]
+    ],
+
+    search: {
+      provider: 'local'
+    }
   }
 })
